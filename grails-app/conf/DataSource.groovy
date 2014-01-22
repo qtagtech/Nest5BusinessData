@@ -34,7 +34,7 @@ environments {
     production {
         grails {
             mongo {
-                host = 'mongodb://'+System.env.OPENSHIFT_MONGODB_DB_HOST
+                host = System.env.OPENSHIFT_MONGODB_DB_HOST
                 port = System.env.OPENSHIFT_MONGODB_DB_PORT
                 username = "admin"
                 password="GDqSlKS7E8Vx"
