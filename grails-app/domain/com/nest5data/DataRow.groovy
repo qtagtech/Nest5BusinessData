@@ -5,7 +5,7 @@ import org.bson.types.ObjectId
 class DataRow {
 
     ObjectId id
-    Integer syncId  //generate it if it is a new insert, not used yet, find the way to save it in the device once it is generated here, show
+    Long syncId  //generate it if it is a new insert, not used yet, find the way to save it in the device once it is generated here, show
     String table
     Integer rowId
     Date timeCreated
@@ -14,8 +14,7 @@ class DataRow {
     Device device
     Boolean isDeleted
     static mapping = {
-        table index:true
-        rowId index: true
+        compoundIndex table:1, rowId:1
     }
     static embedded = ['device']
 

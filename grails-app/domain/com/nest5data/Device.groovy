@@ -8,8 +8,7 @@ class Device {
     String uid
     Integer company
     static mapping = {
-        uid index:true
-        name index: true
+        compoundIndex uid:1, name:1
     }
 
     static constraints = {
