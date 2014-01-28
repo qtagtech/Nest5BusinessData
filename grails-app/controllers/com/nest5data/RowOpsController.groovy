@@ -51,32 +51,61 @@ class RowOpsController {
             return
         }
         timeCreated = new Date(received?.time_created as Long)
+        def db = mongo.getDB('nest5BigData')
+        def device = Device.collection.findOne('uid':received.device_id)
+        if(!device){
+            response.setStatus(400)
+            result = [status: 400, code: 55512,message: 'Invalid device_id Parameter. Either the device id is misspelled or it is not yet registered in the platform',payload: null]
+            render result as JSON
+            return
+        }
         if(received.sync_id == 0){//This means it's a new insert, since it doesn't have common id through all devices. nothing else should be done but save it and generate an id that should be returned to the client to update
             def rowHash = received?.fields?.encodeAsMD5()
             def sync_id = 234293874298374203 // generate unique inter-table id for this row
-            def db = mongo.getDB('nest5BigData')
-            def device = Device.collection.findOne('uid':received.device_id)
-            if(!device){
-                response.setStatus(400)
-                result = [status: 400, code: 55512,message: 'Invalid device_id Parameter. Either the device id is misspelled or it is not yet registered in the platform',payload: null]
-                render result as JSON
-                return
-            }
             db.dataRow.insert('table': received.table, 'rowId': received.row_id,'timeCreated': timeCreated,'timeReceived': new Date(),fields: received.fields,'hashKey': rowHash,'device': device, 'isDeleted': false,'syncId': sync_id)
             response.setStatus(201)//new object created
             result = [status: 201, code: 555,message: 'New document successfully created, please update sync_id value in client\'s DB',payload: sync_id]  //success, but status indicates payload present, and las row should be updated with the sync_id generated in the server
             render result as JSON
             return
         }
+        //check the device is registered to the same company as the previous records for this sync_id element
+        def deleting = received.is_delete ? true : false
+        if(deleting){    //the device sent a delete request with all the properties except for the fields (blank values). the server should soft-delete it. The deleted flag is true since the element wont be available to any device from now on
+            db.dataRow.insert('table': received.table, 'rowId': received.row_id,'timeCreated': timeCreated,'timeReceived': new Date(),fields: null,'hashKey': 'N/A','device': device, 'isDeleted': true,'syncId': received.sync_id)
+            //set isDeleted flag on previous existent element (if any) to true
+            def previousResults = DataRow.withCriteria {
+                def now = new Date()
+                lt 'timeReceived', now
+                eq 'isDeleted', false
+            }
+            if(previousResults?.size() != 0){ //there were records.
+                def lastResult = previousResults?.sort {it?.timeReceived}.get(0)
+                //check if current device saving a row, belongs to the same company as the the previous device
+                if(lastResult.device.company != device.company){
+                    response.setStatus(400)//not acceptable
+                    result = [status: 400, code: 55514,message: 'This Record doesn\'t belong to your company.',payload: null]
+                    render result as JSON
+                    return
+                }
+                lastResult.isDeleted = true
+                lastResult.save(flush: true)
+            }
+
+            response.setStatus(200)//new object created
+            result = [status: 200, code: 555,message: 'Document deleted successfully',payload: received.sync_id]  //success deleting the current element
+            render result as JSON
+            //send delete notification to all registered devices.
+            return
+        }
         def lockedResults = DataRow.withCriteria {
             def now = new Date()
             eq 'syncId',received.sync_id
-            gt 'timeCreated', new Date(received.time_created)
-            lt 'timeReceived', now
+            ge 'timeCreated', new Date(received?.time_created)
+            le 'timeReceived', now
             eq 'isDeleted', false
 
         }
-        if(lockedResults.size() > 0) {   //there were records saved during saved Time and receive time that are funcitonal, that means not deleted, this row must be discarded (softDelete)
+        if(lockedResults.size() > 0) {   //there were records saved during saved Time and receive time that are functional, that means not deleted, this row must be discarded (softDelete)
             response.setStatus(406)//not acceptable
             result = [status: 406, code: 55513,message: 'CAUTION: Overlap saving attempted. A newer version of this element has been saved from a different client',payload: null]  //success, but status indicates payload present, and las row should be updated with the sync_id generated in the server
             render result as JSON
@@ -91,14 +120,6 @@ class RowOpsController {
         if(previousResults.size() == 0){ //there were no records. it is a new insert, send notification to all devices registered with this one. This shouldn't happen, since if it was a new record it wouldn't have sync_id!= 0
             def rowHash = received?.fields?.encodeAsMD5()
             def sync_id = 234293874298374203 // generate unique inter-table id for this row
-            def db = mongo.getDB('nest5BigData')
-            def device = Device.collection.findOne('uid':received.device_id)
-            if(!device){
-                response.setStatus(400)
-                result = [status: 400, code: 55512,message: 'Invalid device_id Parameter. Either the device id is misspelled or it is not yet registered in the platform',payload: null]
-                render result as JSON
-                return
-            }
             db.dataRow.insert('table': received.table, 'rowId': received.row_id,'timeCreated': timeCreated,'timeReceived': new Date(),fields: received.fields,'hashKey': rowHash,'device': device, 'isDeleted': false,'syncId': sync_id)
             response.setStatus(201)//new object created
             result = [status: 201, code: 555,message: 'New document successfully created, please update sync_id value in client\'s DB',payload: sync_id]  //success, but status indicates payload present, and las row should be updated with the sync_id generated in the server
@@ -107,17 +128,16 @@ class RowOpsController {
         }
         //else, compare md5 hashes but only get the latest record with isDeleted false in case there are more than one (error may exist here)
         def lastResult = previousResults?.sort {it?.timeReceived}.get(0)
+        //check if current device saving a row, belongs to the same company as the the previous device
+        if(lastResult.device.company != device.company){
+            response.setStatus(400)//not acceptable
+            result = [status: 400, code: 55514,message: 'This Record doesn\'t belong to your company.',payload: null]
+            render result as JSON
+            return
+        }
         def newHash = received?.fields?.encodeAsMD5()
         if(newHash == lastResult.hashKey){ //hashes are the same, so row hasn't had any update, discard the old one with soft delete, save new one and send ACK
             //save new row
-            def db = mongo.getDB('nest5BigData')
-            def device = Device.collection.findOne('uid':received.device_id)
-            if(!device){
-                response.setStatus(400)
-                result = [status: 400, code: 55512,message: 'Invalid device_id Parameter. Either the device id is misspelled or it is not yet registered in the platform',payload: null]
-                render result as JSON
-                return
-            }
             db.dataRow.insert('table': received.table, 'rowId': received.row_id,'timeCreated': timeCreated,'timeReceived': new Date(),fields: received.fields,'hashKey': newHash,'device': device, 'isDeleted': false,'syncId': received.sync_id)
             //discard old row
             lastResult.isDeleted = true
@@ -129,16 +149,7 @@ class RowOpsController {
 
         }
         //else, the new one is an update of the row, save it, send multicast to all devices withe the update to be made on the specific row and table
-        def db = mongo.getDB('nest5BigData')
-        def device = Device.collection.findOne('uid':received.device_id)
-        if(!device){
-            response.setStatus(400)
-            result = [status: 400, code: 55512,message: 'Invalid device_id Parameter. Either the device id is misspelled or it is not yet registered in the platform',payload: null]
-            render result as JSON
-            return
-        }
         db.dataRow.insert('table': received.table, 'rowId': received.row_id,'timeCreated': timeCreated,'timeReceived': new Date(),fields: received.fields,'hashKey': newHash,'device': device, 'isDeleted': false,'syncId': received.sync_id)
-
         lastResult.isDeleted = true
         lastResult.save(flush: true)
         response.setStatus(200)//new object created

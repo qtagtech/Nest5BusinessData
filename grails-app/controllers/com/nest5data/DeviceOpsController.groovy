@@ -34,8 +34,8 @@ class DeviceOpsController {
         def registered = Device.findAllByUid(received?.device_id)
         if(registered?.size() > 0){  //there was a device with the same id previously registered
 
-                response.setStatus(400)
-                result = [status: 400, code: 55511,message: 'Device is already registered for other company'] //here, the device should ask the user if this device should change company. and the call will the be made to changeDeviceRegistration
+                response.setStatus(200)
+                result = [status: 200, code: 55511,message: 'Device is already registered for other company, login continues normally.'] //here, the device should ask the user if this device should change company. and the call will the be made to changeDeviceRegistration
                 render result as JSON
                 return
         }
