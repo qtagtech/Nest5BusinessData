@@ -161,7 +161,8 @@ class DatabaseOpsController {
 
         def table_list = ["ingredient_category","product_category","ingredient","product","combo","productingredient","comboingredient","comboproduct","tax","measurement_unit","sale","sale_item"]
         def db = mongo.getDB('nest5BigData')
-        def str = "\n"
+        def str = new StringBuilder()
+        str.append("\n")
         table_list.each {
             BasicDBObject query = new BasicDBObject("table",it).
                     append("device.company",1).
@@ -170,23 +171,34 @@ class DatabaseOpsController {
             def currentTable = it
 
             try {
-                def a = 1
+
                 while(filas.hasNext()) {
-                    a++
+
                     def actual = filas.next()
-                    def values = "null,"
+                    def values = ""
+                    def agregar = false
                     actual.fields.each{
-                        if(it.getKey() != "_id"){
-                            values +="'"+it.getValue()+"'"
-                            if(actual.fields.next?.getValue() != null)
-                                values+=","
+                            if(it.getKey() != "_id"){
+                                if(it.getValue() != null & it.getValue() != "") {
+                                    agregar = true
+                                    values +="null,'"+it.getValue()+"'"
+                                    if(actual.fields.next?.getValue() != null)
+                                        values+=","
+                                }
+                            }
                         }
+                    if (agregar){
+                        str.append (" \nINSERT INTO ")
+                        str.append (currentTable)
+                        str.append (" VALUES (")
+                        str.append ("\n")
+                        str.append (values)
+                        str.append(");")
+                        str.append("\n")
+                        println str.toString()
+                    }
 
 
-                        }
-                    str += "INSERT INTO "+currentTable+" VALUES (\n" +
-                            "${values}\n" +
-                            ");"
 
                 }
             } finally {
@@ -199,7 +211,7 @@ class DatabaseOpsController {
         def fileStore = new File(directory+"dbExport_${company}_${today[Calendar.DATE]}_${today[Calendar.MONTH]+1}_${today[Calendar.YEAR]}_${today[Calendar.HOUR_OF_DAY]}_${today[Calendar.MINUTE]}_${today[Calendar.SECOND]}_${today[Calendar.MILLISECOND]}.sql");
         fileStore.createNewFile();
         FileUtils.writeStringToFile(fileStore, tables,'UTF-8');
-        FileUtils.writeStringToFile(fileStore, str,'UTF-8',true);
+        FileUtils.writeStringToFile(fileStore, str.toString(),'UTF-8',true);
         println fileStore.name
         response.setHeader "Content-disposition", "attachment; filename="+fileStore.name.lastIndexOf('.').with {it != -1 ? fileStore.name[0..<it] : fileStore.name}+".sql"
         response.contentType = 'application/octet-stream'
