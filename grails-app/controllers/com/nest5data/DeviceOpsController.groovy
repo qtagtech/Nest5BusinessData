@@ -64,7 +64,7 @@ class DeviceOpsController {
         return
     }
     def testNewFields(){
-        def db = mongo.getDB('nest5BigData')
+        def db = mongo.getDB('pruebamongo')
         def query = new BasicDBObject("uid", "0A01B18B436A002555AF");
         def value = new BasicDBObject('$set',new BasicDBObject('prueba2','holaaaa'))
         def device = db.device.update(query,value)

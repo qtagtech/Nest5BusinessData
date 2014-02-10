@@ -15,6 +15,7 @@ class DataRow {
     Boolean isDeleted
     static mapping = {
         compoundIndex table:1, rowId:1
+        sort timeCreated : "desc"
     }
     static embedded = ['device']
 
