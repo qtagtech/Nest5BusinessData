@@ -21,4 +21,5 @@ class DataRow {
 
     static constraints = {
     }
+    static mapWith = "mongo"
 }

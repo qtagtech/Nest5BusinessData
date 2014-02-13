@@ -2,8 +2,9 @@ package com.nest5data
 
 import com.mongodb.BasicDBObject
 import grails.converters.JSON
+import grails.plugin.springsecurity.annotation.Secured
 import org.apache.commons.io.FileUtils
-
+@Secured(["permitAll"])
 class DatabaseOpsController {
 
     def mongo

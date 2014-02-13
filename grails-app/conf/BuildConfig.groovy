@@ -3,8 +3,9 @@ grails.project.class.dir = "target/classes"
 grails.project.test.class.dir = "target/test-classes"
 grails.project.test.reports.dir = "target/test-reports"
 grails.project.work.dir = "target/work"
-grails.project.target.level = 1.6
-grails.project.source.level = 1.6
+grails.project.target.level = 1.7
+grails.project.source.level = 1.7
+
 //grails.project.war.file = "target/${appName}-${appVersion}.war"
 
 grails.project.fork = [
@@ -37,19 +38,32 @@ grails.project.dependency.resolution = {
 
         grailsPlugins()
         grailsHome()
-        mavenLocal()
         grailsCentral()
+
+        mavenLocal()
         mavenCentral()
         // uncomment these (or add new ones) to enable remote dependency resolution from public Maven repositories
-        //mavenRepo "http://repository.codehaus.org"
-        //mavenRepo "http://download.java.net/maven/2/"
-        //mavenRepo "http://repository.jboss.com/maven2/"
+        mavenRepo "http://repository.codehaus.org"
+        mavenRepo "http://download.java.net/maven/2/"
+        mavenRepo "http://repository.jboss.com/maven2/"
+        mavenRepo 'http://repo.spring.io/milestone'
     }
 
     dependencies {
         // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes e.g.
-        // runtime 'mysql:mysql-connector-java:5.1.27'
-        // runtime 'org.postgresql:postgresql:9.3-1100-jdbc41'
+        runtime 'postgresql:postgresql:8.4-702.jdbc3'
+        compile 'org.apache.httpcomponents:httpcore:jar:4.3.1'
+        compile 'org.apache.httpcomponents:httpclient:jar:4.3.1'
+        compile 'org.codehaus.jackson:jackson-core-asl:1.8.7'
+        compile 'org.codehaus.jackson:jackson-mapper-asl:1.8.1'
+        compile 'com.amazonaws:aws-java-sdk:1.5.0'
+        compile 'org.eclipse.birt.runtime.3_7_1:org.apache.commons.codec:jar:1.3.0'
+        compile 'commons-logging:commons-logging:jar:1.1'
+
+        compile('org.codehaus.groovy.modules.http-builder:http-builder:jar:0.5.0-RC2') {
+            excludes "commons-logging", "xml-apis", "groovy","httpclient","httpcore"
+        }
+        // runtime 'mysql:mysql-connector-java:5.1.20'
     }
 
     plugins {
@@ -58,17 +72,20 @@ grails.project.dependency.resolution = {
 
         // plugins for the compile step
         compile ":scaffolding:2.0.1"
-       //compile ':cache:1.1.1'
+       compile ':cache:1.1.1'
         compile ":mongodb:1.3.3"
         // plugins needed at runtime but not for compilation
-       // runtime ":hibernate:3.6.10.7" // or ":hibernate4:4.1.11.6"
-        //runtime ":database-migration:1.3.8"
+        runtime ":hibernate:3.6.10.7" // or ":hibernate4:4.1.11.6"
+        runtime ":database-migration:1.3.8"
         runtime ":jquery:1.10.2.2"
         runtime ":resources:1.2.1"
+        compile ":spring-security-core:2.0-RC2"
 
         // Uncomment these (or add new ones) to enable additional resources capabilities
         //runtime ":zipped-resources:1.0.1"
         //runtime ":cached-resources:1.1"
         //runtime ":yui-minify-resources:0.1.5"
     }
+
+
 }

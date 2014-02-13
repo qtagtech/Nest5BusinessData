@@ -1,7 +1,9 @@
 package com.nest5data
 
 import grails.converters.JSON
+import grails.plugin.springsecurity.annotation.Secured
 
+@Secured(["permitAll"])
 class RowOpsController {
     def mongo
 

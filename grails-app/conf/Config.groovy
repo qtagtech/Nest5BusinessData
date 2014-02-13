@@ -82,6 +82,10 @@ grails.exceptionresolver.params.exclude = ['password']
 
 // configure auto-caching of queries by default (if false you can cache individual queries with 'cache: true')
 grails.hibernate.cache.queries = false
+/*grails.hibernate.cache.use_second_level_cache = true
+grails.hibernate.cache.use_query_cache = true
+grails.hibernate.cache.regison.factory_class = 'net.sf.ehcache.hibernate.EhCacheRegionFactory'
+grails.hibernate.cache.provider_class = "org.hibernate.cache.EhCacheProvider"*/
 
 environments {
     development {
@@ -120,3 +124,18 @@ log4j = {
 }*/
 
 grails.gorm.default.constraints = { '*'(nullable: true) }
+
+// Added by the Spring Security Core plugin:
+grails.plugin.springsecurity.userLookup.userDomainClassName = 'com.nest5data.SecUser'
+grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'com.nest5data.SecUserSecRole'
+grails.plugin.springsecurity.authority.className = 'com.nest5data.SecRole'
+grails.plugin.springsecurity.controllerAnnotations.staticRules = [
+	'/':                              ['permitAll'],
+	'/index':                         ['permitAll'],
+	'/index.gsp':                     ['permitAll'],
+	'/**/js/**':                      ['permitAll'],
+	'/**/css/**':                     ['permitAll'],
+	'/**/images/**':                  ['permitAll'],
+	'/**/favicon.ico':                ['permitAll']
+]
+

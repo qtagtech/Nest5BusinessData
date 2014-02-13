@@ -12,10 +12,10 @@ class Person {
 
     }
     static embedded = ['languages']
-
-
+    static mapWith = "mongo"
 
 
     static constraints = {
     }
+
 }

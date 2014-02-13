@@ -11,4 +11,5 @@ class Language {
 
     static constraints = {
     }
+    static mapWith = "mongo"
 }

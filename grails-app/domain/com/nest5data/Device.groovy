@@ -13,4 +13,6 @@ class Device {
 
     static constraints = {
     }
+    static mapWith = "mongo"
+
 }
