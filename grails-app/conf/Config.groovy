@@ -90,10 +90,12 @@ grails.hibernate.cache.provider_class = "org.hibernate.cache.EhCacheProvider"*/
 environments {
     development {
         grails.logging.jul.usebridge = true
+        com.nest5.BusinessData.database = "nest5BigData"
     }
     production {
         grails.logging.jul.usebridge = false
         // TODO: grails.serverURL = "http://www.changeme.com"
+        com.nest5.BusinessData.database = "pruebamongo"
     }
 }
 

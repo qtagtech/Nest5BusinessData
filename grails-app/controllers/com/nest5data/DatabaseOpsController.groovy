@@ -188,7 +188,7 @@ class DatabaseOpsController {
 
 
         def table_list = ["ingredient_category","product_category","tax","measurement_unit","ingredient","product","combo","productingredient","comboingredient","comboproduct","sale","sale_item","sync_row"]  //the order matters since for inserting an ingredient, tax, measuremet_unit and categories must be present in the database
-        def db = mongo.getDB('pruebamongo')
+        def db = mongo.getDB(grailsApplication.config.com.nest5.BusinessData.database)
         def str = new StringBuilder()
         str.append("\n")
         def sales = []
@@ -492,4 +492,48 @@ class DatabaseOpsController {
         }
         return true;
     }
-}
+
+    /*
+    * CALLS MADE FROM ANY PLATFORM REQUIRING INFO OM SALES, PRODUCTS, COMBOS, INGREDIENTS, CATEGORIES ETC
+    *
+    * */
+
+    def allSales(){
+        println "aca llego"
+        println params
+        def result
+
+
+
+        def company = params?.company
+        if(!company){
+            response.setStatus(400)
+            result = [status: 400, code: 55522,message: 'Invalid company',payload: null]
+            render result as JSON
+            return
+        }
+        def db = mongo.getDB(grailsApplication.config.com.nest5.BusinessData.database)
+        BasicDBObject query = new BasicDBObject("table",'sale').
+                append("device.company",company as Integer).
+                append("isDeleted", false);
+        println query
+        def filas = db.dataRow.find(query)
+        if(filas.size() == 0) {
+            response.setStatus(400)
+            result = [status: 400, code: 55531,message: 'Empty Result Set',payload: null]
+            render result as JSON
+            return
+        }
+        result = [status: 200, code: 555,message: 'Success. See payload.',payload: []]
+        while(filas.hasNext()) {
+            def element = filas.next() ?: null
+            if(element)
+                result.payload.add(element.toMap())
+
+        }
+        render result as JSON
+        return
+
+    }
+
+ }
