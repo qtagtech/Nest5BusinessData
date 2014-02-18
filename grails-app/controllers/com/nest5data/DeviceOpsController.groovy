@@ -13,6 +13,8 @@ class DeviceOpsController {
     def mongo
     def springSecurityService
 
+
+
     def index() {
 
         def result = [message: "bad query request"]
@@ -44,13 +46,14 @@ class DeviceOpsController {
         def com = Company.findByGlobal_id(company as Long)
         if(!com){
             //check nest5 server since it hasn't synced
-            def http = new HTTPBuilder( 'http://nest5api.aws.af.cm' )
+            def http = new HTTPBuilder( grailsApplication.config.com.nest5.BusinessData.Nest5APIServerURL )
             def jsonData
 // perform a GET request, expecting JSON response data
             http.request( GET, TEXT ) {
 
                 uri.path = '/company/companyDetails'
                 uri.query = [company_id:company]
+
 
                 headers.'User-Agent' = 'Mozilla/5.0 Ubuntu/8.10 Firefox/3.0.4'
 

@@ -499,7 +499,6 @@ class DatabaseOpsController {
     * */
 
     def allSales(){
-        println "aca llego"
         println params
         def result
 
@@ -535,5 +534,7 @@ class DatabaseOpsController {
         return
 
     }
+
+
 
  }
