@@ -1,5 +1,6 @@
 package com.nest5data
 
+import com.mongodb.BasicDBObject
 import grails.converters.JSON
 import grails.plugin.springsecurity.annotation.Secured
 
@@ -190,6 +191,50 @@ class RowOpsController {
         println dataRow.syncId
         render dataRow as JSON
         return
+    }
+
+    def fetchProperty(){
+        println params
+        def result
+
+
+
+        def company = params?.company
+        if(!company){
+            response.setStatus(400)
+            result = [status: 400, code: 55522,message: 'Invalid company',payload: null]
+            render result as JSON
+            return
+        }
+        def table = params?.table
+        if(!table){
+            response.setStatus(400)
+            result = [status: 400, code: 55522,message: 'Invalid table',payload: null]
+            render result as JSON
+            return
+        }
+        def db = mongo.getDB(grailsApplication.config.com.nest5.BusinessData.database)
+        BasicDBObject query = new BasicDBObject("table",table).
+                append("device.company",company as Integer).
+                append("isDeleted", false);
+        println query
+        def filas = db.dataRow.find(query)
+        if(filas.size() == 0) {
+            response.setStatus(400)
+            result = [status: 400, code: 55531,message: 'Empty Result Set',payload: null]
+            render result as JSON
+            return
+        }
+        result = [status: 200, code: 555,message: 'Success. See payload.',payload: []]
+        while(filas.hasNext()) {
+            def element = filas.next() ?: null
+            if(element)
+                result.payload.add(element.toMap())
+
+        }
+        render result as JSON
+        return
+
     }
 
     private Long randomNumber (){
