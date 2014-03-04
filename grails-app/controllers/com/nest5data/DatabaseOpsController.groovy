@@ -518,7 +518,7 @@ class DatabaseOpsController {
         println query
         def filas = db.dataRow.find(query)
         if(filas.size() == 0) {
-            response.setStatus(400)
+            response.setStatus(200)
             result = [status: 400, code: 55531,message: 'Empty Result Set',payload: null]
             render result as JSON
             return
