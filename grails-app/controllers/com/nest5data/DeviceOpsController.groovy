@@ -27,6 +27,7 @@ class DeviceOpsController {
         def received = null
         try{received = JSON.parse(params?.payload)}catch (Exception e){}
         def result
+        println received
         if(!received){
             response.setStatus(400)
             result = [status: 400, code: 55520,message: 'Invalid Device Registration Parameters']

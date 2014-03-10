@@ -187,14 +187,14 @@ class DatabaseOpsController {
 
 
 
-        def table_list = ["ingredient_category","product_category","tax","measurement_unit","ingredient","product","combo","productingredient","comboingredient","comboproduct","sale","sale_item","sync_row"]  //the order matters since for inserting an ingredient, tax, measuremet_unit and categories must be present in the database
+        def table_list = ["ingredient_category","product_category","tax","measurement_unit","ingredient","product","combo","sale","sync_row"]  //the order matters since for inserting an ingredient, tax, measuremet_unit and categories must be present in the database
         def db = mongo.getDB(grailsApplication.config.com.nest5.BusinessData.database)
         def str = new StringBuilder()
         str.append("\n")
         def sales = []
         def products = []
         def combos = []
-        table_list.each {
+        table_list.each {      //nunca llamara que traiga tablas productingredient, comboingredient, compboproduct ni sale_item, solo llama product, combo, sale y con eso al final agrega las relaciones mucho a mucho
             BasicDBObject query = new BasicDBObject("table",it).
                     append("device.company",company).
                     append("isDeleted", false);
@@ -258,8 +258,8 @@ class DatabaseOpsController {
                     }
                 }
                 else{
-                    /*   estructura de query para ingredientes que depende de tax, measurement_unit y ingredient_category. Se hace un insert selecconando los valores con los sync_id de esas tres tablas, luego
-                 *los valores fijos se meten con un update diciendole que lo haga sobre el ultimo row actualizado en esa tabal
+                    /*   estructura de query para ingredientes que depende de tax, measurement_unit y ingredient_category. Se hace un insert seleccionando los valores con los sync_id de esas tres tablas, luego
+                 *los valores fijos se meten con un update diciendole que lo haga sobre el ultimo row actualizado en esa tabla
                  *
                     INSERT into ingredient (category_id, tax_id, unit_id)***
                     "SELECT ingredient_category._id as category_id, tax._id as tax_id,
@@ -280,7 +280,7 @@ class DatabaseOpsController {
                         def actual = filas.next()
                         def keys= "_id,"
                         def values = "\n\n"
-                        if(it != 'combo' && it != 'product'){
+                        if(it != 'combo' && it != 'product'){  //si es ingredient
                             values += "INSERT into "+it+" (category_id, tax_id, unit_id)\n"
                             values += "SELECT ingredient_category._id as category_id, tax._id as tax_id, "+
                                         "measurement_unit._id as unit_id\n"+
@@ -293,7 +293,7 @@ class DatabaseOpsController {
                                         "measurement_unit.sync_id = "+actual.fields.unit_id+";\n"
                         }
                         else{
-                            if( it != 'combo') {
+                            if( it != 'combo') {   //product
                                 values += "INSERT into "+it+" (category_id, tax_id)\n"
                                 values += "SELECT product_category._id as category_id, tax._id as tax_id "+
                                         "FROM product_category, tax\n"+
@@ -301,7 +301,7 @@ class DatabaseOpsController {
                                         "product_category.sync_id = "+actual.fields.category_id+"\n"+
                                         "AND\n"+
                                         "tax.sync_id = "+actual.fields.tax_id+";\n"
-                            }else{
+                            }else{ //combo
                                 values += "INSERT into "+it+" (tax_id)"
                                 values += "SELECT tax._id as tax_id \n"+
                                         "FROM tax\n"+
@@ -356,12 +356,12 @@ class DatabaseOpsController {
             }
 
         }
-       /* println "sales: "
+        println "sales: "
         println sales
         println "products: "
         println products
         println "combos: "
-        println combos*/
+        println combos
         def TYPE_INGREDIENT = 0;
         def TYPE_PRODUCT = 1;
         def TYPE_COMBO = 3;

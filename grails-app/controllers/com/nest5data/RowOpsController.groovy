@@ -63,6 +63,7 @@ class RowOpsController {
         }
         timeCreated = new Date(received?.time_created as Long)
         def db = mongo.getDB(grailsApplication.config.com.nest5.BusinessData.database)
+        println received.device_id;
         def device = Device.collection.findOne('uid':received.device_id)
         if(!device){
             response.setStatus(400)
