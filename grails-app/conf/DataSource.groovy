@@ -48,8 +48,8 @@ environments {
                 host = System.env.OPENSHIFT_MONGODB_DB_HOST
                 port = System.env.OPENSHIFT_MONGODB_DB_PORT
                 username = "admin"
-                password="GDqSlKS7E8Vx"
-                databaseName = "pruebamongo"
+                password="YmIY6mDMasGt"
+                databaseName = "bigdata"
             }
         }
 
