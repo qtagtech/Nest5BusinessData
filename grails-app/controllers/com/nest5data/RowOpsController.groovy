@@ -79,6 +79,24 @@ class RowOpsController {
                 sync_id = randomNumber()
             }
             db.dataRow.insert('table': received.table, 'rowId': received.row_id,'timeCreated': timeCreated,'timeReceived': new Date(),fields: received.fields,'hashKey': rowHash,'device': device, 'isDeleted': false,'syncId': sync_id)
+            //check if it is a sale, if yes, update currentSale value in device
+            //update device's lastupdated field everything in try catch to avoid conflicts
+            try{
+                BasicDBObject searchQuery = new BasicDBObject().append('uid',received.device_id)
+                BasicDBObject newDocument = new BasicDBObject()
+                newDocument.append('$set',new BasicDBObject().append("lastUpdated",new Date()))
+                Device.collection.update(searchQuery,newDocument)
+                if(received.table == "sale"){
+                    if(device.currentSale < received.fields.sale_number){
+                        BasicDBObject updatedDocument = new BasicDBObject()
+                        updatedDocument.append('$set',new BasicDBObject().append("currentSale",received.fields.sale_number))
+                        Device.collection.update(searchQuery,updatedDocument)
+                    }
+                }
+            }catch (Exception e){
+                println "error actualizando device"
+                println e
+            }
             response.setStatus(201)//new object created
             result = [status: 201, code: 555,message: 'New document successfully created, please update sync_id value in client\'s DB',syncId: sync_id,syncRow: syncRow]  //success, but status indicates syncId present, and las row should be updated with the sync_id generated in the server
             render result as JSON
@@ -142,6 +160,24 @@ class RowOpsController {
                 sync_id = randomNumber()
             }
             db.dataRow.insert('table': received.table, 'rowId': received.row_id,'timeCreated': timeCreated,'timeReceived': new Date(),fields: received.fields,'hashKey': rowHash,'device': device, 'isDeleted': false,'syncId': sync_id)
+            //check if it is a sale, if yes, update currentSale value in device
+            //update device's lastupdated field everything in try catch to avoid conflicts
+            try{
+                BasicDBObject searchQuery = new BasicDBObject().append('uid',received.device_id)
+                BasicDBObject newDocument = new BasicDBObject()
+                newDocument.append('$set',new BasicDBObject().append("lastUpdated",new Date()))
+                Device.collection.update(searchQuery,newDocument)
+                if(received.table == "sale"){
+                    if(device.currentSale < received.fields.sale_number){
+                        BasicDBObject updatedDocument = new BasicDBObject()
+                        updatedDocument.append('$set',new BasicDBObject().append("currentSale",received.fields.sale_number))
+                        Device.collection.update(searchQuery,updatedDocument)
+                    }
+                }
+            }catch (Exception e){
+                println "error actualizando device"
+                println e
+            }
             response.setStatus(201)//new object created
             result = [status: 201, code: 555,message: 'New document successfully created, please update sync_id value in client\'s DB',syncId: sync_id,syncRow: syncRow]  //success, but status indicates syncId present, and las row should be updated with the sync_id generated in the server
             render result as JSON
@@ -165,6 +201,24 @@ class RowOpsController {
             //discard old row
             lastResult.isDeleted = true
             lastResult.save(flush: true)
+            //check if it is a sale, if yes, update currentSale value in device
+            //update device's lastupdated field everything in try catch to avoid conflicts
+            try{
+                BasicDBObject searchQuery = new BasicDBObject().append('uid',received.device_id)
+                BasicDBObject newDocument = new BasicDBObject()
+                newDocument.append('$set',new BasicDBObject().append("lastUpdated",new Date()))
+                Device.collection.update(searchQuery,newDocument)
+                if(received.table == "sale"){
+                    if(device.currentSale < received.fields.sale_number){
+                        BasicDBObject updatedDocument = new BasicDBObject()
+                        updatedDocument.append('$set',new BasicDBObject().append("currentSale",received.fields.sale_number))
+                        Device.collection.update(searchQuery,updatedDocument)
+                    }
+                }
+            }catch (Exception e){
+                println "error actualizando device"
+                println e
+            }
             response.setStatus(200)//new object created
             result = [status: 200, code: 555,message: 'Document successfully updated! There are no changes.',syncId: received.sync_id,syncRow: syncRow]  //success in updating latest row version although ther were no changes.
             render result as JSON
@@ -175,6 +229,24 @@ class RowOpsController {
         db.dataRow.insert('table': received.table, 'rowId': received.row_id,'timeCreated': timeCreated,'timeReceived': new Date(),fields: received.fields,'hashKey': newHash,'device': device, 'isDeleted': false,'syncId': received.sync_id)
         lastResult.isDeleted = true
         lastResult.save(flush: true)
+        //check if it is a sale, if yes, update currentSale value in device
+        //update device's lastupdated field everything in try catch to avoid conflicts
+        try{
+            BasicDBObject searchQuery = new BasicDBObject().append('uid',received.device_id)
+            BasicDBObject newDocument = new BasicDBObject()
+            newDocument.append('$set',new BasicDBObject().append("lastUpdated",new Date()))
+            Device.collection.update(searchQuery,newDocument)
+            if(received.table == "sale"){
+                if(device.currentSale < received.fields.sale_number){
+                    BasicDBObject updatedDocument = new BasicDBObject()
+                    updatedDocument.append('$set',new BasicDBObject().append("currentSale",received.fields.sale_number))
+                    Device.collection.update(searchQuery,updatedDocument)
+                }
+            }
+        }catch (Exception e){
+            println "error actualizando device"
+            println e
+        }
         response.setStatus(200)//new object created
         result = [status: 200, code: 555,message: 'Document successfully updated to newer version!',syncId: received.sync_id,syncRow: syncRow]  //success in updating to newer version
         render result as JSON

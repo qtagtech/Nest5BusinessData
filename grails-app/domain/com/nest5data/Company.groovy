@@ -14,9 +14,11 @@ class Company extends SecUser {
     Date registerDate
     Boolean active = true
     Long global_id
+    String invoiceMessage = ""
 
     static mapping = {
         datasource "trans"
+        invoiceMessage type: 'text'
 
     }
 

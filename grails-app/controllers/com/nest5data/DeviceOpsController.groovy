@@ -119,6 +119,7 @@ class DeviceOpsController {
                     username: jsonData.company.username,
                     url: jsonData.company.url,
                     telephone: jsonData.company.telephone,
+                    invoiceMessage: jsonData.company.invoiceMessage,
                     categoy: category).save(flush: true)
 
             def companyRole = SecRole.findByAuthority('ROLE_COMPANY') ?: new SecRole(authority: 'ROLE_COMPANY').save(failOnError: true)
@@ -138,12 +139,12 @@ class DeviceOpsController {
         if(registered?.size() > 0){  //there was a device with the same id previously registered
 
                 response.setStatus(200)
-                result = [status: 200, code: 55511,message: 'Device is already registered for other company, login continues normally.'] //here, the device should ask the user if this device should change company. and the call will the be made to changeDeviceRegistration
+                result = [status: 200, code: 55511,message: 'Device is already registered for other company, login continues normally.',minSale: registered[0].minSale,maxSale: registered[0].maxSale, currentSale: registered[0].currentSale,prefix: registered[0].prefix] //here, the device should ask the user if this device should change company. and the call will the be made to changeDeviceRegistration
                 render result as JSON
                 return
         }
         //else, save the id and registerit to the current company making the request
-        def device = new Device(uid: received?.device_id, company: company)
+        def device = new Device(uid: received?.device_id, company: company,registeredOn: new Date(),minSale: 0, maxSale: 0,currentSale: 0)
         if(!device.save()){
             println device.errors.allErrors
             response.setStatus(400)
@@ -151,9 +152,38 @@ class DeviceOpsController {
             render result as JSON
             return
         }
+        response.setStatus(200)
+        result = [status: 200, code: 555,message: 'Device successfully registered to company',minSale: 0,maxSale: 0, currentSale: 0,prefix: ""]
+        render result as JSON
+        return
+
+    }
+
+    def fetchMaxSale(){
+        def received = null
+        try{received = JSON.parse(params?.payload)}catch (Exception e){}
+        def result
+        println received
+        if(!received){
+            response.setStatus(400)
+            result = [status: 400, code: 55520,message: 'Invalid Device Registration Parameters']
+            render result as JSON
+            return
+        }
+
+
+        //here we should also receive reported location via gps, wifi or any other location provider. public ip of device, os and many more useful data for trending and statistics
+        def registered = Device.findByUid(received?.device_id)
+        if(!registered){  //there was a device with the same id previously registered
+
+                response.setStatus(400)
+                result = [status: 400, code: 55520,message: 'Device does not exist']
+                render result as JSON
+                return
+        }
 
         response.setStatus(200)
-        result = [status: 200, code: 555,message: 'Device successfully registered to company']
+        result = [status: 200, code: 555,message: 'Device exists, find maxSale, currentSale and prefix values attached as payload',maxSale: registered.maxSale, currentSale: registered.currentSale,prefix: registered.prefix]
         render result as JSON
         return
 
