@@ -15,10 +15,12 @@ class Company extends SecUser {
     Boolean active = true
     Long global_id
     String invoiceMessage = ""
+    String tipMessage = ""
 
     static mapping = {
         datasource "trans"
         invoiceMessage type: 'text'
+        tipMessage type: 'text'
 
     }
 

@@ -71,7 +71,7 @@ class RowOpsController {
             render result as JSON
             return
         }
-        if(received.sync_id == 0){//This means it's a new insert, since it doesn't have common id through all devices. nothing else should be done but save it and generate an id that should be returned to the client to update
+        if(received.sync_id as Long == 0){//This means it's a new insert, since it doesn't have common id through all devices. nothing else should be done but save it and generate an id that should be returned to the client to update
             def rowHash = received?.fields?.encodeAsMD5()
 
             def sync_id = randomNumber() //it gets a random number, if the number already exists in the database the function is going to return 0 so it will cycle the while until it gets a number different from 0L
@@ -105,7 +105,7 @@ class RowOpsController {
         //check the device is registered to the same company as the previous records for this sync_id element
         def deleting = received.is_delete ? true : false
         if(deleting){    //the device sent a delete request with all the properties except for the fields (blank values). the server should soft-delete it. The deleted flag is true since the element wont be available to any device from now on
-            db.dataRow.insert('table': received.table, 'rowId': received.row_id,'timeCreated': timeCreated,'timeReceived': new Date(),fields: null,'hashKey': 'N/A','device': device, 'isDeleted': true,'syncId': received.sync_id,syncRow: syncRow)
+            db.dataRow.insert('table': received.table, 'rowId': received.row_id,'timeCreated': timeCreated,'timeReceived': new Date(),fields: null,'hashKey': 'N/A','device': device, 'isDeleted': true,'syncId': received.sync_id as Long,syncRow: syncRow)
             //set isDeleted flag on previous existent element (if any) to true
             def previousResults = DataRow.withCriteria {
                 def now = new Date()
@@ -197,7 +197,7 @@ class RowOpsController {
         def newHash = received?.fields?.encodeAsMD5()
         if(newHash == lastResult.hashKey){ //hashes are the same, so row hasn't had any update, discard the old one with soft delete, save new one and send ACK
             //save new row
-            db.dataRow.insert('table': received.table, 'rowId': received.row_id,'timeCreated': timeCreated,'timeReceived': new Date(),fields: received.fields,'hashKey': newHash,'device': device, 'isDeleted': false,'syncId': received.sync_id)
+            db.dataRow.insert('table': received.table, 'rowId': received.row_id,'timeCreated': timeCreated,'timeReceived': new Date(),fields: received.fields,'hashKey': newHash,'device': device, 'isDeleted': false,'syncId': received.sync_id as Long)
             //discard old row
             lastResult.isDeleted = true
             lastResult.save(flush: true)
@@ -226,7 +226,7 @@ class RowOpsController {
 
         }
         //else, the new one is an update of the row, save it, send multicast to all devices withe the update to be made on the specific row and table
-        db.dataRow.insert('table': received.table, 'rowId': received.row_id,'timeCreated': timeCreated,'timeReceived': new Date(),fields: received.fields,'hashKey': newHash,'device': device, 'isDeleted': false,'syncId': received.sync_id)
+        db.dataRow.insert('table': received.table, 'rowId': received.row_id,'timeCreated': timeCreated,'timeReceived': new Date(),fields: received.fields,'hashKey': newHash,'device': device, 'isDeleted': false,'syncId': received.sync_id as Long)
         lastResult.isDeleted = true
         lastResult.save(flush: true)
         //check if it is a sale, if yes, update currentSale value in device
@@ -248,6 +248,7 @@ class RowOpsController {
             println e
         }
         response.setStatus(200)//new object created
+        println "acaaaa"
         result = [status: 200, code: 555,message: 'Document successfully updated to newer version!',syncId: received.sync_id,syncRow: syncRow]  //success in updating to newer version
         render result as JSON
         return
@@ -305,6 +306,86 @@ class RowOpsController {
                 result.payload.add(element.toMap())
 
         }
+        render result as JSON
+        return
+
+    }
+
+    def fetchRow(){
+        println params
+        def result
+
+
+
+        def company = params?.company
+        if(!company){
+            response.setStatus(400)
+            result = [status: 400, code: 55522,message: 'Invalid company',payload: null]
+            render result as JSON
+            return
+        }
+        def row = params?.row
+        if(!row){
+            response.setStatus(400)
+            result = [status: 400, code: 55522,message: 'Invalid table',payload: null]
+            render result as JSON
+            return
+        }
+        def db = mongo.getDB(grailsApplication.config.com.nest5.BusinessData.database)
+        BasicDBObject query = new BasicDBObject("syncId",row as Long).
+                append("device.company",company as Integer).
+                append("isDeleted", false);
+        println query
+        def filas = db.dataRow.find(query)
+        if(filas.size() == 0) {
+            response.setStatus(400)
+            result = [status: 400, code: 55531,message: 'Empty Result Set',payload: null]
+            render result as JSON
+            return
+        }
+        def element = filas.next().toMap()
+        result = [status: 200, code: 555,message: 'Success. See payload.',payload: element]
+
+        render result as JSON
+        return
+
+    }
+    def fetchSpecialRow(){
+        println params
+        def result
+
+
+
+        def company = params?.company
+        if(!company){
+            response.setStatus(400)
+            result = [status: 400, code: 55522,message: 'Invalid company',payload: null]
+            render result as JSON
+            return
+        }
+        def row = params?.row
+        if(!row){
+            response.setStatus(400)
+            result = [status: 400, code: 55522,message: 'Invalid table',payload: null]
+            render result as JSON
+            return
+        }
+        def db = mongo.getDB(grailsApplication.config.com.nest5.BusinessData.database)
+        BasicDBObject query = new BasicDBObject("table","special_product")
+                .append("fields.product_id",row as Long).
+                append("device.company",company as Integer).
+                append("isDeleted", false);
+        println query
+        def filas = db.dataRow.find(query)
+        if(filas.size() == 0) {
+            response.setStatus(400)
+            result = [status: 400, code: 55531,message: 'Empty Result Set',payload: null]
+            render result as JSON
+            return
+        }
+        def element = filas.next().toMap()
+        result = [status: 200, code: 555,message: 'Success. See payload.',payload: element]
+
         render result as JSON
         return
 

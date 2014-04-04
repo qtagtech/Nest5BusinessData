@@ -13,8 +13,10 @@ class Device {
     Integer maxSale
     Integer currentSale
     String prefix
+    String resolution
     static mapping = {
         compoundIndex uid:1, name:1
+        resolution type: 'text'
     }
 
     static constraints = {
