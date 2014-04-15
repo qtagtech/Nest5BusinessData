@@ -161,6 +161,7 @@ class DatabaseOpsController {
                 'togo          integer,\n' +
                 'discount          real,\n' +
                 'tip          integer,\n' +
+                'sale_number          integer,\n' +
                 'sync_id          real\n' +
                 ');\n' +
                 '\n' +

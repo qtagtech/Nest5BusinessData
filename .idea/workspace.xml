@@ -2,13 +2,335 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2d046b0d-454e-416b-97bd-f66e64a095c7" name="Default" comment="">
+<<<<<<< HEAD
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/conf/DataSource.groovy" afterPath="$PROJECT_DIR$/grails-app/conf/DataSource.groovy" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/web.xml.tmp" afterPath="$PROJECT_DIR$/target/work/web.xml.tmp" />
+=======
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/postgresql-9.2-1004.jdbc4.jar" />
+      <change type="DELETED" beforePath="C:\Users\Juanda\Documents\GitHub\Nest5BusinessData\lib\postgresql-9.1-901.jdbc3.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Juanda\Documents\GitHub\Nest5BusinessData\target\work\plugins\hibernate-3.6.10.7\HibernateGrailsPlugin.groovy" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Juanda\Documents\GitHub\Nest5BusinessData\target\work\plugins\hibernate-3.6.10.7\LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Juanda\Documents\GitHub\Nest5BusinessData\target\work\plugins\hibernate-3.6.10.7\application.properties" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Juanda\Documents\GitHub\Nest5BusinessData\target\work\plugins\hibernate-3.6.10.7\grails-app\i18n\messages.properties" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Juanda\Documents\GitHub\Nest5BusinessData\target\work\plugins\hibernate-3.6.10.7\plugin.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Juanda\Documents\GitHub\Nest5BusinessData\target\work\plugins\hibernate-3.6.10.7\scripts\CreateHibernateCfgXml.groovy" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Juanda\Documents\GitHub\Nest5BusinessData\target\work\plugins\hibernate-3.6.10.7\scripts\SchemaExport.groovy" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Juanda\Documents\GitHub\Nest5BusinessData\target\work\plugins\hibernate-3.6.10.7\src\docs\ref\Domain\attach.gdoc" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Juanda\Documents\GitHub\Nest5BusinessData\target\work\plugins\hibernate-3.6.10.7\src\docs\ref\Domain\delete.gdoc" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Juanda\Documents\GitHub\Nest5BusinessData\target\work\plugins\hibernate-3.6.10.7\src\docs\ref\Domain\discard.gdoc" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Juanda\Documents\GitHub\Nest5BusinessData\target\work\plugins\hibernate-3.6.10.7\src\docs\ref\Domain\getDirtyPropertyNames.gdoc" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Juanda\Documents\GitHub\Nest5BusinessData\target\work\plugins\hibernate-3.6.10.7\src\docs\ref\Domain\getPersistentValue.gdoc" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Juanda\Documents\GitHub\Nest5BusinessData\target\work\plugins\hibernate-3.6.10.7\src\docs\ref\Domain\instanceOf.gdoc" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Juanda\Documents\GitHub\Nest5BusinessData\target\work\plugins\hibernate-3.6.10.7\src\docs\ref\Domain\isAttached.gdoc" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Juanda\Documents\GitHub\Nest5BusinessData\target\work\plugins\hibernate-3.6.10.7\src\docs\ref\Domain\isDirty.gdoc" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Juanda\Documents\GitHub\Nest5BusinessData\target\work\plugins\hibernate-3.6.10.7\src\docs\ref\Domain\lock.gdoc" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Juanda\Documents\GitHub\Nest5BusinessData\target\work\plugins\hibernate-3.6.10.7\src\docs\ref\Domain\merge.gdoc" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Juanda\Documents\GitHub\Nest5BusinessData\target\work\plugins\hibernate-3.6.10.7\src\docs\ref\Domain\methodMissing.gdoc" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Juanda\Documents\GitHub\Nest5BusinessData\target\work\plugins\hibernate-3.6.10.7\src\docs\ref\Domain\refresh.gdoc" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Juanda\Documents\GitHub\Nest5BusinessData\target\work\plugins\hibernate-3.6.10.7\src\docs\ref\Domain\save.gdoc" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Juanda\Documents\GitHub\Nest5BusinessData\target\work\plugins\hibernate-3.6.10.7\src\docs\ref\Domain\validate.gdoc" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Juanda\Documents\GitHub\Nest5BusinessData\target\work\plugins\hibernate-3.6.10.7\src\groovy\grails\plugin\hibernate3\HibernatePluginSupport.groovy" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Juanda\Documents\GitHub\Nest5BusinessData\target\work\plugins\hibernate-3.6.10.7\src\java\hibernate.cfg.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Juanda\Documents\GitHub\Nest5BusinessData\target\work\plugins\mongodb-1.3.3\LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Juanda\Documents\GitHub\Nest5BusinessData\target\work\plugins\mongodb-1.3.3\MongodbGrailsPlugin.groovy" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Juanda\Documents\GitHub\Nest5BusinessData\target\work\plugins\mongodb-1.3.3\application.properties" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Juanda\Documents\GitHub\Nest5BusinessData\target\work\plugins\mongodb-1.3.3\dependencies.groovy" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Juanda\Documents\GitHub\Nest5BusinessData\target\work\plugins\mongodb-1.3.3\plugin.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Juanda\Documents\GitHub\Nest5BusinessData\target\work\plugins\mongodb-1.3.3\scripts\_Install.groovy" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Juanda\Documents\GitHub\Nest5BusinessData\target\work\plugins\mongodb-1.3.3\scripts\_Uninstall.groovy" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Juanda\Documents\GitHub\Nest5BusinessData\target\work\plugins\mongodb-1.3.3\scripts\_Upgrade.groovy" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Juanda\Documents\GitHub\Nest5BusinessData\target\work\plugins\tomcat-7.0.50\LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Juanda\Documents\GitHub\Nest5BusinessData\target\work\plugins\tomcat-7.0.50\TomcatGrailsPlugin.groovy" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Juanda\Documents\GitHub\Nest5BusinessData\target\work\plugins\tomcat-7.0.50\application.properties" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Juanda\Documents\GitHub\Nest5BusinessData\target\work\plugins\tomcat-7.0.50\grails-plugin-tomcat-7.0.50.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Juanda\Documents\GitHub\Nest5BusinessData\target\work\plugins\tomcat-7.0.50\plugin.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Juanda\Documents\GitHub\Nest5BusinessData\target\work\plugins\tomcat-7.0.50\scripts\Tomcat.groovy" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Juanda\Documents\GitHub\Nest5BusinessData\target\work\plugins\tomcat-7.0.50\scripts\_Events.groovy" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Juanda\Documents\GitHub\Nest5BusinessData\target\work\plugins\tomcat-7.0.50\src\groovy\org\grails\plugins\tomcat\InlineExplodedTomcatServer.groovy" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Juanda\Documents\GitHub\Nest5BusinessData\target\work\plugins\tomcat-7.0.50\src\groovy\org\grails\plugins\tomcat\TomcatLoader.groovy" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Juanda\Documents\GitHub\Nest5BusinessData\target\work\plugins\tomcat-7.0.50\src\groovy\org\grails\plugins\tomcat\TomcatServer.groovy" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Juanda\Documents\GitHub\Nest5BusinessData\target\work\plugins\tomcat-7.0.50\src\groovy\org\grails\plugins\tomcat\TomcatServerFactory.groovy" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Juanda\Documents\GitHub\Nest5BusinessData\target\work\plugins\tomcat-7.0.50\src\groovy\org\grails\plugins\tomcat\fork\ForkedTomcatServer.groovy" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Juanda\Documents\GitHub\Nest5BusinessData\target\work\plugins\tomcat-7.0.50\src\groovy\org\grails\plugins\tomcat\fork\TomcatDevelopmentRunner.groovy" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Juanda\Documents\GitHub\Nest5BusinessData\target\work\plugins\tomcat-7.0.50\src\groovy\org\grails\plugins\tomcat\fork\TomcatExecutionContext.groovy" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Juanda\Documents\GitHub\Nest5BusinessData\target\work\plugins\tomcat-7.0.50\src\groovy\org\grails\plugins\tomcat\fork\TomcatWarRunner.groovy" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Juanda\Documents\GitHub\Nest5BusinessData\target\work\plugins\tomcat-7.0.50\src\java\org\grails\plugins\tomcat\ParentDelegatingClassLoader.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Juanda\Documents\GitHub\Nest5BusinessData\target\work\plugins\tomcat-7.0.50\src\java\org\grails\plugins\tomcat\TomcatKillSwitch.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/guide/1. Overview.gdoc" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/guide/1. Overview.gdoc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/guide/1.1 Quick Start.gdoc" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/guide/1.1 Quick Start.gdoc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/guide/1.1.1 Make sure jQuery plugin is installed.gdoc" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/guide/1.1.1 Make sure jQuery plugin is installed.gdoc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/guide/1.1.2 Install jQuery UI and Blueprint plugins.gdoc" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/guide/1.1.2 Install jQuery UI and Blueprint plugins.gdoc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/guide/1.1.3 Edit your Sitemesh layout.gdoc" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/guide/1.1.3 Edit your Sitemesh layout.gdoc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/guide/1.1.4 Edit your GSP page to include jQuery.gdoc" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/guide/1.1.4 Edit your GSP page to include jQuery.gdoc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/guide/1.1.5 View the page source.gdoc" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/guide/1.1.5 View the page source.gdoc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/guide/1.1.6 Now optimize your application.gdoc" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/guide/1.1.6 Now optimize your application.gdoc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/guide/10. Security.gdoc" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/guide/10. Security.gdoc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/guide/2. Concepts.gdoc" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/guide/2. Concepts.gdoc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/guide/3. Declaring resources.gdoc" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/guide/3. Declaring resources.gdoc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/guide/3.1 The resource DSL.gdoc" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/guide/3.1 The resource DSL.gdoc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/guide/3.1.1 The dependsOn method.gdoc" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/guide/3.1.1 The dependsOn method.gdoc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/guide/3.1.2 The resource method.gdoc" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/guide/3.1.2 The resource method.gdoc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/guide/3.1.3 The defaultBundle method.gdoc" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/guide/3.1.3 The defaultBundle method.gdoc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/guide/3.2 Resource artefacts.gdoc" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/guide/3.2 Resource artefacts.gdoc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/guide/3.3 Config.groovy.gdoc" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/guide/3.3 Config.groovy.gdoc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/guide/3.4 Bundling.gdoc" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/guide/3.4 Bundling.gdoc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/guide/4. Using resources.gdoc" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/guide/4. Using resources.gdoc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/guide/4.1 Linking to CSS, JavaScript etc..gdoc" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/guide/4.1 Linking to CSS, JavaScript etc..gdoc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/guide/4.2 Linking to images.gdoc" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/guide/4.2 Linking to images.gdoc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/guide/4.3 Linking to resources explicitly, bypassing modules.gdoc" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/guide/4.3 Linking to resources explicitly, bypassing modules.gdoc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/guide/4.4 Including pieces of JavaScript code generated at runtime.gdoc" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/guide/4.4 Including pieces of JavaScript code generated at runtime.gdoc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/guide/5. Overriding resources.gdoc" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/guide/5. Overriding resources.gdoc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/guide/6. Creating custom mappers.gdoc" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/guide/6. Creating custom mappers.gdoc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/guide/6.1 Defining a mapper.gdoc" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/guide/6.1 Defining a mapper.gdoc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/guide/6.2 Mapper phases and priority.gdoc" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/guide/6.2 Mapper phases and priority.gdoc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/guide/6.3 Operation.gdoc" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/guide/6.3 Operation.gdoc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/guide/6.4 Processing only the right types of files.gdoc" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/guide/6.4 Processing only the right types of files.gdoc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/guide/6.5 Adding response headers and intercepting requests.gdoc" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/guide/6.5 Adding response headers and intercepting requests.gdoc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/guide/7. Writing plugins that use Resources.gdoc" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/guide/7. Writing plugins that use Resources.gdoc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/guide/8. Debugging.gdoc" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/guide/8. Debugging.gdoc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/guide/9. Configuration.gdoc" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/guide/9. Configuration.gdoc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/web/access/intercept/AbstractFilterInvocationDefinition.java" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/web/access/intercept/AbstractFilterInvocationDefinition.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/scaffolding-2.0.1/src/java/org/codehaus/groovy/grails/scaffolding/AbstractGrailsTemplateGenerator.java" afterPath="$PROJECT_DIR$/target/work/plugins/scaffolding-2.0.1/src/java/org/codehaus/groovy/grails/scaffolding/AbstractGrailsTemplateGenerator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/java/org/grails/plugin/resources/artefacts/AbstractResourcesArtefactHandler.java" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/java/org/grails/plugin/resources/artefacts/AbstractResourcesArtefactHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/groovy/org/grails/plugin/resource/AggregatedResourceMeta.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/groovy/org/grails/plugin/resource/AggregatedResourceMeta.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/web/access/AjaxAwareAccessDeniedHandler.java" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/web/access/AjaxAwareAccessDeniedHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/web/authentication/AjaxAwareAuthenticationEntryPoint.java" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/web/authentication/AjaxAwareAuthenticationEntryPoint.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/web/authentication/AjaxAwareAuthenticationFailureHandler.java" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/web/authentication/AjaxAwareAuthenticationFailureHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/web/authentication/AjaxAwareAuthenticationSuccessHandler.java" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/web/authentication/AjaxAwareAuthenticationSuccessHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/web/access/intercept/AnnotationFilterInvocationDefinition.java" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/web/access/intercept/AnnotationFilterInvocationDefinition.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/scaffolding-2.0.1/src/templates/scaffolding/AsyncController.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/scaffolding-2.0.1/src/templates/scaffolding/AsyncController.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/scaffolding-2.0.1/src/templates/scaffolding/AsyncSpec.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/scaffolding-2.0.1/src/templates/scaffolding/AsyncSpec.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/access/vote/AuthenticatedVetoableDecisionManager.java" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/access/vote/AuthenticatedVetoableDecisionManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/annotation/Authorities.java" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/annotation/Authorities.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/annotation/AuthoritiesTransformation.java" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/annotation/AuthoritiesTransformation.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/templates/Authority.groovy.template" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/templates/Authority.groovy.template" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/authentication/encoding/BCryptPasswordEncoder.java" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/authentication/encoding/BCryptPasswordEncoder.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/grails-app/resourceMappers/org/grails/plugin/resource/BaseUrlResourceMapper.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/grails-app/resourceMappers/org/grails/plugin/resource/BaseUrlResourceMapper.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/conf/BuildConfig.groovy" afterPath="$PROJECT_DIR$/grails-app/conf/BuildConfig.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/grails-app/resourceMappers/org/grails/plugin/resource/BundleResourceMapper.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/grails-app/resourceMappers/org/grails/plugin/resource/BundleResourceMapper.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/groovy/org/grails/plugin/resource/CSSBundleResourceMeta.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/groovy/org/grails/plugin/resource/CSSBundleResourceMeta.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/groovy/org/grails/plugin/resource/CSSLinkProcessor.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/groovy/org/grails/plugin/resource/CSSLinkProcessor.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/grails-app/resourceMappers/org/grails/plugin/resource/CSSPreprocessorResourceMapper.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/grails-app/resourceMappers/org/grails/plugin/resource/CSSPreprocessorResourceMapper.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/grails-app/resourceMappers/org/grails/plugin/resource/CSSRewriterResourceMapper.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/grails-app/resourceMappers/org/grails/plugin/resource/CSSRewriterResourceMapper.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/database-migration-1.3.8/src/groovy/grails/plugin/databasemigration/ChangelogXml2Groovy.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/database-migration-1.3.8/src/groovy/grails/plugin/databasemigration/ChangelogXml2Groovy.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/web/access/intercept/ChannelFilterInvocationSecurityMetadataSourceFactoryBean.java" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/web/access/intercept/ChannelFilterInvocationSecurityMetadataSourceFactoryBean.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/access/vote/ClosureConfigAttribute.java" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/access/vote/ClosureConfigAttribute.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/access/vote/ClosureVoter.java" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/access/vote/ClosureVoter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/web/authentication/preauth/x509/ClosureX509PrincipalExtractor.java" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/web/authentication/preauth/x509/ClosureX509PrincipalExtractor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/domain/com/nest5data/Company.groovy" afterPath="$PROJECT_DIR$/grails-app/domain/com/nest5data/Company.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/scaffolding-2.0.1/src/templates/scaffolding/Controller.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/scaffolding-2.0.1/src/templates/scaffolding/Controller.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/scaffolding-2.0.1/scripts/CreateScaffoldController.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/scaffolding-2.0.1/scripts/CreateScaffoldController.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/webxml-1.4.1/scripts/CreateWebXmlConfig.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/webxml-1.4.1/scripts/CreateWebXmlConfig.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/CryptoEncoderWrapper.java" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/CryptoEncoderWrapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/conf/DataSource.groovy" afterPath="$PROJECT_DIR$/grails-app/conf/DataSource.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/database-migration-1.3.8/DatabaseMigrationGrailsPlugin.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/database-migration-1.3.8/DatabaseMigrationGrailsPlugin.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/database-migration-1.3.8/grails-app/controllers/grails/plugin/databasemigration/DbdocController.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/database-migration-1.3.8/grails-app/controllers/grails/plugin/databasemigration/DbdocController.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/database-migration-1.3.8/grails-app/conf/DbdocUrlMappings.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/database-migration-1.3.8/grails-app/conf/DbdocUrlMappings.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/database-migration-1.3.8/scripts/DbmChangelogToGroovy.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/database-migration-1.3.8/scripts/DbmChangelogToGroovy.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/database-migration-1.3.8/scripts/DbmDiff.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/database-migration-1.3.8/scripts/DbmDiff.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/web/filter/DebugFilter.java" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/web/filter/DebugFilter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/scaffolding-2.0.1/src/groovy/org/codehaus/groovy/grails/scaffolding/DefaultGrailsTemplateGenerator.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/scaffolding-2.0.1/src/groovy/org/codehaus/groovy/grails/scaffolding/DefaultGrailsTemplateGenerator.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/userdetails/DefaultPostAuthenticationChecks.java" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/userdetails/DefaultPostAuthenticationChecks.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/userdetails/DefaultPreAuthenticationChecks.java" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/userdetails/DefaultPreAuthenticationChecks.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/java/org/grails/plugin/resources/artefacts/DefaultResourceMapperClass.java" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/java/org/grails/plugin/resources/artefacts/DefaultResourceMapperClass.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/java/org/grails/plugin/resources/artefacts/DefaultResourcesClass.java" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/java/org/grails/plugin/resources/artefacts/DefaultResourcesClass.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/grails-app/conf/DefaultSecurityConfig.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/grails-app/conf/DefaultSecurityConfig.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/web/access/DefaultThrowableAnalyzer.java" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/web/access/DefaultThrowableAnalyzer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/groovy/org/grails/plugin/resource/DevModeSanityFilter.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/groovy/org/grails/plugin/resource/DevModeSanityFilter.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/domain/com/nest5data/Device.groovy" afterPath="$PROJECT_DIR$/grails-app/domain/com/nest5data/Device.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/controllers/com/nest5data/DeviceOpsController.groovy" afterPath="$PROJECT_DIR$/grails-app/controllers/com/nest5data/DeviceOpsController.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/authentication/encoding/DigestAuthPasswordEncoder.java" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/authentication/encoding/DigestAuthPasswordEncoder.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/groovy/org/grails/plugin/resource/util/DispositionsUtils.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/groovy/org/grails/plugin/resource/util/DispositionsUtils.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/scaffolding-2.0.1/src/java/org/codehaus/groovy/grails/scaffolding/DomainClassPropertyComparator.java" afterPath="$PROJECT_DIR$/target/work/plugins/scaffolding-2.0.1/src/java/org/codehaus/groovy/grails/scaffolding/DomainClassPropertyComparator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/database-migration-1.3.8/src/groovy/grails/plugin/databasemigration/DslBuilder.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/database-migration-1.3.8/src/groovy/grails/plugin/databasemigration/DslBuilder.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/webxml-1.4.1/src/groovy/grails/plugin/webxml/FilterManager.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/webxml-1.4.1/src/groovy/grails/plugin/webxml/FilterManager.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/web/authentication/FilterProcessUrlRequestMatcher.java" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/web/authentication/FilterProcessUrlRequestMatcher.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/scaffolding-2.0.1/scripts/GenerateAll.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/scaffolding-2.0.1/scripts/GenerateAll.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/scaffolding-2.0.1/scripts/GenerateAsyncController.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/scaffolding-2.0.1/scripts/GenerateAsyncController.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/scaffolding-2.0.1/scripts/GenerateController.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/scaffolding-2.0.1/scripts/GenerateController.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/scaffolding-2.0.1/scripts/GenerateViews.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/scaffolding-2.0.1/scripts/GenerateViews.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/database-migration-1.3.8/src/groovy/grails/plugin/databasemigration/GormColumn.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/database-migration-1.3.8/src/groovy/grails/plugin/databasemigration/GormColumn.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/database-migration-1.3.8/src/groovy/grails/plugin/databasemigration/GormDatabase.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/database-migration-1.3.8/src/groovy/grails/plugin/databasemigration/GormDatabase.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/database-migration-1.3.8/src/groovy/grails/plugin/databasemigration/GormDatabaseSnapshotGenerator.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/database-migration-1.3.8/src/groovy/grails/plugin/databasemigration/GormDatabaseSnapshotGenerator.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/database-migration-1.3.8/src/groovy/grails/plugin/databasemigration/GormDatabaseTypeConverter.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/database-migration-1.3.8/src/groovy/grails/plugin/databasemigration/GormDatabaseTypeConverter.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/database-migration-1.3.8/src/groovy/grails/plugin/databasemigration/GormDiff.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/database-migration-1.3.8/src/groovy/grails/plugin/databasemigration/GormDiff.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/groovy/grails/plugin/springsecurity/web/authentication/rememberme/GormPersistentTokenRepository.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/groovy/grails/plugin/springsecurity/web/authentication/rememberme/GormPersistentTokenRepository.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/groovy/grails/plugin/springsecurity/userdetails/GormUserDetailsService.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/groovy/grails/plugin/springsecurity/userdetails/GormUserDetailsService.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/web/filter/GrailsAnonymousAuthenticationFilter.java" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/web/filter/GrailsAnonymousAuthenticationFilter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/authentication/GrailsAnonymousAuthenticationProvider.java" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/authentication/GrailsAnonymousAuthenticationProvider.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/authentication/GrailsAnonymousAuthenticationToken.java" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/authentication/GrailsAnonymousAuthenticationToken.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/database-migration-1.3.8/src/groovy/grails/plugin/databasemigration/GrailsChange.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/database-migration-1.3.8/src/groovy/grails/plugin/databasemigration/GrailsChange.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/database-migration-1.3.8/src/groovy/grails/plugin/databasemigration/GrailsChangeLogParser.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/database-migration-1.3.8/src/groovy/grails/plugin/databasemigration/GrailsChangeLogParser.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/database-migration-1.3.8/src/groovy/grails/plugin/databasemigration/GrailsClassLoaderResourceAccessor.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/database-migration-1.3.8/src/groovy/grails/plugin/databasemigration/GrailsClassLoaderResourceAccessor.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/database-migration-1.3.8/src/groovy/grails/plugin/databasemigration/GrailsDiffStatusListener.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/database-migration-1.3.8/src/groovy/grails/plugin/databasemigration/GrailsDiffStatusListener.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/database-migration-1.3.8/src/groovy/grails/plugin/databasemigration/GrailsPrecondition.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/database-migration-1.3.8/src/groovy/grails/plugin/databasemigration/GrailsPrecondition.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/web/filter/GrailsRememberMeAuthenticationFilter.java" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/web/filter/GrailsRememberMeAuthenticationFilter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/scaffolding-2.0.1/src/java/org/codehaus/groovy/grails/scaffolding/GrailsTemplateGenerator.java" afterPath="$PROJECT_DIR$/target/work/plugins/scaffolding-2.0.1/src/java/org/codehaus/groovy/grails/scaffolding/GrailsTemplateGenerator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/userdetails/GrailsUser.java" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/userdetails/GrailsUser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/userdetails/GrailsUserDetailsService.java" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/userdetails/GrailsUserDetailsService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/web/access/GrailsWebInvocationPrivilegeEvaluator.java" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/web/access/GrailsWebInvocationPrivilegeEvaluator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/database-migration-1.3.8/src/groovy/grails/plugin/databasemigration/GroovyAwareStringChangeLogSerializer.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/database-migration-1.3.8/src/groovy/grails/plugin/databasemigration/GroovyAwareStringChangeLogSerializer.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/groovy/org/grails/plugin/resource/util/HalfBakedLegacyLinkGenerator.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/groovy/org/grails/plugin/resource/util/HalfBakedLegacyLinkGenerator.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/web/access/channel/HeaderCheckInsecureChannelProcessor.java" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/web/access/channel/HeaderCheckInsecureChannelProcessor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/web/access/channel/HeaderCheckSecureChannelProcessor.java" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/web/access/channel/HeaderCheckSecureChannelProcessor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/database-migration-1.3.8/src/groovy/grails/plugin/databasemigration/HibernateAwareTypeConverter.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/database-migration-1.3.8/src/groovy/grails/plugin/databasemigration/HibernateAwareTypeConverter.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/jquery-1.10.2.2/scripts/InstallJQuery.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/jquery-1.10.2.2/scripts/InstallJQuery.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/web/access/intercept/InterceptUrlMapFilterInvocationDefinition.java" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/web/access/intercept/InterceptUrlMapFilterInvocationDefinition.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/groovy/grails/plugin/springsecurity/InterceptedUrl.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/groovy/grails/plugin/springsecurity/InterceptedUrl.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/web/filter/IpAddressFilter.java" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/web/filter/IpAddressFilter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/jquery-1.10.2.2/grails-app/conf/JQueryConfig.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/jquery-1.10.2.2/grails-app/conf/JQueryConfig.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/jquery-1.10.2.2/src/groovy/org/codehaus/groovy/grails/plugins/jquery/JQueryConfig.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/jquery-1.10.2.2/src/groovy/org/codehaus/groovy/grails/plugins/jquery/JQueryConfig.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/jquery-1.10.2.2/grails-app/conf/JQueryPluginResources.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/jquery-1.10.2.2/grails-app/conf/JQueryPluginResources.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/jquery-1.10.2.2/src/groovy/org/codehaus/groovy/grails/plugins/jquery/JQueryProvider.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/jquery-1.10.2.2/src/groovy/org/codehaus/groovy/grails/plugins/jquery/JQueryProvider.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/jquery-1.10.2.2/grails-app/taglib/JQueryResourceTagLib.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/jquery-1.10.2.2/grails-app/taglib/JQueryResourceTagLib.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/jquery-1.10.2.2/grails-app/services/JQueryService.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/jquery-1.10.2.2/grails-app/services/JQueryService.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/jquery-1.10.2.2/grails-app/taglib/JQueryTagLib.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/jquery-1.10.2.2/grails-app/taglib/JQueryTagLib.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/groovy/org/grails/plugin/resource/JavaScriptBundleResourceMeta.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/groovy/org/grails/plugin/resource/JavaScriptBundleResourceMeta.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/jquery-1.10.2.2/JqueryGrailsPlugin.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/jquery-1.10.2.2/JqueryGrailsPlugin.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/jquery-1.10.2.2/LICENSE.txt" afterPath="$PROJECT_DIR$/target/work/plugins/jquery-1.10.2.2/LICENSE.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/LICENSE.txt" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/LICENSE.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/groovy/org/grails/plugin/resource/mapper/MapperPhase.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/groovy/org/grails/plugin/resource/mapper/MapperPhase.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/database-migration-1.3.8/src/groovy/grails/plugin/databasemigration/dbdoc/MemoryDocVisitor.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/database-migration-1.3.8/src/groovy/grails/plugin/databasemigration/dbdoc/MemoryDocVisitor.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/database-migration-1.3.8/src/groovy/grails/plugin/databasemigration/MigrationRunner.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/database-migration-1.3.8/src/groovy/grails/plugin/databasemigration/MigrationRunner.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/database-migration-1.3.8/src/groovy/grails/plugin/databasemigration/MigrationUtils.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/database-migration-1.3.8/src/groovy/grails/plugin/databasemigration/MigrationUtils.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/groovy/org/grails/plugin/resource/module/ModuleBuilder.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/groovy/org/grails/plugin/resource/module/ModuleBuilder.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/groovy/org/grails/plugin/resource/module/ModuleDeclarationsFactory.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/groovy/org/grails/plugin/resource/module/ModuleDeclarationsFactory.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/groovy/org/grails/plugin/resource/module/ModulesBuilder.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/groovy/org/grails/plugin/resource/module/ModulesBuilder.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/web/authentication/logout/MutableLogoutFilter.java" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/web/authentication/logout/MutableLogoutFilter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/database-migration-1.3.8/src/groovy/grails/plugin/databasemigration/MySQLCompatibleChangeLogSerializer.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/database-migration-1.3.8/src/groovy/grails/plugin/databasemigration/MySQLCompatibleChangeLogSerializer.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/database-migration-1.3.8/src/groovy/grails/plugin/databasemigration/MysqlAwareCreateTableGenerator.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/database-migration-1.3.8/src/groovy/grails/plugin/databasemigration/MysqlAwareCreateTableGenerator.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Nest5BusinessData-grailsPlugins.iml" afterPath="$PROJECT_DIR$/Nest5BusinessData-grailsPlugins.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Nest5BusinessData.iml" afterPath="$PROJECT_DIR$/Nest5BusinessData.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/userdetails/NoStackUsernameNotFoundException.java" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/userdetails/NoStackUsernameNotFoundException.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/database-migration-1.3.8/src/groovy/grails/plugin/databasemigration/NoopVisitor.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/database-migration-1.3.8/src/groovy/grails/plugin/databasemigration/NoopVisitor.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/access/intercept/NullAfterInvocationManager.java" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/access/intercept/NullAfterInvocationManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/access/NullAfterInvocationProvider.java" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/access/NullAfterInvocationProvider.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/authentication/NullAuthenticationEventPublisher.java" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/authentication/NullAuthenticationEventPublisher.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/web/NullFilterChainValidator.java" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/web/NullFilterChainValidator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/web/authentication/NullLogoutHandlerRememberMeServices.java" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/web/authentication/NullLogoutHandlerRememberMeServices.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/authentication/dao/NullSaltSource.java" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/authentication/dao/NullSaltSource.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/web/authentication/switchuser/NullSwitchUserAuthorityChanger.java" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/web/authentication/switchuser/NullSwitchUserAuthorityChanger.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/authentication/encoding/PBKDF2PasswordEncoder.java" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/authentication/encoding/PBKDF2PasswordEncoder.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/templates/PersistentLogin.groovy.template" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/templates/PersistentLogin.groovy.template" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/templates/Person.groovy.template" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/templates/Person.groovy.template" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/templates/PersonAuthority.groovy.template" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/templates/PersonAuthority.groovy.template" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/groovy/org/grails/plugin/resource/ProcessingFilter.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/groovy/org/grails/plugin/resource/ProcessingFilter.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/groovy/grails/plugin/springsecurity/ReflectionUtils.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/groovy/grails/plugin/springsecurity/ReflectionUtils.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/web/authentication/RequestHolderAuthenticationFilter.java" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/web/authentication/RequestHolderAuthenticationFilter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/templates/Requestmap.groovy.template" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/templates/Requestmap.groovy.template" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/web/access/intercept/RequestmapFilterInvocationDefinition.java" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/web/access/intercept/RequestmapFilterInvocationDefinition.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/groovy/org/grails/plugin/resource/mapper/ResourceMapper.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/groovy/org/grails/plugin/resource/mapper/ResourceMapper.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/java/org/grails/plugin/resources/artefacts/ResourceMapperArtefactHandler.java" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/java/org/grails/plugin/resources/artefacts/ResourceMapperArtefactHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/java/org/grails/plugin/resources/artefacts/ResourceMapperClass.java" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/java/org/grails/plugin/resources/artefacts/ResourceMapperClass.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/groovy/org/grails/plugin/resource/mapper/ResourceMappersFactory.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/groovy/org/grails/plugin/resource/mapper/ResourceMappersFactory.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/groovy/org/grails/plugin/resource/ResourceMeta.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/groovy/org/grails/plugin/resource/ResourceMeta.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/groovy/org/grails/plugin/resource/util/ResourceMetaStore.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/groovy/org/grails/plugin/resource/util/ResourceMetaStore.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/groovy/org/grails/plugin/resource/ResourceModule.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/groovy/org/grails/plugin/resource/ResourceModule.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/groovy/org/grails/plugin/resource/ResourceProcessor.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/groovy/org/grails/plugin/resource/ResourceProcessor.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/groovy/org/grails/plugin/resource/ResourceProcessorBatch.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/groovy/org/grails/plugin/resource/ResourceProcessorBatch.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/grails-app/taglib/org/grails/plugin/resource/ResourceTagLib.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/grails-app/taglib/org/grails/plugin/resource/ResourceTagLib.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/java/org/grails/plugin/resources/artefacts/ResourcesArtefactHandler.java" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/java/org/grails/plugin/resources/artefacts/ResourcesArtefactHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/grails-app/conf/ResourcesBootStrap.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/grails-app/conf/ResourcesBootStrap.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/java/org/grails/plugin/resources/artefacts/ResourcesClass.java" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/java/org/grails/plugin/resources/artefacts/ResourcesClass.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/ResourcesGrailsPlugin.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/ResourcesGrailsPlugin.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/controllers/com/nest5data/RowOpsController.groovy" afterPath="$PROJECT_DIR$/grails-app/controllers/com/nest5data/RowOpsController.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/scripts/S2CreatePersistentToken.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/scripts/S2CreatePersistentToken.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/scripts/S2Quickstart.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/scripts/S2Quickstart.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/scaffolding-2.0.1/src/java/org/codehaus/groovy/grails/scaffolding/view/ScaffoldedGroovyPageView.java" afterPath="$PROJECT_DIR$/target/work/plugins/scaffolding-2.0.1/src/java/org/codehaus/groovy/grails/scaffolding/view/ScaffoldedGroovyPageView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/scaffolding-2.0.1/src/templates/artifacts/ScaffoldingController.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/scaffolding-2.0.1/src/templates/artifacts/ScaffoldingController.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/scaffolding-2.0.1/ScaffoldingGrailsPlugin.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/scaffolding-2.0.1/ScaffoldingGrailsPlugin.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/scaffolding-2.0.1/src/java/org/codehaus/groovy/grails/scaffolding/view/ScaffoldingViewResolver.java" afterPath="$PROJECT_DIR$/target/work/plugins/scaffolding-2.0.1/src/java/org/codehaus/groovy/grails/scaffolding/view/ScaffoldingViewResolver.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/database-migration-1.3.8/src/groovy/grails/plugin/databasemigration/ScriptUtils.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/database-migration-1.3.8/src/groovy/grails/plugin/databasemigration/ScriptUtils.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/groovy/grails/plugin/springsecurity/annotation/Secured.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/groovy/grails/plugin/springsecurity/annotation/Secured.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/annotation/SecuredClosureDelegate.java" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/annotation/SecuredClosureDelegate.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/SecurityConfigType.java" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/SecurityConfigType.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/SecurityEventListener.java" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/SecurityEventListener.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/SecurityFilterPosition.java" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/SecurityFilterPosition.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/web/SecurityRequestHolder.java" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/web/SecurityRequestHolder.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/grails-app/taglib/grails/plugin/springsecurity/SecurityTagLib.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/grails-app/taglib/grails/plugin/springsecurity/SecurityTagLib.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/scaffolding-2.0.1/src/java/org/codehaus/groovy/grails/scaffolding/SimpleDomainClassPropertyComparator.java" afterPath="$PROJECT_DIR$/target/work/plugins/scaffolding-2.0.1/src/java/org/codehaus/groovy/grails/scaffolding/SimpleDomainClassPropertyComparator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/database-migration-1.3.8/src/groovy/grails/plugin/databasemigration/Slf4jLogger.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/database-migration-1.3.8/src/groovy/grails/plugin/databasemigration/Slf4jLogger.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/scaffolding-2.0.1/src/templates/scaffolding/Spec.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/scaffolding-2.0.1/src/templates/scaffolding/Spec.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/SpringSecurityCoreGrailsPlugin.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/SpringSecurityCoreGrailsPlugin.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/grails-app/services/grails/plugin/springsecurity/SpringSecurityService.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/grails-app/services/grails/plugin/springsecurity/SpringSecurityService.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/SpringSecurityUtils.java" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/SpringSecurityUtils.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/groovy/org/grails/plugin/resource/util/StatsManager.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/groovy/org/grails/plugin/resource/util/StatsManager.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/groovy/org/grails/plugin/resource/URLUtils.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/groovy/org/grails/plugin/resource/URLUtils.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/web/access/expression/WebExpressionConfigAttribute.java" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/web/access/expression/WebExpressionConfigAttribute.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/web/access/expression/WebExpressionVoter.java" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/web/access/expression/WebExpressionVoter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/webxml-1.4.1/WebxmlGrailsPlugin.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/webxml-1.4.1/WebxmlGrailsPlugin.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/database-migration-1.3.8/scripts/_DatabaseMigrationCommon.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/database-migration-1.3.8/scripts/_DatabaseMigrationCommon.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/database-migration-1.3.8/scripts/_Events.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/database-migration-1.3.8/scripts/_Events.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/scaffolding-2.0.1/scripts/_Events.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/scaffolding-2.0.1/scripts/_Events.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/webxml-1.4.1/scripts/_Events.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/webxml-1.4.1/scripts/_Events.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/scaffolding-2.0.1/scripts/_GrailsGenerate.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/scaffolding-2.0.1/scripts/_GrailsGenerate.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/database-migration-1.3.8/scripts/_Install.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/database-migration-1.3.8/scripts/_Install.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/scripts/_Install.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/scripts/_Install.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/scripts/_S2Common.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/scripts/_S2Common.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/scaffolding-2.0.1/src/templates/scaffolding/_form.gsp" afterPath="$PROJECT_DIR$/target/work/plugins/scaffolding-2.0.1/src/templates/scaffolding/_form.gsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/database-migration-1.3.8/application.properties" afterPath="$PROJECT_DIR$/target/work/plugins/database-migration-1.3.8/application.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/jquery-1.10.2.2/application.properties" afterPath="$PROJECT_DIR$/target/work/plugins/jquery-1.10.2.2/application.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/application.properties" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/application.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/scaffolding-2.0.1/application.properties" afterPath="$PROJECT_DIR$/target/work/plugins/scaffolding-2.0.1/application.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/application.properties" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/application.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/webxml-1.4.1/application.properties" afterPath="$PROJECT_DIR$/target/work/plugins/webxml-1.4.1/application.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web-app/WEB-INF/applicationContext.xml" afterPath="$PROJECT_DIR$/web-app/WEB-INF/applicationContext.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/grails-app/views/login/auth.gsp" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/grails-app/views/login/auth.gsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/ref/Mappers/baseurl.gdoc" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/ref/Mappers/baseurl.gdoc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/ref/Mappers/bundle.gdoc" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/ref/Mappers/bundle.gdoc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web-app/WEB-INF/tld/c.tld" afterPath="$PROJECT_DIR$/web-app/WEB-INF/tld/c.tld" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/database-migration-1.3.8/src/resources/changelog.template" afterPath="$PROJECT_DIR$/target/work/plugins/database-migration-1.3.8/src/resources/changelog.template" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/scaffolding-2.0.1/src/templates/scaffolding/create.gsp" afterPath="$PROJECT_DIR$/target/work/plugins/scaffolding-2.0.1/src/templates/scaffolding/create.gsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/ref/Mappers/csspreprocessor.gdoc" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/ref/Mappers/csspreprocessor.gdoc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/ref/Mappers/cssrewriter.gdoc" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/ref/Mappers/cssrewriter.gdoc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/grails-app/views/login/denied.gsp" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/grails-app/views/login/denied.gsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/database-migration-1.3.8/dependencies.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/database-migration-1.3.8/dependencies.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/jquery-1.10.2.2/dependencies.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/jquery-1.10.2.2/dependencies.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/dependencies.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/dependencies.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/dependencies.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/dependencies.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/webxml-1.4.1/dependencies.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/webxml-1.4.1/dependencies.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/scaffolding-2.0.1/src/templates/scaffolding/edit.gsp" afterPath="$PROJECT_DIR$/target/work/plugins/scaffolding-2.0.1/src/templates/scaffolding/edit.gsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/ref/Tags/external.gdoc" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/ref/Tags/external.gdoc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web-app/WEB-INF/tld/fmt.tld" afterPath="$PROJECT_DIR$/web-app/WEB-INF/tld/fmt.tld" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web-app/WEB-INF/tld/grails.tld" afterPath="$PROJECT_DIR$/web-app/WEB-INF/tld/grails.tld" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/ref/Tags/img.gdoc" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/ref/Tags/img.gdoc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/scaffolding-2.0.1/src/templates/scaffolding/index.gsp" afterPath="$PROJECT_DIR$/target/work/plugins/scaffolding-2.0.1/src/templates/scaffolding/index.gsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/jquery-1.10.2.2/web-app/js/jquery/jquery-1.10.2.js" afterPath="$PROJECT_DIR$/target/work/plugins/jquery-1.10.2.2/web-app/js/jquery/jquery-1.10.2.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/jquery-1.10.2.2/web-app/js/jquery/jquery-1.10.2.min.js" afterPath="$PROJECT_DIR$/target/work/plugins/jquery-1.10.2.2/web-app/js/jquery/jquery-1.10.2.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/ref/Tags/layoutResources.gdoc" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/ref/Tags/layoutResources.gdoc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/database-migration-1.3.8/plugin.xml" afterPath="$PROJECT_DIR$/target/work/plugins/database-migration-1.3.8/plugin.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/jquery-1.10.2.2/plugin.xml" afterPath="$PROJECT_DIR$/target/work/plugins/jquery-1.10.2.2/plugin.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/plugin.xml" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/plugin.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/scaffolding-2.0.1/plugin.xml" afterPath="$PROJECT_DIR$/target/work/plugins/scaffolding-2.0.1/plugin.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/plugin.xml" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/plugin.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/webxml-1.4.1/plugin.xml" afterPath="$PROJECT_DIR$/target/work/plugins/webxml-1.4.1/plugin.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/scaffolding-2.0.1/src/templates/scaffolding/renderEditor.template" afterPath="$PROJECT_DIR$/target/work/plugins/scaffolding-2.0.1/src/templates/scaffolding/renderEditor.template" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/ref/Tags/require.gdoc" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/ref/Tags/require.gdoc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/ref/Tags/resource.gdoc" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/ref/Tags/resource.gdoc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/ref/Tags/resourceLink.gdoc" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/ref/Tags/resourceLink.gdoc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/ref/Tags/script.gdoc" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/ref/Tags/script.gdoc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/scaffolding-2.0.1/src/templates/scaffolding/show.gsp" afterPath="$PROJECT_DIR$/target/work/plugins/scaffolding-2.0.1/src/templates/scaffolding/show.gsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web-app/WEB-INF/sitemesh.xml" afterPath="$PROJECT_DIR$/web-app/WEB-INF/sitemesh.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/grails-app/i18n/spring-security-core.properties" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/grails-app/i18n/spring-security-core.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/grails-app/i18n/spring-security-core_de.properties" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/grails-app/i18n/spring-security-core_de.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/grails-app/i18n/spring-security-core_fr.properties" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/grails-app/i18n/spring-security-core_fr.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/grails-app/i18n/spring-security-core_it.properties" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/grails-app/i18n/spring-security-core_it.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/grails-app/i18n/spring-security-core_nb.properties" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/grails-app/i18n/spring-security-core_nb.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/grails-app/i18n/spring-security-core_pt_BR.properties" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/grails-app/i18n/spring-security-core_pt_BR.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/grails-app/i18n/spring-security-core_ru.properties" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/grails-app/i18n/spring-security-core_ru.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/grails-app/i18n/spring-security-core_sv.properties" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/grails-app/i18n/spring-security-core_sv.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web-app/WEB-INF/tld/spring.tld" afterPath="$PROJECT_DIR$/web-app/WEB-INF/tld/spring.tld" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/stacktrace.log" afterPath="$PROJECT_DIR$/target/stacktrace.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/ref/Tags/stash.gdoc" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/ref/Tags/stash.gdoc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/ref/Tags/style.gdoc" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/ref/Tags/style.gdoc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/ref/Tags/use.gdoc" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/docs/ref/Tags/use.gdoc" />
+>>>>>>> 2435289a374157a399159d433937d69997e65ef7
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Nest5BusinessData.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$USER_HOME$/.grails/" />
+<<<<<<< HEAD
     <file path="/Dummy.txt" changelist="2d046b0d-454e-416b-97bd-f66e64a095c7" time="1397533938191" ignored="false" />
     <file path="$PROJECT_DIR$/../Nest5Web/grails-app/views/layouts/dashboardLayout.gsp" changelist="2d046b0d-454e-416b-97bd-f66e64a095c7" time="1394161079773" ignored="false" />
     <file path="$PROJECT_DIR$/../../Trabajo/Web Workspace/nest5Knowledge/application.properties" changelist="2d046b0d-454e-416b-97bd-f66e64a095c7" time="1394156092174" ignored="false" />
@@ -36,6 +358,8 @@
     <file path="/addProduct.gsp" changelist="2d046b0d-454e-416b-97bd-f66e64a095c7" time="1394418086489" ignored="false" />
     <file path="/addCombo.gsp" changelist="2d046b0d-454e-416b-97bd-f66e64a095c7" time="1394421740951" ignored="false" />
     <file path="$PROJECT_DIR$/../Ayjue/grails-app/conf/DataSource.groovy" changelist="2d046b0d-454e-416b-97bd-f66e64a095c7" time="1397529363121" ignored="false" />
+=======
+>>>>>>> 2435289a374157a399159d433937d69997e65ef7
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +423,11 @@
       <file leaf-file-name="DatabaseOpsController.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/nest5data/DatabaseOpsController.groovy">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state line="385" column="31" selection-start="18359" selection-end="18359" vertical-scroll-proportion="0.0">
+=======
+            <state line="234" column="29" selection-start="10816" selection-end="10816" vertical-scroll-proportion="0.0" vertical-offset="3978" max-vertical-offset="9299">
+>>>>>>> 2435289a374157a399159d433937d69997e65ef7
               <folding />
             </state>
           </provider>
@@ -108,12 +436,17 @@
       <file leaf-file-name="RowOpsController.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/nest5data/RowOpsController.groovy">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state line="65" column="35" selection-start="2886" selection-end="2886" vertical-scroll-proportion="0.0">
+=======
+            <state line="64" column="61" selection-start="2825" selection-end="2825" vertical-scroll-proportion="0.0" vertical-offset="1088" max-vertical-offset="6953">
+>>>>>>> 2435289a374157a399159d433937d69997e65ef7
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="DataSource.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/conf/DataSource.groovy">
           <provider selected="true" editor-type-id="text-editor">
@@ -127,6 +460,12 @@
         <entry file="file://$PROJECT_DIR$/grails-app/domain/com/nest5data/Company.groovy">
           <provider selected="true" editor-type-id="text-editor">
             <state line="17" column="4" selection-start="330" selection-end="383" vertical-scroll-proportion="0.54770994">
+=======
+      <file leaf-file-name="BuildConfig.groovy" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grails-app/conf/BuildConfig.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="80" column="26" selection-start="3955" selection-end="3955" vertical-scroll-proportion="0.0" vertical-offset="992" max-vertical-offset="1734">
+>>>>>>> 2435289a374157a399159d433937d69997e65ef7
               <folding />
             </state>
           </provider>
@@ -138,12 +477,22 @@
       <file leaf-file-name="Config.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/conf/Config.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="100" column="40" selection-start="4374" selection-end="4374" vertical-scroll-proportion="0.0">
+            <state line="102" column="1" selection-start="4415" selection-end="4415" vertical-scroll-proportion="0.0" vertical-offset="1734" max-vertical-offset="2584">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Device.groovy" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grails-app/domain/com/nest5data/Device.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="21" selection-start="283" selection-end="283" vertical-scroll-proportion="-11.086957" vertical-offset="0" max-vertical-offset="544">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+<<<<<<< HEAD
       <file leaf-file-name="BuildConfig.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/conf/BuildConfig.groovy">
           <provider selected="true" editor-type-id="text-editor">
@@ -157,6 +506,21 @@
         <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/nest5data/DeviceOpsController.groovy">
           <provider selected="true" editor-type-id="text-editor">
             <state line="47" column="27" selection-start="1584" selection-end="1584" vertical-scroll-proportion="0.0">
+=======
+      <file leaf-file-name="DeviceOpsController.groovy" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/nest5data/DeviceOpsController.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="300" column="29" selection-start="12840" selection-end="12840" vertical-scroll-proportion="0.63785046" vertical-offset="4708" max-vertical-offset="6052">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DataSource.groovy" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grails-app/conf/DataSource.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="2" selection-start="111" selection-end="111" vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="1343">
+>>>>>>> 2435289a374157a399159d433937d69997e65ef7
               <folding />
             </state>
           </provider>
@@ -182,20 +546,32 @@
       <list>
         <option value="$PROJECT_DIR$/grails-app/conf/UrlMappings.groovy" />
         <option value="$PROJECT_DIR$/grails-app/controllers/com/nest5data/SpecialController.groovy" />
-        <option value="$PROJECT_DIR$/grails-app/conf/BuildConfig.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/conf/Config.groovy" />
         <option value="$PROJECT_DIR$/grails-app/controllers/com/nest5data/DatabaseOpsController.groovy" />
         <option value="$PROJECT_DIR$/grails-app/controllers/com/nest5data/RowOpsController.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/domain/com/nest5data/Company.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/conf/DataSource.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/conf/BuildConfig.groovy" />
         <option value="$PROJECT_DIR$/grails-app/controllers/com/nest5data/DeviceOpsController.groovy" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/grails-app/conf/Config.groovy" />
         <option value="$PROJECT_DIR$/grails-app/conf/DataSource.groovy" />
+=======
+        <option value="$PROJECT_DIR$/grails-app/domain/com/nest5data/Device.groovy" />
+>>>>>>> 2435289a374157a399159d433937d69997e65ef7
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
+<<<<<<< HEAD
     <option name="width" value="1376" />
     <option name="height" value="784" />
+=======
+    <option name="width" value="1616" />
+    <option name="height" value="876" />
+>>>>>>> 2435289a374157a399159d433937d69997e65ef7
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -225,9 +601,14 @@
     <panes />
   </component>
   <component name="PropertiesComponent">
-    <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="GoToClass.includeLibraries" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+<<<<<<< HEAD
     <property name="MemberChooser.sorted" value="false" />
     <property name="recentsLimit" value="5" />
     <property name="restartRequiresConfirmation" value="true" />
@@ -237,10 +618,23 @@
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="dynamic.classpath" value="false" />
+=======
+    <property name="recentsLimit" value="5" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Nest5Web" />
+    <property name="restartRequiresConfirmation" value="true" />
+    <property name="FullScreen" value="false" />
+    <property name="dynamic.classpath" value="false" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+>>>>>>> 2435289a374157a399159d433937d69997e65ef7
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.nest5data" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Juanda\Documents\GitHub\Nest5BusinessData\lib" />
     </key>
   </component>
   <component name="RunManager" selected="Grails.Grails:Nest5BusinessData">
@@ -250,7 +644,7 @@
       <option name="PROGRAM_PARAMETERS" />
       <method />
     </configuration>
-    <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails">
+    <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails" singleton="true">
       <module name="" />
       <setting name="vmparams" value="" />
       <setting name="cmdLine" value="run-app" />
@@ -260,6 +654,7 @@
       <setting name="launchBrowser" value="false" />
       <method />
     </configuration>
+<<<<<<< HEAD
     <configuration default="true" type="GroovyScriptRunConfiguration" factoryName="Groovy">
       <module name="" />
       <setting name="path" value="" />
@@ -269,6 +664,8 @@
       <setting name="debug" value="false" />
       <method />
     </configuration>
+=======
+>>>>>>> 2435289a374157a399159d433937d69997e65ef7
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
@@ -277,6 +674,12 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
+<<<<<<< HEAD
+=======
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
+      <method />
+    </configuration>
+>>>>>>> 2435289a374157a399159d433937d69997e65ef7
     <configuration default="true" type="Applet" factoryName="Applet">
       <module name="" />
       <option name="MAIN_CLASS_NAME" />
@@ -318,21 +721,9 @@
       <listeners />
       <method />
     </configuration>
+<<<<<<< HEAD
     <configuration default="true" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
-      <method />
-    </configuration>
+=======
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -354,10 +745,133 @@
       <patterns />
       <method />
     </configuration>
+    <configuration default="true" type="FlashRunConfigurationType" factoryName="Flash App">
+      <option name="BCName" value="" />
+      <option name="IOSSimulatorSdkPath" value="" />
+      <option name="adlOptions" value="" />
+      <option name="airProgramParameters" value="" />
+      <option name="appDescriptorForEmulator" value="Android" />
+      <option name="debugTransport" value="USB" />
+      <option name="debuggerSdkRaw" value="BC SDK" />
+      <option name="emulator" value="NexusOne" />
+      <option name="emulatorAdlOptions" value="" />
+      <option name="fastPackaging" value="true" />
+      <option name="fullScreenHeight" value="0" />
+      <option name="fullScreenWidth" value="0" />
+      <option name="launchUrl" value="false" />
+      <option name="launcherParameters">
+        <LauncherParameters>
+          <option name="browserFamily" value="FIREFOX" />
+          <option name="launcherType" value="OSDefault" />
+          <option name="newPlayerInstance" value="false" />
+          <option name="playerPath" value="FlashPlayerDebugger.exe" />
+        </LauncherParameters>
+      </option>
+      <option name="mobileRunTarget" value="Emulator" />
+      <option name="moduleName" value="" />
+      <option name="overriddenMainClass" value="" />
+      <option name="overriddenOutputFileName" value="" />
+      <option name="overrideMainClass" value="false" />
+      <option name="runTrusted" value="true" />
+      <option name="screenDpi" value="0" />
+      <option name="screenHeight" value="0" />
+      <option name="screenWidth" value="0" />
+      <option name="url" value="http://" />
+      <option name="usbDebugPort" value="7936" />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
+      <module name="" />
+      <option name="TESTING_TYPE" value="0" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" appDescriptorForEmulator="Android" class_name="" emulatorAdlOptions="" method_name="" output_log_level="null" package_name="" scope="Class">
+      <option name="BCName" value="" />
+      <option name="launcherParameters">
+        <LauncherParameters>
+          <option name="browserFamily" value="FIREFOX" />
+          <option name="launcherType" value="OSDefault" />
+          <option name="newPlayerInstance" value="false" />
+          <option name="playerPath" value="FlashPlayerDebugger.exe" />
+        </LauncherParameters>
+      </option>
+      <option name="moduleName" value="" />
+      <option name="trusted" value="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
+>>>>>>> 2435289a374157a399159d433937d69997e65ef7
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="myFilePath" />
+      <option name="GLUE" />
+      <option name="myNameFilter" />
+      <option name="myGeneratedName" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <method />
+    </configuration>
     <configuration default="false" name="Grails:Nest5BusinessData" type="GrailsRunConfigurationType" factoryName="Grails" singleton="true">
       <module name="Nest5BusinessData" />
       <setting name="vmparams" value="" />
-      <setting name="cmdLine" value="run-app -Dgrails.server.port.http=8090" />
+      <setting name="cmdLine" value="run-app -Dgrails.server.port.http=8090 --stacktrace" />
       <setting name="depsClasspath" value="false" />
       <setting name="passParentEnv" value="true" />
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
@@ -378,23 +892,40 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="2d046b0d-454e-416b-97bd-f66e64a095c7" name="Default" comment="" />
-      <created>1393855796872</created>
-      <updated>1393855796872</updated>
-      <workItem from="1393855756243" duration="1826000" />
-      <workItem from="1393940800147" duration="523000" />
+      <created>1394205158317</created>
+      <updated>1394205158317</updated>
+      <workItem from="1394205158323" duration="49000" />
+      <workItem from="1394206511147" duration="704000" />
+      <workItem from="1394471094673" duration="15079000" />
+      <workItem from="1394553474952" duration="370000" />
+      <workItem from="1394558334474" duration="9813000" />
+      <workItem from="1394662197608" duration="3985000" />
+      <workItem from="1394728687798" duration="4323000" />
+      <workItem from="1394847258314" duration="21641000" />
+      <workItem from="1395276682759" duration="2165000" />
+      <workItem from="1395295366856" duration="1342000" />
+      <workItem from="1396270393323" duration="2224000" />
+      <workItem from="1396272675917" duration="2640000" />
+      <workItem from="1396538492513" duration="2633000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2349000" />
+    <option name="totallyTimeSpent" value="70532000" />
   </component>
   <component name="ToolWindowManager">
+<<<<<<< HEAD
     <frame x="-8" y="-8" width="1376" height="784" extended-state="0" />
     <editor active="true" />
+=======
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <editor active="false" />
+>>>>>>> 2435289a374157a399159d433937d69997e65ef7
     <layout>
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -403,14 +934,33 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Grails View" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.116615854" sideWeight="0.7433036" order="2" side_tool="false" content_ui="tabs" />
+=======
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2565104" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Console" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3294271" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+>>>>>>> 2435289a374157a399159d433937d69997e65ef7
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2565104" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Grails View" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.116875" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25669643" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -423,6 +973,11 @@
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+=======
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+>>>>>>> 2435289a374157a399159d433937d69997e65ef7
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -437,58 +992,9 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
-    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="true" />
-    <option name="CHECK_NEW_TODO" value="true" />
     <option name="myTodoPanelSettings">
-      <value>
-        <are-packages-shown value="false" />
-        <are-modules-shown value="false" />
-        <flatten-packages value="false" />
-        <is-autoscroll-to-source value="false" />
-      </value>
+      <TodoPanelSettings />
     </option>
-    <option name="PERFORM_UPDATE_IN_BACKGROUND" value="true" />
-    <option name="PERFORM_COMMIT_IN_BACKGROUND" value="true" />
-    <option name="PERFORM_EDIT_IN_BACKGROUND" value="true" />
-    <option name="PERFORM_CHECKOUT_IN_BACKGROUND" value="true" />
-    <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
-    <option name="PERFORM_ROLLBACK_IN_BACKGROUND" value="false" />
-    <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="false" />
-    <option name="CHANGED_ON_SERVER_INTERVAL" value="60" />
-    <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
-    <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
-    <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
-    <option name="SHORT_DIFF_HORIZONTALLY" value="true" />
-    <option name="SHORT_DIFF_EXTRA_LINES" value="2" />
-    <option name="SOFT_WRAPS_IN_SHORT_DIFF" value="true" />
-    <option name="INCLUDE_TEXT_INTO_PATCH" value="false" />
-    <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
-    <option name="SHOW_FILE_HISTORY_DETAILS" value="true" />
-    <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
-    <option name="SHOW_DIRTY_RECURSIVELY" value="false" />
-    <option name="LIMIT_HISTORY" value="true" />
-    <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
-    <option name="UPDATE_FILTER_SCOPE_NAME" />
-    <option name="USE_COMMIT_MESSAGE_MARGIN" value="false" />
-    <option name="COMMIT_MESSAGE_MARGIN_SIZE" value="72" />
-    <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
-    <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" />
-    <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
-    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
-    <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
-    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
-    <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
-    <option name="FILE_HISTORY_DIALOG_COMMENTS_SPLITTER_PROPORTION" value="0.8" />
-    <option name="FILE_HISTORY_DIALOG_SPLITTER_PROPORTION" value="0.5" />
-    <option name="ACTIVE_VCS_NAME" />
-    <option name="UPDATE_GROUP_BY_PACKAGES" value="false" />
-    <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
-    <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
-    <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
-    <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -496,63 +1002,60 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/nest5data/DeviceOpsController.groovy">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state line="47" column="27" selection-start="1584" selection-end="1584" vertical-scroll-proportion="0.0">
+=======
+        <state line="215" column="11" selection-start="9252" selection-end="9252" vertical-scroll-proportion="0.0" vertical-offset="3655" max-vertical-offset="4403">
+>>>>>>> 2435289a374157a399159d433937d69997e65ef7
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/conf/DataSource.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="63" column="86" selection-start="2169" selection-end="2169" vertical-scroll-proportion="0.0" vertical-offset="765" max-vertical-offset="1292">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/nest5data/DatabaseOpsController.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/nest5data/DatabaseOpsController.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/nest5data/DatabaseOpsController.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/nest5data/DatabaseOpsController.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/nest5data/DatabaseOpsController.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/nest5data/DatabaseOpsController.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="385" column="31" selection-start="18359" selection-end="18359" vertical-scroll-proportion="0.0">
+        <state line="234" column="29" selection-start="10816" selection-end="10816" vertical-scroll-proportion="0.0" vertical-offset="3978" max-vertical-offset="9299">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/nest5data/RowOpsController.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="65" column="35" selection-start="2886" selection-end="2886" vertical-scroll-proportion="0.0">
+        <state line="46" column="0" selection-start="1956" selection-end="1956" vertical-scroll-proportion="0.0" vertical-offset="782" max-vertical-offset="5576">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/domain/com/nest5data/Company.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="35" selection-start="443" selection-end="443" vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="697" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/conf/BuildConfig.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="67" column="13" selection-start="3226" selection-end="3226" vertical-scroll-proportion="0.0" vertical-offset="1139" max-vertical-offset="1632">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/conf/Config.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="92" column="56" selection-start="4075" selection-end="4075" vertical-scroll-proportion="0.0" vertical-offset="1564" max-vertical-offset="2584">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/domain/com/nest5data/Device.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="6" selection-start="61" selection-end="61" vertical-scroll-proportion="0.11564626" />
+        <state line="24" column="0" selection-start="393" selection-end="393" vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="510">
+          <folding />
+        </state>
       </provider>
       <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
         <state />
@@ -560,11 +1063,184 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/nest5data/DeviceOpsController.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="27" selection-start="1584" selection-end="1584" vertical-scroll-proportion="0.0">
+        <state line="82" column="37" selection-start="3052" selection-end="3052" vertical-scroll-proportion="0.0" vertical-offset="1394" max-vertical-offset="3893">
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/conf/DataSource.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="63" column="86" selection-start="2169" selection-end="2169" vertical-scroll-proportion="0.0" vertical-offset="765" max-vertical-offset="1292">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/nest5data/DatabaseOpsController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="234" column="29" selection-start="10816" selection-end="10816" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="9299">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/nest5data/RowOpsController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="0" selection-start="1956" selection-end="1956" vertical-scroll-proportion="0.0" vertical-offset="782" max-vertical-offset="5576">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/nest5data/DatabaseOpsController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+=======
+    <entry file="file://$PROJECT_DIR$/grails-app/domain/com/nest5data/Company.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="35" selection-start="443" selection-end="443" vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="697" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/conf/BuildConfig.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="71" column="13" selection-start="3319" selection-end="3319" vertical-scroll-proportion="0.0" vertical-offset="913" max-vertical-offset="1632">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/conf/Config.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="100" column="63" selection-start="4393" selection-end="4397" vertical-scroll-proportion="0.0" vertical-offset="1700" max-vertical-offset="2584">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/domain/com/nest5data/Device.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="0" selection-start="393" selection-end="393" vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="510">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/nest5data/DeviceOpsController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="82" column="37" selection-start="3052" selection-end="3052" vertical-scroll-proportion="0.0" vertical-offset="1394" max-vertical-offset="3893">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/conf/DataSource.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="63" column="86" selection-start="2169" selection-end="2169" vertical-scroll-proportion="0.0" vertical-offset="765" max-vertical-offset="1292">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/nest5data/DatabaseOpsController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="234" column="29" selection-start="10816" selection-end="10816" vertical-scroll-proportion="0.0" vertical-offset="3978" max-vertical-offset="9299">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/nest5data/RowOpsController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="233" column="12" selection-start="14428" selection-end="14428" vertical-scroll-proportion="0.0" vertical-offset="3961" max-vertical-offset="5576">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/domain/com/nest5data/Company.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="29" selection-start="355" selection-end="355" vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="697" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/domain/com/nest5data/Device.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="20" selection-start="168" selection-end="179" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="510">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/conf/Config.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="100" column="40" selection-start="4374" selection-end="4374" vertical-scroll-proportion="0.0" vertical-offset="1700" max-vertical-offset="2584">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/nest5data/DeviceOpsController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="219" column="5" selection-start="9353" selection-end="9353" vertical-scroll-proportion="0.0" vertical-offset="3723" max-vertical-offset="3893">
+>>>>>>> 2435289a374157a399159d433937d69997e65ef7
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/nest5data/DatabaseOpsController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state line="385" column="31" selection-start="18359" selection-end="18359" vertical-scroll-proportion="0.0">
+=======
+        <state line="234" column="29" selection-start="10816" selection-end="10816" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="9299">
+>>>>>>> 2435289a374157a399159d433937d69997e65ef7
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/nest5data/RowOpsController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state line="65" column="35" selection-start="2886" selection-end="2886" vertical-scroll-proportion="0.0">
+=======
+        <state line="233" column="12" selection-start="14428" selection-end="14428" vertical-scroll-proportion="0.0" vertical-offset="3961" max-vertical-offset="5576">
+>>>>>>> 2435289a374157a399159d433937d69997e65ef7
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/domain/com/nest5data/Company.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="8" selection-start="411" selection-end="438" vertical-scroll-proportion="0.0" vertical-offset="3" max-vertical-offset="697" />
+      </provider>
+      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/domain/com/nest5data/Device.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state line="4" column="6" selection-start="61" selection-end="61" vertical-scroll-proportion="0.11564626" />
+=======
+        <state line="10" column="20" selection-start="168" selection-end="179" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="510">
+          <folding />
+        </state>
+>>>>>>> 2435289a374157a399159d433937d69997e65ef7
+      </provider>
+      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/conf/Config.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="100" column="40" selection-start="4374" selection-end="4374" vertical-scroll-proportion="0.0" vertical-offset="1700" max-vertical-offset="2584">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/nest5data/DeviceOpsController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state line="47" column="27" selection-start="1584" selection-end="1584" vertical-scroll-proportion="0.0">
+=======
+        <state line="219" column="5" selection-start="9353" selection-end="9353" vertical-scroll-proportion="0.0" vertical-offset="3360" max-vertical-offset="3893">
+>>>>>>> 2435289a374157a399159d433937d69997e65ef7
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/nest5data/SpecialController.groovy">
       <provider selected="true" editor-type-id="text-editor">
         <state line="20" column="58" selection-start="788" selection-end="788" vertical-scroll-proportion="0.53654486" />
@@ -573,34 +1249,162 @@
     <entry file="file://$PROJECT_DIR$/grails-app/conf/UrlMappings.groovy">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="49" selection-start="266" selection-end="266" vertical-scroll-proportion="0.29310346">
+=======
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/nest5data/DatabaseOpsController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="385" column="29" selection-start="18359" selection-end="18359" vertical-scroll-proportion="0.0" vertical-offset="6545" max-vertical-offset="9282">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/conf/Config.groovy">
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/nest5data/RowOpsController.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="100" column="40" selection-start="4374" selection-end="4374" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/conf/BuildConfig.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="60" selection-start="1191" selection-end="1191" vertical-scroll-proportion="0.0">
+        <state line="65" column="35" selection-start="2886" selection-end="2886" vertical-scroll-proportion="0.0" vertical-offset="1105" max-vertical-offset="4352">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/conf/DataSource.groovy">
       <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="16" selection-start="1265" selection-end="1265" vertical-scroll-proportion="0.0" vertical-offset="765" max-vertical-offset="1071">
+>>>>>>> 2435289a374157a399159d433937d69997e65ef7
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/conf/Config.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="100" column="40" selection-start="4374" selection-end="4374" vertical-scroll-proportion="0.0" vertical-offset="1700" max-vertical-offset="2584">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/grails-app/conf/BuildConfig.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="60" selection-start="1191" selection-end="1191" vertical-scroll-proportion="0.0">
+=======
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/nest5data/DeviceOpsController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="17" selection-start="1584" selection-end="1584" vertical-scroll-proportion="0.0" vertical-offset="799" max-vertical-offset="3383">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/nest5data/DatabaseOpsController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/nest5data/DatabaseOpsController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/nest5data/DatabaseOpsController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/nest5data/DatabaseOpsController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
+>>>>>>> 2435289a374157a399159d433937d69997e65ef7
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/grails-app/conf/DataSource.groovy">
+      <provider selected="true" editor-type-id="text-editor">
         <state line="45" column="19" selection-start="1251" selection-end="1251" vertical-scroll-proportion="0.0">
+=======
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/nest5data/DatabaseOpsController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/nest5data/SpecialController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="58" selection-start="788" selection-end="788" vertical-scroll-proportion="0.53654486" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/conf/UrlMappings.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="49" selection-start="266" selection-end="266" vertical-scroll-proportion="0.29310346" vertical-offset="0" max-vertical-offset="0">
+>>>>>>> 2435289a374157a399159d433937d69997e65ef7
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/nest5data/DatabaseOpsController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state line="17" column="4" selection-start="330" selection-end="383" vertical-scroll-proportion="0.54770994">
+=======
+        <state line="234" column="29" selection-start="10816" selection-end="10816" vertical-scroll-proportion="0.0" vertical-offset="3978" max-vertical-offset="9299">
+>>>>>>> 2435289a374157a399159d433937d69997e65ef7
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/domain/com/nest5data/DataRow.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="6" selection-start="61" selection-end="61" vertical-scroll-proportion="0.13682093" vertical-offset="0" max-vertical-offset="527" />
+      </provider>
+      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/conf/Config.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="102" column="1" selection-start="4415" selection-end="4415" vertical-scroll-proportion="0.0" vertical-offset="1377" max-vertical-offset="2584">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/nest5data/RowOpsController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="64" column="61" selection-start="2825" selection-end="2825" vertical-scroll-proportion="0.0" vertical-offset="1088" max-vertical-offset="6953">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/domain/com/nest5data/Company.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="4" selection-start="330" selection-end="383" vertical-scroll-proportion="0.54770994">
+        <state line="19" column="22" selection-start="407" selection-end="407" vertical-scroll-proportion="0.7324263" vertical-offset="0" max-vertical-offset="731" />
+      </provider>
+      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
+        <state />
+      </provider>
+    </entry>
+<<<<<<< HEAD
+=======
+    <entry file="file://$PROJECT_DIR$/grails-app/conf/DataSource.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="2" selection-start="111" selection-end="111" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1343">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/conf/BuildConfig.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="80" column="26" selection-start="3955" selection-end="3955" vertical-scroll-proportion="0.0" vertical-offset="992" max-vertical-offset="1734">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/domain/com/nest5data/Device.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="21" selection-start="283" selection-end="283" vertical-scroll-proportion="-11.086957" vertical-offset="0" max-vertical-offset="544">
           <folding />
         </state>
       </provider>
@@ -608,6 +1412,14 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/nest5data/DeviceOpsController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="300" column="29" selection-start="12840" selection-end="12840" vertical-scroll-proportion="0.63785046" vertical-offset="4708" max-vertical-offset="6052">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+>>>>>>> 2435289a374157a399159d433937d69997e65ef7
   </component>
   <component name="grailsSettings">
     <option name="map">
@@ -615,14 +1427,14 @@
         <entry key="Nest5BusinessData">
           <value>
             <GrailsSettings>
-              <option name="buildConfigCrc" value="-1660289829" />
-              <option name="pluginDependenciesCrc" value="162010865" />
+              <option name="buildConfigCrc" value="380386319" />
+              <option name="pluginDependenciesCrc" value="-1897457409" />
               <option name="properties">
                 <map>
-                  <entry key="grails.global.plugins.dir" value="C:\Users\Juandavid\.grails\2.3.5\global-plugins" />
+                  <entry key="grails.global.plugins.dir" value="C:\Users\Juanda\.grails\2.3.7\global-plugins" />
                   <entry key="grails.project.plugins.dir" value="target\work\plugins" />
                   <entry key="grails.project.work.dir" value="target\work" />
-                  <entry key="grails.work.dir" value="C:\Users\Juandavid\.grails\2.3.5" />
+                  <entry key="grails.work.dir" value="C:\Users\Juanda\.grails\2.3.7" />
                 </map>
               </option>
             </GrailsSettings>
@@ -635,6 +1447,81 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>GrailsWeb (Nest5BusinessData)|Web</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>grails-2.3.7</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.7</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>Nest5BusinessData</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>
 
