@@ -18,7 +18,7 @@ environments {
                     port = 27017
                     username = ""
                     password=""
-                    databaseName = "nest5BigData"
+                    databaseName = "ayJue"
                 }
             }
 
@@ -29,7 +29,7 @@ environments {
             dbCreate = "update"
             driverClassName = "org.postgresql.Driver"
             dialect = "org.hibernate.dialect.PostgreSQLDialect"
-            url = "jdbc:postgresql://localhost:5432/nest5BigDataTrans"
+            url = "jdbc:postgresql://localhost:5432/ayJueTrans"
             username = "postgres"
             password = "qtagtech"
         }
@@ -49,7 +49,7 @@ environments {
                 port = System.env.OPENSHIFT_MONGODB_DB_PORT
                 username = "admin"
                 password="YmIY6mDMasGt"
-                databaseName = "bigdata"
+                databaseName = "ayJue"
             }
         }
 
