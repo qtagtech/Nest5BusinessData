@@ -144,3 +144,5 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	'/**/favicon.ico':                ['permitAll']
 ]
 
+app.timezone = "America/Bogota"
+

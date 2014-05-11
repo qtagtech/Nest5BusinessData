@@ -35,6 +35,7 @@ class DeviceOpsController {
             return
         }
         def company = received?.company
+        println "La compania es la "+company
         //check company existance in remote Operational RDBMS database, there should be a local copy of all companies.
         //there should be a Company model for matching the received id to it and getting a company object, for now any id will do it
         if(!company){
@@ -74,7 +75,10 @@ class DeviceOpsController {
                 return
             }
         }
-        def com = Company.findByGlobal_id(company as Long) //aca es el error, linea 77
+        def com = Company.findByGlobal_id(company as Long)
+        if(!com){
+            com = Company.findByUsername(jsonData?.company?.username?.trim()) //aca es el error, linea 77
+        }
         if(!com){
 
             if(!jsonData){
@@ -121,33 +125,37 @@ class DeviceOpsController {
                     telephone: jsonData.company.telephone,
                     invoiceMessage: jsonData.company.invoiceMessage,
                     tipMessage: jsonData.company.tipMessage,
-                    categoy: category).save(flush: true)
+                    categoy: category)
 
-            def companyRole = SecRole.findByAuthority('ROLE_COMPANY') ?: new SecRole(authority: 'ROLE_COMPANY').save(failOnError: true)
-            if (!com.authorities.contains(companyRole)) {
-                SecUserSecRole.create com, companyRole
+            if(!com.save()){
+                println com.errors.allErrors
             }
-
         }else{
             //update values
-            com.properties = [
-                    email:  jsonData.company.email,
-                    address: jsonData.company.address,
-                    contactName: jsonData.company.contactName,
-                    global_id: jsonData.company.id,
-                    logo: jsonData.company.logo,
-                    name: jsonData.company.name,
-                    nit: jsonData.company.nit,
-                    url: jsonData.company.url,
-                    telephone: jsonData.company.telephone,
-                    invoiceMessage: jsonData.company.invoiceMessage,
-                    tipMessage: jsonData.company.tipMessage]
+            if(jsonData?.company){
+                com.email =  jsonData?.company?.email
+                com.address = jsonData?.company?.address
+                com.contactName = jsonData?.company?.contactName
+                com.global_id = jsonData?.company?.id
+                println "el id de la compania es "+jsonData?.company?.id
+                com.logo = jsonData?.company?.logo
+                com.name = jsonData?.company?.name
+                com.nit = jsonData?.company?.nit
+                com.url = jsonData?.company?.url
+                com.telephone = jsonData?.company?.telephone
+                com.invoiceMessage = jsonData?.company?.invoiceMessage
+                com.tipMessage = jsonData?.company?.tipMessage
+            }
+
 
             if(!com.save(flush:true))
                 println com.errors.allErrors
 
         }
-
+        def companyRole = SecRole.findByAuthority('ROLE_COMPANY') ?: new SecRole(authority: 'ROLE_COMPANY').save(failOnError: true)
+        if (!com.authorities.contains(companyRole)) {
+            SecUserSecRole.create com, companyRole
+        }
 
 
 
@@ -172,7 +180,7 @@ class DeviceOpsController {
             return
         }
         response.setStatus(200)
-        result = [status: 200, code: 555,message: 'Device successfully registered to company',minSale: 0,maxSale: 0, currentSale: 0,prefix: " ",resolution: " ",nit: com.nit, tel: com.telephone,address: com.address, name: com.name, email: com.email,url: com.url,invoiceMessage: com.invoiceMessage,tipMessage: com.tipMessage]
+        result = [status: 200, code: 555,message: 'Device successfully registered to company',minSale: 0,maxSale: 0, currentSale: 0,prefix: " ",resolution: " ",nit: com?.nit, tel: com?.telephone,address: com?.address, name: com?.name, email: com?.email,url: com?.url,invoiceMessage: com?.invoiceMessage,tipMessage: com?.tipMessage]
         render result as JSON
         return
 
