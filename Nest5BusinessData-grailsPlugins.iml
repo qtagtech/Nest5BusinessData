@@ -18,7 +18,6 @@
           <unit-entry name="Gorm" />
           <unit-entry name="sessionFactory" />
         </datasource-map>
-        <naming-strategy-map />
       </configuration>
     </facet>
   </component>
@@ -101,7 +100,6 @@
           <root url="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-jasper/7.0.52/tomcat-embed-jasper-7.0.52.jar!/" />
           <root url="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/tomcat-catalina-ant/7.0.52/tomcat-catalina-ant-7.0.52.jar!/" />
           <root url="jar://$MAVEN_REPOSITORY$/org/grails/grails-datastore-gorm-hibernate-core/3.0.3.RELEASE/grails-datastore-gorm-hibernate-core-3.0.3.RELEASE.jar!/" />
-          <root url="jar://$MAVEN_REPOSITORY$/org/postgresql/postgresql/9.2-1004-jdbc4/postgresql-9.2-1004-jdbc4.jar!/" />
           <root url="jar://$MAVEN_REPOSITORY$/org/grails/grails-datastore-gorm-hibernate4/3.0.3.RELEASE/grails-datastore-gorm-hibernate4-3.0.3.RELEASE.jar!/" />
           <root url="jar://$MAVEN_REPOSITORY$/org/jboss/logging/jboss-logging/3.1.0.GA/jboss-logging-3.1.0.GA.jar!/" />
           <root url="jar://$MAVEN_REPOSITORY$/com/fasterxml/classmate/1.0.0/classmate-1.0.0.jar!/" />
@@ -121,6 +119,7 @@
           <root url="jar://$MAVEN_REPOSITORY$/org/grails/grails-datastore-gorm-mongodb/2.0.1.RELEASE/grails-datastore-gorm-mongodb-2.0.1.RELEASE.jar!/" />
           <root url="jar://$MAVEN_REPOSITORY$/org/grails/grails-datastore-core/3.0.4.RELEASE/grails-datastore-core-3.0.4.RELEASE.jar!/" />
           <root url="jar://$MAVEN_REPOSITORY$/org/grails/grails-datastore-gorm/3.0.4.RELEASE/grails-datastore-gorm-3.0.4.RELEASE.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/org/postgresql/postgresql/9.2-1004-jdbc4/postgresql-9.2-1004-jdbc4.jar!/" />
           <root url="jar://$MAVEN_REPOSITORY$/org/grails/grails-datastore-simple/3.0.4.RELEASE/grails-datastore-simple-3.0.4.RELEASE.jar!/" />
         </CLASSES>
         <JAVADOC />

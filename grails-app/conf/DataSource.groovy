@@ -21,7 +21,7 @@ environments {
                     port = 27017
                     username = ""
                     password=""
-                    databaseName = "ayJue"
+                    databaseName = "newNest5DB"
                 }
             }
 
@@ -32,7 +32,7 @@ environments {
             dbCreate = "update"
             driverClassName = "org.postgresql.Driver"
             dialect = "org.hibernate.dialect.PostgreSQLDialect"
-            url = "jdbc:postgresql://localhost:5432/ayJueTrans"
+            url = "jdbc:postgresql://localhost:5432/newNest5"
             username = "postgres"
             password = "qtagtech"
         }
