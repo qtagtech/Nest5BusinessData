@@ -60,6 +60,7 @@ grails.project.dependency.resolution = {
         compile 'org.codehaus.jackson:jackson-mapper-asl:1.8.1'
         compile 'com.amazonaws:aws-java-sdk:1.5.0'
         compile 'org.eclipse.birt.runtime.3_7_1:org.apache.commons.codec:jar:1.3.0'
+        compile 'joda-time:joda-time:2.3'
         compile 'commons-logging:commons-logging:jar:1.1'
         compile 'org.grails:grails-datastore-gorm:3.0.4.RELEASE'
         compile 'org.grails:grails-datastore-core:3.0.4.RELEASE'
