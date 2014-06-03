@@ -52,7 +52,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/templates/Authority.groovy.template" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/templates/Authority.groovy.template" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/authentication/encoding/BCryptPasswordEncoder.java" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/authentication/encoding/BCryptPasswordEncoder.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/grails-app/resourceMappers/org/grails/plugin/resource/BaseUrlResourceMapper.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/grails-app/resourceMappers/org/grails/plugin/resource/BaseUrlResourceMapper.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/conf/BuildConfig.groovy" afterPath="$PROJECT_DIR$/grails-app/conf/BuildConfig.groovy" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/grails-app/resourceMappers/org/grails/plugin/resource/BundleResourceMapper.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/grails-app/resourceMappers/org/grails/plugin/resource/BundleResourceMapper.groovy" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/groovy/org/grails/plugin/resource/CSSBundleResourceMeta.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/groovy/org/grails/plugin/resource/CSSBundleResourceMeta.groovy" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/groovy/org/grails/plugin/resource/CSSLinkProcessor.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/groovy/org/grails/plugin/resource/CSSLinkProcessor.groovy" />
@@ -63,7 +62,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/access/vote/ClosureConfigAttribute.java" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/access/vote/ClosureConfigAttribute.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/access/vote/ClosureVoter.java" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/access/vote/ClosureVoter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/web/authentication/preauth/x509/ClosureX509PrincipalExtractor.java" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/web/authentication/preauth/x509/ClosureX509PrincipalExtractor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/conf/Config.groovy" afterPath="$PROJECT_DIR$/grails-app/conf/Config.groovy" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/scaffolding-2.0.1/src/templates/scaffolding/Controller.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/scaffolding-2.0.1/src/templates/scaffolding/Controller.groovy" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/scaffolding-2.0.1/scripts/CreateScaffoldController.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/scaffolding-2.0.1/scripts/CreateScaffoldController.groovy" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/webxml-1.4.1/scripts/CreateWebXmlConfig.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/webxml-1.4.1/scripts/CreateWebXmlConfig.groovy" />
@@ -83,7 +81,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/grails-app/conf/DefaultSecurityConfig.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/grails-app/conf/DefaultSecurityConfig.groovy" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/web/access/DefaultThrowableAnalyzer.java" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/web/access/DefaultThrowableAnalyzer.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/groovy/org/grails/plugin/resource/DevModeSanityFilter.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/groovy/org/grails/plugin/resource/DevModeSanityFilter.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/controllers/com/nest5data/DeviceOpsController.groovy" afterPath="$PROJECT_DIR$/grails-app/controllers/com/nest5data/DeviceOpsController.groovy" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/authentication/encoding/DigestAuthPasswordEncoder.java" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/authentication/encoding/DigestAuthPasswordEncoder.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/groovy/org/grails/plugin/resource/util/DispositionsUtils.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/resources-1.2.1/src/groovy/org/grails/plugin/resource/util/DispositionsUtils.groovy" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/scaffolding-2.0.1/src/java/org/codehaus/groovy/grails/scaffolding/DomainClassPropertyComparator.java" afterPath="$PROJECT_DIR$/target/work/plugins/scaffolding-2.0.1/src/java/org/codehaus/groovy/grails/scaffolding/DomainClassPropertyComparator.java" />
@@ -144,8 +141,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/web/authentication/logout/MutableLogoutFilter.java" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/web/authentication/logout/MutableLogoutFilter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/database-migration-1.3.8/src/groovy/grails/plugin/databasemigration/MySQLCompatibleChangeLogSerializer.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/database-migration-1.3.8/src/groovy/grails/plugin/databasemigration/MySQLCompatibleChangeLogSerializer.groovy" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/database-migration-1.3.8/src/groovy/grails/plugin/databasemigration/MysqlAwareCreateTableGenerator.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/database-migration-1.3.8/src/groovy/grails/plugin/databasemigration/MysqlAwareCreateTableGenerator.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Nest5BusinessData-grailsPlugins.iml" afterPath="$PROJECT_DIR$/Nest5BusinessData-grailsPlugins.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Nest5BusinessData.iml" afterPath="$PROJECT_DIR$/Nest5BusinessData.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/userdetails/NoStackUsernameNotFoundException.java" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/userdetails/NoStackUsernameNotFoundException.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/database-migration-1.3.8/src/groovy/grails/plugin/databasemigration/NoopVisitor.groovy" afterPath="$PROJECT_DIR$/target/work/plugins/database-migration-1.3.8/src/groovy/grails/plugin/databasemigration/NoopVisitor.groovy" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/access/intercept/NullAfterInvocationManager.java" afterPath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC2/src/java/grails/plugin/springsecurity/access/intercept/NullAfterInvocationManager.java" />
@@ -336,7 +331,7 @@
       <file leaf-file-name="DatabaseOpsController.groovy" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/nest5data/DatabaseOpsController.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="234" column="133" selection-start="10105" selection-end="10105" vertical-scroll-proportion="0.42429283" vertical-offset="3723" max-vertical-offset="23358">
+            <state line="394" column="99" selection-start="19832" selection-end="19832" vertical-scroll-proportion="0.38069215" vertical-offset="6489" max-vertical-offset="23528">
               <folding>
                 <element signature="e#23#55#0" expanded="true" />
               </folding>
@@ -391,6 +386,9 @@
       </file>
       <file leaf-file-name="Company.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/domain/com/nest5data/Company.groovy">
+          <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
+            <state />
+          </provider>
           <provider selected="true" editor-type-id="text-editor">
             <state line="15" column="18" selection-start="325" selection-end="325" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="731">
               <folding />
@@ -763,11 +761,13 @@
       <workItem from="1398693483558" duration="16267000" />
       <workItem from="1399299584391" duration="8935000" />
       <workItem from="1399765888491" duration="784000" />
+      <workItem from="1399857137189" duration="568000" />
+      <workItem from="1401139238764" duration="4013000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="158021000" />
+    <option name="totallyTimeSpent" value="162602000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -782,7 +782,7 @@
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2565104" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Console" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13671875" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.171875" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -861,13 +861,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/domain/com/nest5data/Device.groovy">
+      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state line="24" column="0" selection-start="393" selection-end="393" vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="510">
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/nest5data/DeviceOpsController.groovy">
@@ -920,13 +920,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/domain/com/nest5data/Device.groovy">
+      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state line="24" column="0" selection-start="393" selection-end="393" vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="510">
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/nest5data/DeviceOpsController.groovy">
@@ -1002,21 +1002,21 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/domain/com/nest5data/Company.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="8" selection-start="411" selection-end="438" vertical-scroll-proportion="0.0" vertical-offset="3" max-vertical-offset="697" />
-      </provider>
       <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
         <state />
       </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="8" selection-start="411" selection-end="438" vertical-scroll-proportion="0.0" vertical-offset="3" max-vertical-offset="697" />
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/domain/com/nest5data/Device.groovy">
+      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="20" selection-start="168" selection-end="179" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="510">
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/conf/Config.groovy">
@@ -1140,13 +1140,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/domain/com/nest5data/Company.groovy">
+      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="18" selection-start="325" selection-end="325" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="731">
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/conf/Config.groovy">
@@ -1157,23 +1157,23 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/domain/com/nest5data/DataRow.groovy">
+      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state line="17" column="33" selection-start="458" selection-end="458" vertical-scroll-proportion="0.0" vertical-offset="289" max-vertical-offset="527">
           <folding />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/domain/com/nest5data/Device.groovy">
       <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/domain/com/nest5data/Device.groovy">
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="21" selection-start="283" selection-end="283" vertical-scroll-proportion="0.36743516" vertical-offset="0" max-vertical-offset="694">
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/conf/BuildConfig.groovy">
@@ -1190,13 +1190,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/conf/DataSource.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="25" selection-start="1995" selection-end="1995" vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="1343">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/nest5data/RowOpsController.groovy">
       <provider selected="true" editor-type-id="text-editor">
         <state line="80" column="147" selection-start="4018" selection-end="4018" vertical-scroll-proportion="0.0" vertical-offset="1360" max-vertical-offset="6953">
@@ -1204,9 +1197,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/conf/DataSource.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="62" column="25" selection-start="1995" selection-end="1995" vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="1343">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/nest5data/DatabaseOpsController.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="234" column="133" selection-start="10105" selection-end="10105" vertical-scroll-proportion="0.42429283" vertical-offset="3723" max-vertical-offset="23358">
+        <state line="394" column="99" selection-start="19832" selection-end="19832" vertical-scroll-proportion="0.38069215" vertical-offset="6489" max-vertical-offset="23528">
           <folding>
             <element signature="e#23#55#0" expanded="true" />
           </folding>

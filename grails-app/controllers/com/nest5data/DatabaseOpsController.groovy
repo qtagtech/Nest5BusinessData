@@ -276,8 +276,13 @@ class DatabaseOpsController {
                                     }
                                     else{
 
-                                        if( isNumeric(it.getValue() as String))
-                                            values +=it.getValue()+","
+                                        if( isNumeric(it.getValue() as String)){
+                                            if((it.getValue() != Double.NaN) && (it.getValue()!= "NaN"))
+                                                values +=it.getValue()+","
+                                            else
+                                                values += "0,"
+                                        }
+
                                         else
                                             values +="'"+it.getValue()+"',"
 
@@ -386,8 +391,13 @@ class DatabaseOpsController {
                                     if(i != 0 )
                                         str.append(",\n")
                                     def val
-                                    if( isNumeric(it.getValue() as String))
-                                        val = it.getValue()
+                                    if( isNumeric(it.getValue() as String)){
+                                        if((it.getValue() != Double.NaN) && (it.getValue()!= "NaN"))
+                                            val = it.getValue()
+                                        else
+                                            val = 0
+                                    }
+
                                     else
                                         val ="'"+it.getValue()+"'"
                                     str.append(it.getKey()+" = "+val)
