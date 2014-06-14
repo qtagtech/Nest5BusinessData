@@ -27,8 +27,6 @@ environments {
 
 
         dataSource_trans {
-            //dbCreate = "create-drop" // one of 'create', 'create-drop', 'update', 'validate', ''
-            //url = "jdbc:h2:mem:devDb;MVCC=TRUE"
             dbCreate = "update"
             driverClassName = "org.postgresql.Driver"
             dialect = "org.hibernate.dialect.PostgreSQLDialect"
@@ -40,10 +38,30 @@ environments {
 
     }
     test {
-        dataSource {
-            dbCreate = "update"
-            url = "jdbc:h2:mem:testDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE"
+
+        grails {
+            mongo {
+                host = System.env.OPENSHIFT_MONGODB_DB_HOST
+                port = System.env.OPENSHIFT_MONGODB_DB_PORT
+                username = "admin"
+                password="YmIY6mDMasGt"
+                databaseName = "ayJue"
+            }
         }
+
+
+        dataSource_trans {
+            dbCreate = "update"
+            driverClassName = "org.postgresql.Driver"
+            dialect = "org.hibernate.dialect.PostgreSQLDialect"
+            host = System.env.OPENSHIFT_POSTGRESQL_DB_HOST
+            port = System.env.OPENSHIFT_POSTGRESQL_DB_PORT
+            url = "jdbc:postgresql://"+host+":"+port+"/"+System.env.OPENSHIFT_APP_NAME
+            username = System.env.OPENSHIFT_POSTGRESQL_DB_USERNAME
+            password = System.env.OPENSHIFT_POSTGRESQL_DB_PASSWORD
+        }
+
+
     }
     production {
         grails {
@@ -56,12 +74,9 @@ environments {
             }
         }
         dataSource_trans {
-            //dbCreate = "create-drop" // one of 'create', 'create-drop', 'update', 'validate', ''
-            //url = "jdbc:h2:mem:devDb;MVCC=TRUE"
             dbCreate = "update"
             driverClassName = "org.postgresql.Driver"
-            dialect = org.hibernate.dialect.PostgreSQLDialect
-            //uri = new URI(System.env.OPENSHIFT_POSTGRESQL_DB_URL ?: "http://localhost:5432")
+            dialect = "org.hibernate.dialect.PostgreSQLDialect"
             host = System.env.OPENSHIFT_POSTGRESQL_DB_HOST
             port = System.env.OPENSHIFT_POSTGRESQL_DB_PORT
             url = "jdbc:postgresql://"+host+":"+port+"/"+System.env.OPENSHIFT_APP_NAME

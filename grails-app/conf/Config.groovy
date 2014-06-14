@@ -94,9 +94,15 @@ environments {
         com.nest5.BusinessData.Nest5APIServerURL = "http://localhost:8092"
 
     }
+    test {
+        grails.logging.jul.usebridge = true
+        com.nest5.BusinessData.database = "bigdatastaging"
+        com.nest5.BusinessData.Nest5APIServerURL = "http://apistaging.nest5.com"
+
+    }
     production {
         grails.logging.jul.usebridge = false
-        // TODO: grails.serverURL = "http://www.changeme.com"
+        grails.serverURL = "http://bigdata.nest5.com"
         com.nest5.BusinessData.database = "bigdata"
         com.nest5.BusinessData.Nest5APIServerURL = "http://api.nest5.com"
     }
