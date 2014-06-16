@@ -3,6 +3,7 @@ package com.nest5data
 import com.mongodb.BasicDBObject
 import grails.converters.JSON
 import grails.plugin.springsecurity.annotation.Secured
+import grails.transaction.Transactional
 import groovyx.net.http.HTTPBuilder
 import static groovyx.net.http.ContentType.TEXT
 import static groovyx.net.http.Method.GET
@@ -19,6 +20,7 @@ class RowOpsController {
         return
     }
 
+    @Transactional
     def rowReceived(){
         /*
         We have received a row of data, it may be an Insert, update or delete of any table and in any client.
@@ -67,7 +69,15 @@ class RowOpsController {
         def db = mongo.getDB(grailsApplication.config.com.nest5.BusinessData.database)
         def device
         if(received.device_id == "DdLrWE6UPLM0uYhSlUO7"){ //web device, check if it is already registered or if not and return it, if null, get it as before
-            device = registerDevice(params)
+            if(registerDevice(params)) {
+                device = Device.collection.findOne("uid":received?.device_id,"company":params.company as Long)
+                if(!device){
+                    device = new Device(uid: received?.device_id, company: params.company as Long,registeredOn: new Date(),minSale: 0, maxSale: 0,currentSale: 0,prefix: " ",resolution: " ")
+                    if(!device.save()){
+                        return null
+                    }
+                }
+            }
         }
         if(!device) //it is not a web device so try getting the device by id since it has uniue id as it is a mobile device
             device = Device.collection.findOne('uid':received.device_id)
@@ -81,12 +91,12 @@ class RowOpsController {
         if(received.sync_id as Long == 0){//This means it's a new insert, since it doesn't have common id through all devices. nothing else should be done but save it and generate an id that should be returned to the client to update
             //println"aca1"
             def rowHash = received?.fields?.encodeAsMD5()
-
             def sync_id = randomNumber() //it gets a random number, if the number already exists in the database the function is going to return 0 so it will cycle the while until it gets a number different from 0L
             while(sync_id == 0L){
                 sync_id = randomNumber()
             }
-            db.dataRow.insert('table': received.table, 'rowId': received.row_id,'timeCreated': timeCreated,'timeReceived': new Date(),fields: received.fields,'hashKey': rowHash,'device': device.id, 'isDeleted': false,'syncId': sync_id)
+          db.dataRow.insert('table': received.table, 'rowId': received.row_id,'timeCreated': timeCreated,'timeReceived': new Date(),fields: received.fields,'hashKey': rowHash,'device': device._id, 'isDeleted': false,'syncId': sync_id)
+
             //check if it is a sale, if yes, update currentSale value in device
             //update device's lastupdated field everything in try catch to avoid conflicts
             try{
@@ -105,7 +115,7 @@ class RowOpsController {
             }catch (Exception e){
                 //println"aca3"
                 //println"error actualizando device"
-                println e
+                e.printStackTrace()
             }
 
             response.setStatus(201)//new object created
@@ -117,7 +127,7 @@ class RowOpsController {
         def deleting = received.is_delete ? true : false
         if(deleting){
             //println"aca4"//the device sent a delete request with all the properties except for the fields (blank values). the server should soft-delete it. The deleted flag is true since the element wont be available to any device from now on
-            db.dataRow.insert('table': received.table, 'rowId': received.row_id,'timeCreated': timeCreated,'timeReceived': new Date(),fields: null,'hashKey': 'N/A','device': device.id, 'isDeleted': true,'syncId': received.sync_id as Long,syncRow: syncRow)
+            db.dataRow.insert('table': received.table, 'rowId': received.row_id,'timeCreated': timeCreated,'timeReceived': new Date(),fields: null,'hashKey': 'N/A','device': device._id, 'isDeleted': true,'syncId': received.sync_id as Long,syncRow: syncRow)
             //set isDeleted flag on previous existent element (if any) to true
             def previousResults = DataRow.withCriteria {
                 def now = new Date()
@@ -175,7 +185,7 @@ class RowOpsController {
             while(sync_id == 0L){
                 sync_id = randomNumber()
             }
-            db.dataRow.insert('table': received.table, 'rowId': received.row_id,'timeCreated': timeCreated,'timeReceived': new Date(),fields: received.fields,'hashKey': rowHash,'device': device.id, 'isDeleted': false,'syncId': sync_id)
+            db.dataRow.insert('table': received.table, 'rowId': received.row_id,'timeCreated': timeCreated,'timeReceived': new Date(),fields: received.fields,'hashKey': rowHash,'device': device._id, 'isDeleted': false,'syncId': sync_id)
             //check if it is a sale, if yes, update currentSale value in device
             //update device's lastupdated field everything in try catch to avoid conflicts
             try{
@@ -220,7 +230,7 @@ class RowOpsController {
         if(newHash == lastResult.hashKey){ //hashes are the same, so row hasn't had any update, discard the old one with soft delete, save new one and send ACK
             //save new row
             //println "aca15"
-            db.dataRow.insert('table': received.table, 'rowId': received.row_id,'timeCreated': timeCreated,'timeReceived': new Date(),fields: received.fields,'hashKey': newHash,'device': device.id, 'isDeleted': false,'syncId': received.sync_id as Long)
+            db.dataRow.insert('table': received.table, 'rowId': received.row_id,'timeCreated': timeCreated,'timeReceived': new Date(),fields: received.fields,'hashKey': newHash,'device': device._id, 'isDeleted': false,'syncId': received.sync_id as Long)
             //discard old row
             lastResult.isDeleted = true
             lastResult.save(flush: true)
@@ -253,7 +263,7 @@ class RowOpsController {
         }
         //println "aca18"
         //else, the new one is an update of the row, save it, send multicast to all devices withe the update to be made on the specific row and table
-        db.dataRow.insert('table': received.table, 'rowId': received.row_id,'timeCreated': timeCreated,'timeReceived': new Date(),fields: received.fields,'hashKey': newHash,'device': device.id, 'isDeleted': false,'syncId': received.sync_id as Long)
+        db.dataRow.insert('table': received.table, 'rowId': received.row_id,'timeCreated': timeCreated,'timeReceived': new Date(),fields: received.fields,'hashKey': newHash,'device': device._id, 'isDeleted': false,'syncId': received.sync_id as Long)
         lastResult.isDeleted = true
         lastResult.save(flush: true)
         //check if it is a sale, if yes, update currentSale value in device
@@ -419,122 +429,37 @@ class RowOpsController {
 
     }
 
-    private Device registerDevice(params){
+    private boolean registerDevice(params){
         def received = null
         try{received = JSON.parse(params?.row)}catch (Exception e){}
         def result
         if(!received){
-            return null
+            return false
         }
         def company = params?.company
-        //check company existance in remote Operational RDBMS database, there should be a local copy of all companies.
-        //there should be a Company model for matching the received id to it and getting a company object, for now any id will do it
         if(!company){
-            return null
-        }//error
-        //check nest5 server since it hasn't synced
+            return false
+        }
         def http = new HTTPBuilder( grailsApplication.config.com.nest5.BusinessData.Nest5APIServerURL )
         def jsonData
-// perform a GET request, expecting JSON response data
         http.request( GET, TEXT ) {
             uri.path = '/api/companyDetails'
             uri.query = [company_id:company]
             headers.'User-Agent' = 'Mozilla/5.0 Ubuntu/8.10 Firefox/3.0.4'
-            // response handler for a success response code:
             response.success = { resp, json ->
-                // parse the JSON response object:
                 jsonData = JSON.parse(json)
             }
-            // handler for any failure status code:
             response.failure = { resp ->
-                return null
+                return false
             }
         }
-        def com = Company.findByGlobal_id(company as Long)
-        if(!com){
-            com = Company.findByUsername(jsonData?.company?.username?.trim()) //aca es el error, linea 77
+        if(!jsonData){
+            return false
         }
-        if(!com){
-
-            if(!jsonData){
-                return null
-            }
-            if (jsonData.status != 1){
-                return null
-            }
-            def category = Category.findByName(jsonData.category.name)
-            if(!category){
-                category = new Category(
-                        name: jsonData.category.category.name,
-                        description: jsonData.category.category.description,
-                        icon: new Icon(
-                                name:jsonData.category.icon.name,
-                                tipo:jsonData.category.icon.tipo,
-                                description: jsonData.category.icon.description,
-                                ruta:jsonData.category.icon.ruta).save()).save(flush: true)
-            }
-
-            com = new Company(
-                    accountExpired: jsonData.company.accountExpired,
-                    accountLocked:  jsonData.company.accountLocked,
-                    active: jsonData.company.active,
-                    email:  jsonData.company.email,
-                    address: jsonData.company.address,
-                    contactName: jsonData.company.contactName,
-                    enabled: jsonData.company.enabled,
-                    global_id: jsonData.company.id,
-                    logo: jsonData.company.log,
-                    name: jsonData.company.name,
-                    nit: jsonData.company.nit,
-                    password: jsonData.company.password,
-                    passwordExpired: jsonData.company.passwordExpired,
-                    registerDate: jsonData.company.registerDate,
-                    username: jsonData.company.username,
-                    url: jsonData.company.url,
-                    telephone: jsonData.company.telephone,
-                    invoiceMessage: jsonData.company.invoiceMessage,
-                    tipMessage: jsonData.company.tipMessage,
-                    categoy: category)
-
-            if(!com.save()){
-                println com.errors.allErrors
-            }
-        }else{
-            //update values
-            if(jsonData?.company){
-                com.email =  jsonData?.company?.email
-                com.address = jsonData?.company?.address
-                com.contactName = jsonData?.company?.contactName
-                com.global_id = jsonData?.company?.id
-                com.logo = jsonData?.company?.logo
-                com.name = jsonData?.company?.name
-                com.nit = jsonData?.company?.nit
-                com.url = jsonData?.company?.url
-                com.telephone = jsonData?.company?.telephone
-                com.invoiceMessage = jsonData?.company?.invoiceMessage
-                com.tipMessage = jsonData?.company?.tipMessage
-            }
-
-
-            if(!com.save(flush:true))
-                println com.errors.allErrors
-
+        if (jsonData.status != 1){
+            return false
         }
-        def companyRole = SecRole.findByAuthority('ROLE_COMPANY') ?: new SecRole(authority: 'ROLE_COMPANY').save(failOnError: true)
-        if (!com.authorities.contains(companyRole)) {
-            SecUserSecRole.create com, companyRole
-        }
-        //here we should also receive reported location via gps, wifi or any other location provider. public ip of device, os and many more useful data for trending and statistics
-        //else, save the id and register it to the current company making the request
-        def device
-        device = Device.collection.findOne("uid":received?.device_id,"company":company as Long)
-        if(!device){
-            device = new Device(uid: received?.device_id, company: company,registeredOn: new Date(),minSale: 0, maxSale: 0,currentSale: 0,prefix: " ",resolution: " ")
-            if(!device.save()){
-                return null
-            }
-        }
-        return device
+        return true
 
     }
 

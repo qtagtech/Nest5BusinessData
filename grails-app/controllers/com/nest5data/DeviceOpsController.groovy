@@ -42,33 +42,9 @@ class DeviceOpsController {
             render result as JSON
             return
         }//error
-        //check nest5 server since it hasn't synced
-        def http = new HTTPBuilder( grailsApplication.config.com.nest5.BusinessData.Nest5APIServerURL )
-        def jsonData
-// perform a GET request, expecting JSON response data
-        http.request( GET, TEXT ) {
 
-            uri.path = '/api/companyDetails'
-            uri.query = [company_id:company]
-
-
-            headers.'User-Agent' = 'Mozilla/5.0 Ubuntu/8.10 Firefox/3.0.4'
-
-            // response handler for a success response code:
-            response.success = { resp, json ->
-                // parse the JSON response object:
-                jsonData = JSON.parse(json)
-            }
-            // handler for any failure status code:
-            response.failure = { resp ->
-                println "Unexpected error: ${resp.statusLine.statusCode} : ${resp.statusLine.reasonPhrase}"
-                response.setStatus(400)
-                result = [status: 400, code: 55522,message: 'Error fetching Data']
-                render result as JSON
-                return
-            }
-        }
-        def com = Company.findByGlobal_id(company as Long)
+        def jsonData = companyDetailsRequest(company)
+        /*def com = Company.findByGlobal_id(company as Long)
         if(!com){
             com = Company.findByUsername(jsonData?.company?.username?.trim()) //aca es el error, linea 77
         }
@@ -148,18 +124,24 @@ class DeviceOpsController {
         def companyRole = SecRole.findByAuthority('ROLE_COMPANY') ?: new SecRole(authority: 'ROLE_COMPANY').save(failOnError: true)
         if (!com.authorities.contains(companyRole)) {
             SecUserSecRole.create com, companyRole
+        }*/
+        if(!jsonData){
+            response.setStatus(400)
+            result = [status: 400, code: 55522,message: 'Error fetching Data.']
+            render result as JSON
+            return
         }
-
-
-
-
-
-        //here we should also receive reported location via gps, wifi or any other location provider. public ip of device, os and many more useful data for trending and statistics
+        if (jsonData.status != 1){
+            response.setStatus(400)
+            result = [status: 400, code: 55521,message: 'Company does not exist.']
+            render result as JSON
+        }
+            //here we should also receive reported location via gps, wifi or any other location provider. public ip of device, os and many more useful data for trending and statistics
         def registered = Device.findAllByUid(received?.device_id)
         if(registered?.size() > 0){  //there was a device with the same id previously registered
 
                 response.setStatus(200)
-                result = [status: 200, code: 55511,message: 'Device is already registered for other company, login continues normally.',minSale: registered[0].minSale,maxSale: registered[0].maxSale as Integer, currentSale: registered[0].currentSale as Integer,prefix: registered[0].prefix as String,nit: com.nit, tel: com.telephone,address: com.address, name: com.name, email: com.email,url: com.url,invoiceMessage: com.invoiceMessage,tipMessage: com.tipMessage] //here, the device should ask the user if this device should change company. and the call will the be made to changeDeviceRegistration
+                result = [status: 200, code: 55511,message: 'Device is already registered for other company, login continues normally.',minSale: registered[0].minSale,maxSale: registered[0].maxSale as Integer, currentSale: registered[0].currentSale as Integer,prefix: registered[0].prefix as String,nit: jsonData.nit, tel: jsonData.telephone,address: jsonData.address, name: jsonData.name, email: jsonData.email,url: jsonData.url,invoiceMessage: jsonData.invoiceMessage,tipMessage: jsonData.tipMessage,resolution: jsonData.resolution] //here, the device should ask the user if this device should change company. and the call will the be made to changeDeviceRegistration
                 render result as JSON
                 return
         }
@@ -173,7 +155,7 @@ class DeviceOpsController {
             return
         }
         response.setStatus(200)
-        result = [status: 200, code: 555,message: 'Device successfully registered to company',minSale: 0,maxSale: 0, currentSale: 0,prefix: " ",resolution: " ",nit: com?.nit, tel: com?.telephone,address: com?.address, name: com?.name, email: com?.email,url: com?.url,invoiceMessage: com?.invoiceMessage,tipMessage: com?.tipMessage]
+        result = [status: 200, code: 555,message: 'Device successfully registered to company',minSale: 0,maxSale: 0, currentSale: 0,prefix: " ",nit: jsonData?.nit, tel: jsonData?.telephone,address: jsonData?.address, name: jsonData?.name, email: jsonData?.email,url: jsonData?.url,invoiceMessage: jsonData?.invoiceMessage,tipMessage: jsonData?.tipMessage,resolution :jsonData?.resolution]
         render result as JSON
         return
 
@@ -202,14 +184,13 @@ class DeviceOpsController {
                 return
         }
         //println registered.company
-        def com = Company.findByGlobal_id(registered.company as Long)
+        def com = companyDetailsRequest(registered.company)
         if(!com){
             response.setStatus(400)
-            result = [status: 400, code: 55520,message: 'No existe la empresa']
+            result = [status: 400, code: 55525,message: 'company does not exist',maxSale: 0, currentSale: 0,prefix: 0,nit: "00000", tel: "00000",address: "NA", name: "NA", email: "NA",url: "NA",invoiceMessage: "NA",tipMessage:"NA"]
             render result as JSON
             return
         }
-
         response.setStatus(200)
         result = [status: 200, code: 555,message: 'Device exists, find maxSale, currentSale and prefix values attached as payload',maxSale: registered.maxSale as Integer, currentSale: registered.currentSale as Integer,prefix: registered.prefix as String,nit: com.nit, tel: com.telephone,address: com.address, name: com.name, email: com.email,url: com.url,invoiceMessage: com.invoiceMessage,tipMessage: com.tipMessage]
         render result as JSON
@@ -352,6 +333,27 @@ class DeviceOpsController {
         render device.toString()          //returns JSON string
         return
 
+    }
+
+    def companyDetailsRequest(cid){
+        //check nest5 server sif company exists, has permission and other stuff
+        def http = new HTTPBuilder( grailsApplication.config.com.nest5.BusinessData.Nest5APIServerURL )
+// perform a GET request, expecting JSON response data
+        http.request( GET, TEXT ) {
+            uri.path = '/api/companyDetails'
+            uri.query = [company_id:cid]
+            headers.'User-Agent' = 'Mozilla/5.0 Ubuntu/8.10 Firefox/3.0.4'
+            response.success = { resp, json ->
+                return (JSON.parse(json))
+            }
+            response.failure = { resp ->
+                println "Unexpected error: ${resp.statusLine.statusCode} : ${resp.statusLine.reasonPhrase}"
+//                response.setStatus(400)
+//                result = [status: 400, code: 55522,message: 'Error fetching Data']
+//                render result as JSON
+                return null
+            }
+        }
     }
 
 

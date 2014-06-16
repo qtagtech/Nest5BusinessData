@@ -90,7 +90,7 @@ grails.hibernate.cache.provider_class = "org.hibernate.cache.EhCacheProvider"*/
 environments {
     development {
         grails.logging.jul.usebridge = true
-        com.nest5.BusinessData.database = "nest5BigData"
+        com.nest5.BusinessData.database = "newNest5DB"
         com.nest5.BusinessData.Nest5APIServerURL = "http://localhost:8080"
 
     }
