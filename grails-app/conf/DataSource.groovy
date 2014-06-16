@@ -5,16 +5,12 @@ dataSource {
     password = ""
 }
 hibernate {
-/*    cache.use_second_level_cache = true
-    cache.use_query_cache = true
-    cache.region.factory_class = 'net.sf.ehcache.hibernate.EhCacheRegionFactory'*/
     cache.use_second_level_cache = true
     cache.use_query_cache = false
     cache.region.factory_class = 'org.hibernate.cache.ehcache.EhCacheRegionFactory'
 }
 environments {
     development {
-
             grails {
                 mongo {
                     host = "localhost"
@@ -24,8 +20,6 @@ environments {
                     databaseName = "newNest5DB"
                 }
             }
-
-
         dataSource_trans {
             dbCreate = "update"
             driverClassName = "org.postgresql.Driver"
@@ -35,21 +29,17 @@ environments {
             password = "qtagtech"
         }
 
-
     }
-    test {
-
+    staging {
         grails {
             mongo {
                 host = System.env.OPENSHIFT_MONGODB_DB_HOST
                 port = System.env.OPENSHIFT_MONGODB_DB_PORT
                 username = "admin"
-                password="YmIY6mDMasGt"
-                databaseName = "ayJue"
+                password="LAixLHrEJUxm"
+                databaseName = "bigdatastaging"
             }
         }
-
-
         dataSource_trans {
             dbCreate = "update"
             driverClassName = "org.postgresql.Driver"
@@ -60,8 +50,6 @@ environments {
             username = System.env.OPENSHIFT_POSTGRESQL_DB_USERNAME
             password = System.env.OPENSHIFT_POSTGRESQL_DB_PASSWORD
         }
-
-
     }
     production {
         grails {
@@ -70,7 +58,7 @@ environments {
                 port = System.env.OPENSHIFT_MONGODB_DB_PORT
                 username = "admin"
                 password="YmIY6mDMasGt"
-                databaseName = "ayJue"
+                databaseName = "bigdata"
             }
         }
         dataSource_trans {

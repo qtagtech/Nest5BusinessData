@@ -74,8 +74,8 @@ grails.project.dependency.resolution = {
 
     plugins {
         build ':tomcat:7.0.53'
-        compile ":mongodb:3.0.1"
-        compile ":hibernate4:4.3.5.3"
+        compile ":hibernate4:4.3.5.4"
+        compile ':mongodb:3.0.1'
       runtime ":resources:1.2.1"
         runtime ":resources:1.2.1"
         compile ":spring-security-core:2.0-RC3"

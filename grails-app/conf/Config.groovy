@@ -91,20 +91,20 @@ environments {
     development {
         grails.logging.jul.usebridge = true
         com.nest5.BusinessData.database = "nest5BigData"
-        com.nest5.BusinessData.Nest5APIServerURL = "http://localhost:8092"
+        com.nest5.BusinessData.Nest5APIServerURL = "http://localhost:8080"
 
     }
-    test {
+    staging {
         grails.logging.jul.usebridge = true
         com.nest5.BusinessData.database = "bigdatastaging"
-        com.nest5.BusinessData.Nest5APIServerURL = "http://apistaging.nest5.com"
+        com.nest5.BusinessData.Nest5APIServerURL = "http://staging.nest5.com"
 
     }
     production {
         grails.logging.jul.usebridge = false
         grails.serverURL = "http://bigdata.nest5.com"
         com.nest5.BusinessData.database = "bigdata"
-        com.nest5.BusinessData.Nest5APIServerURL = "http://api.nest5.com"
+        com.nest5.BusinessData.Nest5APIServerURL = "http://nest5.com"
     }
 }
 

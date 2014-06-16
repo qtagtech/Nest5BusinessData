@@ -5,8 +5,8 @@ import grails.converters.JSON
 import com.nest5data.Device
 import grails.plugin.springsecurity.annotation.Secured
 import groovyx.net.http.*
-import static groovyx.net.http.ContentType.*
-import static groovyx.net.http.Method.*
+import static groovyx.net.http.ContentType.TEXT
+import static groovyx.net.http.Method.GET
 
 @Secured(["permitAll"])
 class DeviceOpsController {
@@ -27,7 +27,6 @@ class DeviceOpsController {
         def received = null
         try{received = JSON.parse(params?.payload)}catch (Exception e){}
         def result
-        println received
         if(!received){
             response.setStatus(400)
             result = [status: 400, code: 55520,message: 'Invalid Device Registration Parameters']
@@ -35,7 +34,6 @@ class DeviceOpsController {
             return
         }
         def company = received?.company
-        println "La compania es la "+company
         //check company existance in remote Operational RDBMS database, there should be a local copy of all companies.
         //there should be a Company model for matching the received id to it and getting a company object, for now any id will do it
         if(!company){
@@ -50,7 +48,7 @@ class DeviceOpsController {
 // perform a GET request, expecting JSON response data
         http.request( GET, TEXT ) {
 
-            uri.path = '/company/companyDetails'
+            uri.path = '/api/companyDetails'
             uri.query = [company_id:company]
 
 
@@ -58,14 +56,9 @@ class DeviceOpsController {
 
             // response handler for a success response code:
             response.success = { resp, json ->
-                println resp.statusLine
-                println resp.contentType
-
                 // parse the JSON response object:
                 jsonData = JSON.parse(json)
-                println jsonData
             }
-
             // handler for any failure status code:
             response.failure = { resp ->
                 println "Unexpected error: ${resp.statusLine.statusCode} : ${resp.statusLine.reasonPhrase}"
@@ -137,7 +130,7 @@ class DeviceOpsController {
                 com.address = jsonData?.company?.address
                 com.contactName = jsonData?.company?.contactName
                 com.global_id = jsonData?.company?.id
-                println "el id de la compania es "+jsonData?.company?.id
+                //println "el id de la compania es "+jsonData?.company?.id
                 com.logo = jsonData?.company?.logo
                 com.name = jsonData?.company?.name
                 com.nit = jsonData?.company?.nit
@@ -190,7 +183,7 @@ class DeviceOpsController {
         def received = null
         try{received = JSON.parse(params?.payload)}catch (Exception e){}
         def result
-        println received
+        //println received
         if(!received){
             response.setStatus(400)
             result = [status: 400, code: 55520,message: 'Invalid Device Registration Parameters']
@@ -208,7 +201,7 @@ class DeviceOpsController {
                 render result as JSON
                 return
         }
-        println registered.company
+        //println registered.company
         def com = Company.findByGlobal_id(registered.company as Long)
         if(!com){
             response.setStatus(400)
@@ -262,7 +255,7 @@ class DeviceOpsController {
     }
 
     def fetchDevice(){
-        println params
+        //println params
         def result
         def company = params?.company
         if(!company){
@@ -281,7 +274,7 @@ class DeviceOpsController {
         def db = mongo.getDB(grailsApplication.config.com.nest5.BusinessData.database)
         BasicDBObject query = new BasicDBObject("company",company as Integer).
                 append("uid", row as String);
-        println query
+        //println query
         def filas = db.device.find(query)
         if(filas.size() == 0) {
             response.setStatus(400)
@@ -297,7 +290,7 @@ class DeviceOpsController {
     }
 
     def updateDevice(){
-        println params
+        //println params
         def result
         def company = params?.company
         if(!company){
@@ -322,8 +315,8 @@ class DeviceOpsController {
                 .append("prefix",params?.prefix)
                 .append("resolution",params?.resolution)
         BasicDBObject setObject = new BasicDBObject('$set' : newfields)
-        println query
-        println setObject
+        //println query
+        //println setObject
         def filas = db.device.update(query,setObject)
         result = [status: 200, code: 555,message: 'Success.']
         render result as JSON
@@ -351,7 +344,7 @@ class DeviceOpsController {
             cursor.close();
         }*/
         //println new BasicDBObject('$match', new BasicDBObject("type", "airfare") );
-        println device
+        //println device
     }
 
     def tryNewField(){
