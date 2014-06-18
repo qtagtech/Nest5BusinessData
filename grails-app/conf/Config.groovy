@@ -90,7 +90,8 @@ grails.hibernate.cache.provider_class = "org.hibernate.cache.EhCacheProvider"*/
 environments {
     development {
         grails.logging.jul.usebridge = true
-        com.nest5.BusinessData.database = "newNest5DB"
+        com.nest5.BusinessData.database = "paraConvertirDataRows"
+//        com.nest5.BusinessData.database = "newNest5DB"
         com.nest5.BusinessData.Nest5APIServerURL = "http://localhost:8080"
 
     }
@@ -147,7 +148,8 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	'/**/js/**':                      ['permitAll'],
 	'/**/css/**':                     ['permitAll'],
 	'/**/images/**':                  ['permitAll'],
-	'/**/favicon.ico':                ['permitAll']
+	'/**/favicon.ico':                ['permitAll'],
+    '/transition/**':                ['permitAll']
 ]
 
 app.timezone = "America/Bogota"

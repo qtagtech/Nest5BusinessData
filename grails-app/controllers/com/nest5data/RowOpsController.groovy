@@ -1,10 +1,13 @@
 package com.nest5data
 
 import com.mongodb.BasicDBObject
+import com.mongodb.DBCursor
 import grails.converters.JSON
 import grails.plugin.springsecurity.annotation.Secured
 import grails.transaction.Transactional
 import groovyx.net.http.HTTPBuilder
+import org.bson.types.ObjectId
+
 import static groovyx.net.http.ContentType.TEXT
 import static groovyx.net.http.Method.GET
 
@@ -70,19 +73,34 @@ class RowOpsController {
         def device
         if(received.device_id == "DdLrWE6UPLM0uYhSlUO7"){ //web device, check if it is already registered or if not and return it, if null, get it as before
             if(registerDevice(params)) {
-                device = Device.collection.findOne("uid":received?.device_id,"company":params.company as Long)
+                //check using the company in the store
+                device = db.device.findOne("uid":received?.device_id,'store.company': params.company as Integer)
+                println "device no deberia existir"
+                println device
                 if(!device){
-                    device = new Device(uid: received?.device_id, company: params.company as Long,registeredOn: new Date(),minSale: 0, maxSale: 0,currentSale: 0,prefix: " ",resolution: " ")
-                    if(!device.save()){
-                        return null
+                    println "deberia entrar aca y llamar a checkStores"
+                    def store = checkStores(params)
+                    println "regresa de checkStores con tienda"+ store
+                    println "guarda device con esa store"
+                    def resultado = db.device.insert('uid':received.device_id, name: "Sin Nombre",'store': store, registeredOn: new Date(), lastUpdated: new Date(), minSale: 0, maxSale: 0, currentSale: 0, prefix: " ", resolution: " " )
+                    if(resultado.error)
+                    {
+                        response.setStatus(400)
+                        result = [status: 400, code: 55512,message: 'Error saving new device to database: '+resultado?.lastError?.err,syncId: null,syncRow: null]
+                        render result as JSON
+                        return
                     }
+                    println "busca device en db con uid "+received.device_id+" y store.company "+received.company
+                        device = db.device.findOne("uid":received?.device_id,"store.company":params.company as Integer)
+                    println device
                 }
             }
         }
         if(!device) //it is not a web device so try getting the device by id since it has uniue id as it is a mobile device
-            device = Device.collection.findOne('uid':received.device_id)
+            device = db.device.findOne('uid':received.device_id)
 
         if(!device){
+            println "aca7"
             response.setStatus(400)
             result = [status: 400, code: 55512,message: 'Invalid device_id Parameter. Either the device id is misspelled or it is not yet registered in the platform',syncId: null,syncRow: null]
             render result as JSON
@@ -95,7 +113,7 @@ class RowOpsController {
             while(sync_id == 0L){
                 sync_id = randomNumber()
             }
-          db.dataRow.insert('table': received.table, 'rowId': received.row_id,'timeCreated': timeCreated,'timeReceived': new Date(),fields: received.fields,'hashKey': rowHash,'device': device._id, 'isDeleted': false,'syncId': sync_id)
+          db.dataRow.insert('table': received.table, 'rowId': received.row_id,'timeCreated': timeCreated,'timeReceived': new Date(),fields: received.fields,'hashKey': rowHash,'device': device, 'isDeleted': false,'syncId': sync_id)
 
             //check if it is a sale, if yes, update currentSale value in device
             //update device's lastupdated field everything in try catch to avoid conflicts
@@ -104,12 +122,12 @@ class RowOpsController {
                 BasicDBObject searchQuery = new BasicDBObject().append('uid',received.device_id)
                 BasicDBObject newDocument = new BasicDBObject()
                 newDocument.append('$set',new BasicDBObject().append("lastUpdated",new Date()))
-                Device.collection.update(searchQuery,newDocument)
+                db.device.update(searchQuery,newDocument)
                 if(received.table == "sale"){
                     if(device.currentSale < received.fields.sale_number){
                         BasicDBObject updatedDocument = new BasicDBObject()
                         updatedDocument.append('$set',new BasicDBObject().append("currentSale",received.fields.sale_number))
-                        Device.collection.update(searchQuery,updatedDocument)
+                        db.device.update(searchQuery,updatedDocument)
                     }
                 }
             }catch (Exception e){
@@ -127,7 +145,7 @@ class RowOpsController {
         def deleting = received.is_delete ? true : false
         if(deleting){
             //println"aca4"//the device sent a delete request with all the properties except for the fields (blank values). the server should soft-delete it. The deleted flag is true since the element wont be available to any device from now on
-            db.dataRow.insert('table': received.table, 'rowId': received.row_id,'timeCreated': timeCreated,'timeReceived': new Date(),fields: null,'hashKey': 'N/A','device': device._id, 'isDeleted': true,'syncId': received.sync_id as Long,syncRow: syncRow)
+            db.dataRow.insert('table': received.table, 'rowId': received.row_id,'timeCreated': timeCreated,'timeReceived': new Date(),fields: null,'hashKey': 'N/A','device': device as JSON, 'isDeleted': true,'syncId': received.sync_id as Long,syncRow: syncRow)
             //set isDeleted flag on previous existent element (if any) to true
             def previousResults = DataRow.withCriteria {
                 def now = new Date()
@@ -139,7 +157,7 @@ class RowOpsController {
                 //println"aca5"
                 def lastResult = previousResults?.sort {it?.timeReceived}.get(0)
                 //check if current device saving a row, belongs to the same company as the the previous device
-                if(lastResult.device.company != device.company){
+                if(lastResult.device.store.company != device.store.company){
                     //println"aca6"
                     response.setStatus(400)//not acceptable
                     result = [status: 400, code: 55514,message: 'This Record doesn\'t belong to your company.',syncId: null,syncRow: null]
@@ -185,7 +203,7 @@ class RowOpsController {
             while(sync_id == 0L){
                 sync_id = randomNumber()
             }
-            db.dataRow.insert('table': received.table, 'rowId': received.row_id,'timeCreated': timeCreated,'timeReceived': new Date(),fields: received.fields,'hashKey': rowHash,'device': device._id, 'isDeleted': false,'syncId': sync_id)
+            db.dataRow.insert('table': received.table, 'rowId': received.row_id,'timeCreated': timeCreated,'timeReceived': new Date(),fields: received.fields,'hashKey': rowHash,'device': device, 'isDeleted': false,'syncId': sync_id)
             //check if it is a sale, if yes, update currentSale value in device
             //update device's lastupdated field everything in try catch to avoid conflicts
             try{
@@ -193,12 +211,12 @@ class RowOpsController {
                 BasicDBObject searchQuery = new BasicDBObject().append('uid',received.device_id)
                 BasicDBObject newDocument = new BasicDBObject()
                 newDocument.append('$set',new BasicDBObject().append("lastUpdated",new Date()))
-                Device.collection.update(searchQuery,newDocument)
+               db.device.update(searchQuery,newDocument)
                 if(received.table == "sale"){
                     if(device.currentSale < received.fields.sale_number){
                         BasicDBObject updatedDocument = new BasicDBObject()
                         updatedDocument.append('$set',new BasicDBObject().append("currentSale",received.fields.sale_number))
-                        Device.collection.update(searchQuery,updatedDocument)
+                        db.device.update(searchQuery,updatedDocument)
                     }
                 }
             }catch (Exception e){
@@ -217,7 +235,7 @@ class RowOpsController {
         def lastResult = previousResults?.sort {it?.timeReceived}?.get(0)
         //println lastResult
         //check if current device saving a row, belongs to the same company as the the previous device
-        if(lastResult.device.company != device.company){
+        if(lastResult.device.store.company != device.store.company){
             //
 
             //println "aca14"
@@ -230,7 +248,7 @@ class RowOpsController {
         if(newHash == lastResult.hashKey){ //hashes are the same, so row hasn't had any update, discard the old one with soft delete, save new one and send ACK
             //save new row
             //println "aca15"
-            db.dataRow.insert('table': received.table, 'rowId': received.row_id,'timeCreated': timeCreated,'timeReceived': new Date(),fields: received.fields,'hashKey': newHash,'device': device._id, 'isDeleted': false,'syncId': received.sync_id as Long)
+            db.dataRow.insert('table': received.table, 'rowId': received.row_id,'timeCreated': timeCreated,'timeReceived': new Date(),fields: received.fields,'hashKey': newHash,'device': device, 'isDeleted': false,'syncId': received.sync_id as Long)
             //discard old row
             lastResult.isDeleted = true
             lastResult.save(flush: true)
@@ -241,12 +259,12 @@ class RowOpsController {
                 BasicDBObject searchQuery = new BasicDBObject().append('uid',received.device_id)
                 BasicDBObject newDocument = new BasicDBObject()
                 newDocument.append('$set',new BasicDBObject().append("lastUpdated",new Date()))
-                Device.collection.update(searchQuery,newDocument)
+                db.device.update(searchQuery,newDocument)
                 if(received.table == "sale"){
                     if(device.currentSale < received.fields.sale_number){
                         BasicDBObject updatedDocument = new BasicDBObject()
                         updatedDocument.append('$set',new BasicDBObject().append("currentSale",received.fields.sale_number))
-                        Device.collection.update(searchQuery,updatedDocument)
+                        db.device.update(searchQuery,updatedDocument)
                     }
                 }
             }catch (Exception e){
@@ -263,7 +281,7 @@ class RowOpsController {
         }
         //println "aca18"
         //else, the new one is an update of the row, save it, send multicast to all devices withe the update to be made on the specific row and table
-        db.dataRow.insert('table': received.table, 'rowId': received.row_id,'timeCreated': timeCreated,'timeReceived': new Date(),fields: received.fields,'hashKey': newHash,'device': device._id, 'isDeleted': false,'syncId': received.sync_id as Long)
+        db.dataRow.insert('table': received.table, 'rowId': received.row_id,'timeCreated': timeCreated,'timeReceived': new Date(),fields: received.fields,'hashKey': newHash,'device': device, 'isDeleted': false,'syncId': received.sync_id as Long)
         lastResult.isDeleted = true
         lastResult.save(flush: true)
         //check if it is a sale, if yes, update currentSale value in device
@@ -273,12 +291,12 @@ class RowOpsController {
             BasicDBObject searchQuery = new BasicDBObject().append('uid',received.device_id)
             BasicDBObject newDocument = new BasicDBObject()
             newDocument.append('$set',new BasicDBObject().append("lastUpdated",new Date()))
-            Device.collection.update(searchQuery,newDocument)
+            db.device.update(searchQuery,newDocument)
             if(received.table == "sale"){
                 if(device.currentSale < received.fields.sale_number){
                     BasicDBObject updatedDocument = new BasicDBObject()
                     updatedDocument.append('$set',new BasicDBObject().append("currentSale",received.fields.sale_number))
-                    Device.collection.update(searchQuery,updatedDocument)
+                    db.device.update(searchQuery,updatedDocument)
                 }
             }
         }catch (Exception e){
@@ -306,13 +324,11 @@ class RowOpsController {
     }
 
     def fetchProperty(){
-        //printlnparams
         def result
-
-
-
         def company = params?.company
         if(!company){
+
+            println "aca1"
             response.setStatus(400)
             result = [status: 400, code: 55522,message: 'Invalid company',payload: null]
             render result as JSON
@@ -320,6 +336,7 @@ class RowOpsController {
         }
         def table = params?.table
         if(!table){
+            println "aca2"
             response.setStatus(400)
             result = [status: 400, code: 55522,message: 'Invalid table',payload: null]
             render result as JSON
@@ -327,9 +344,9 @@ class RowOpsController {
         }
         def db = mongo.getDB(grailsApplication.config.com.nest5.BusinessData.database)
         BasicDBObject query = new BasicDBObject("table",table).
-                append("device.company",company as Integer).
+                append("device.store.company",company as Integer).
                 append("isDeleted", false);
-        //printlnquery
+        //println query
         def filas = db.dataRow.find(query)
         if(filas.size() == 0) {
             response.setStatus(400)
@@ -369,9 +386,35 @@ class RowOpsController {
             render result as JSON
             return
         }
+        /*
+            *
+            * **************************************************************************INIT TEMP!!!!
+            ********************BRING ALL OLD FORMATTED DATAROWS, WITH COMPANY ID'S CONVERTED TO STORES, THE FIRST STORE IN THE SYSTEM FOR THE COMPANY OR A NEW CREATED ONE IF NONE EXIST
+            *
+            *
+            * */
+
+        //poner una función que traiga todas las datarow con el campo company = 16 o cualquiera que sea, removido y con el primer store que se aparezca $set.
+
+        try{
+            transformDataRow(company,row)
+        }catch(Exception e){
+            e.printStackTrace()
+        }
+
+
+
+        /*
+        *
+        *
+        *******************************************************************************END TEMP!!!!
+        *************************BRING ALL OLD FORMATTED DATAROWS, WITH COMPANY ID'S CONVERTED TO STORES, THE FIRST STORE IN THE SYSTEM FOR THE COMPANY OR A NEW CREATED ONE IF NONE EXIST
+        *
+        *
+        * */
         def db = mongo.getDB(grailsApplication.config.com.nest5.BusinessData.database)
         BasicDBObject query = new BasicDBObject("syncId",row as Long).
-                append("device.company",company as Integer).
+                append("device.store.company",company as Integer).
                 append("isDeleted", false);
         //printlnquery
         def filas = db.dataRow.find(query)
@@ -381,7 +424,9 @@ class RowOpsController {
             render result as JSON
             return
         }
+
         def element = filas.next().toMap()
+
         result = [status: 200, code: 555,message: 'Success. See payload.',payload: element]
 
         render result as JSON
@@ -408,10 +453,36 @@ class RowOpsController {
             render result as JSON
             return
         }
+        /*
+            *
+            * **************************************************************************INIT TEMP!!!!
+            ********************BRING ALL OLD FORMATTED DATAROWS, WITH COMPANY ID'S CONVERTED TO STORES, THE FIRST STORE IN THE SYSTEM FOR THE COMPANY OR A NEW CREATED ONE IF NONE EXIST
+            *
+            *
+            * */
+
+        //poner una función que traiga todas las datarow con el campo company = 16 o cualquiera que sea, removido y con el primer store que se aparezca $set.
+
+        try{
+            transformDataRow(company,row)
+        }catch(Exception e){
+            e.printStackTrace()
+        }
+
+
+
+        /*
+        *
+        *
+        *******************************************************************************END TEMP!!!!
+        *************************BRING ALL OLD FORMATTED DATAROWS, WITH COMPANY ID'S CONVERTED TO STORES, THE FIRST STORE IN THE SYSTEM FOR THE COMPANY OR A NEW CREATED ONE IF NONE EXIST
+        *
+        *
+        * */
         def db = mongo.getDB(grailsApplication.config.com.nest5.BusinessData.database)
         BasicDBObject query = new BasicDBObject("table","special_product")
                 .append("fields.product_id",row as Long).
-                append("device.company",company as Integer).
+                append("device.store.company",company as Integer).
                 append("isDeleted", false);
         //printlnquery
         def filas = db.dataRow.find(query)
@@ -426,6 +497,45 @@ class RowOpsController {
 
         render result as JSON
         return
+
+    }
+
+
+    def checkStores(params){
+        println "llega a checkstores"
+        def company = params.company
+        DBCursor stores
+        def db = mongo.getDB(grailsApplication.config.com.nest5.BusinessData.database)
+        try{
+            BasicDBObject query = new BasicDBObject().append('company',company as Integer)
+            stores = db.store.find(query)
+        }catch(Exception e){
+            e.printStackTrace()
+            return null
+        }
+        println "stores encontradas:"
+        println stores.count()
+        if(stores.count() == 0){
+            println "no hay tiendas, crea una nueva"
+            def obid = new ObjectId()
+            def resultado = db.store.insert(_id: obid,name: "Local Por Defecto", latitude: 0, longitude: 0, location: null, company: company as Integer)
+            if(resultado.error)
+            {
+                println resultado.getLastError()
+                return null
+            }
+            println "busca en db una tienda con el id que se acaba de crear "+obid
+            def store = db.store.findOne('_id':obid)
+            println "dentro de checkStores encontró una vez hecha comprobación y demás esta tienda que devolverá"
+            println store
+            return store
+        }
+        else{
+            def store = stores.next()
+            println "existen tiendas entopnces devuleve la primera de la lista"+store
+            return store
+        }
+
 
     }
 
@@ -470,6 +580,39 @@ class RowOpsController {
         }
         return number
     }
+
+    /*
+    * /**************************INIT TEMP
+    *
+    * ******************************TRANSFORM DATAROWS INTO NEW FORMAT WITH STORE
+    *
+    */
+    def transformDataRow(company,row){
+        def db = mongo.getDB(grailsApplication.config.com.nest5.BusinessData.database)
+        def store = db.store.findOne('company':company as Integer)        //¿Cualquier store de la empresa?
+        if(!store){
+            def obid = new ObjectId()
+            def resultado = db.store.insert(_id: obid,name: "Local Por Defecto", latitude: 0, longitude: 0, location: null, company: company as Integer)
+            store = db.store.findOne('_id':obid)
+        }
+
+        if(!store)
+            return false
+
+        BasicDBObject set = new BasicDBObject().append('$set',new BasicDBObject().append('store',store))
+        set.append('$unset',new BasicDBObject().append('company',''))
+        BasicDBObject query = new BasicDBObject().append("company",company as Integer)
+        db.device.update(query,set,false,true)
+        BasicDBObject set2 = new BasicDBObject().append('$set',new BasicDBObject().append("device.store",store))
+        set2.append('$unset',new BasicDBObject().append("device.company",''))
+        BasicDBObject query2 = new BasicDBObject().append("syncId",row)
+        db.dataRow.update(query2,set2,false,false)
+    }
+    /*
+    *
+    *
+    *
+    * */
 
 
 }

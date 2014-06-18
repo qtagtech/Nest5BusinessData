@@ -5,6 +5,7 @@ import com.mongodb.DBCursor
 import grails.converters.JSON
 import grails.plugin.springsecurity.annotation.Secured
 import org.apache.commons.io.FileUtils
+import org.bson.types.ObjectId
 import org.joda.time.DateTime
 import org.joda.time.format.DateTimeFormat
 import org.joda.time.format.DateTimeFormatter
@@ -55,10 +56,10 @@ class DatabaseOpsController {
     //hacer JSON.parse("{'name': 'Sin Impuesto','percentage': 0.0}") borrar el que ya hay en db
         def db = mongo.getDB(grailsApplication.config.com.nest5.BusinessData.database)
         def notax = null
-        def device = Device.collection.findOne('company':company)
+        def device = db.device.findOne('store.company':company)        //¿Cualquier Device?
         try{
             BasicDBObject query = new BasicDBObject("table",'tax').
-                    append("device.company",company).
+                    append("device.store.company",company).
                     append("isDeleted", false)
                     .append("fields.percentage", 0);
              def resultados = db.dataRow.find(query)
@@ -238,14 +239,39 @@ class DatabaseOpsController {
         def sales = []
         def products = []
         def combos = []
+        /*
+            *
+            * **************************************************************************INIT TEMP!!!!
+            ********************BRING ALL OLD FORMATTED DATAROWS, WITH COMPANY ID'S CONVERTED TO STORES, THE FIRST STORE IN THE SYSTEM FOR THE COMPANY OR A NEW CREATED ONE IF NONE EXIST
+            *
+            *
+            * */
+
+        //poner una función que traiga todas las datarow con el campo company = 16 o cualquiera que sea, removido y con el primer store que se aparezca $set.
+
+            try{
+                transformDataRows(company)
+            }catch(Exception e){
+                e.printStackTrace()
+            }
+
+
+
+        /*
+        *
+        *
+        *******************************************************************************END TEMP!!!!
+        *************************BRING ALL OLD FORMATTED DATAROWS, WITH COMPANY ID'S CONVERTED TO STORES, THE FIRST STORE IN THE SYSTEM FOR THE COMPANY OR A NEW CREATED ONE IF NONE EXIST
+        *
+        *
+        * */
         table_list.each {      //nunca llamara que traiga tablas productingredient, comboingredient, compboproduct ni sale_item, solo llama product, combo, sale y con eso al final agrega las relaciones mucho a mucho
             BasicDBObject query = new BasicDBObject("table",it).
-                    append("device.company",company).
+                    append("device.store.company",company).
                     append("isDeleted", false);
+
             def filas = db.dataRow.find(query)
             def currentTable = it
-
-
             try {
                 if((it == "ingredient_category") || (it == "product_category") || (it == "tax") || (it == "measurement_unit") || (it == "sync_row") /*|| (it == "sale")*/) {
                     while(filas.hasNext()) {
@@ -588,7 +614,7 @@ class DatabaseOpsController {
         }
         def db = mongo.getDB(grailsApplication.config.com.nest5.BusinessData.database)
         BasicDBObject query = new BasicDBObject("table",'sale').
-                append("device.company",company as Integer).
+                append("device.store.company",company as Integer).
                 append("isDeleted", false);
         println query
         def filas = db.dataRow.find(query)
@@ -635,7 +661,7 @@ class DatabaseOpsController {
         ************************************* */
          def db = mongo.getDB(grailsApplication.config.com.nest5.BusinessData.database)
         BasicDBObject query = new BasicDBObject("table",'sale').
-                append("device.company",company as Integer).
+                append("device.store.company",company as Integer).
                 append("isDeleted", false)
                 .append("timeCreated",new BasicDBObject('$gte', startDate).append('$lt', endDate));
         def filas
@@ -871,7 +897,7 @@ class DatabaseOpsController {
         def doomdate = dates.doomdate
         def db = mongo.getDB(grailsApplication.config.com.nest5.BusinessData.database)
         BasicDBObject query = new BasicDBObject("table",'sale').
-                append("device.company",company as Integer).
+                append("device.store.company",company as Integer).
                 append("isDeleted", false)
                 .append("timeCreated",new BasicDBObject('$gte', startDate).append('$lt', endDate));
         def filas
@@ -1070,7 +1096,7 @@ class DatabaseOpsController {
         def doomdate = dates.doomdate
          def db = mongo.getDB(grailsApplication.config.com.nest5.BusinessData.database)
         BasicDBObject query = new BasicDBObject("table",'sale').
-                append("device.company",company as Integer).
+                append("device.store.company",company as Integer).
                 append("isDeleted", false)
                 .append("fields.sale_number",numb as Integer);
         println query;
@@ -1371,6 +1397,41 @@ class DatabaseOpsController {
         }
         return number
     }
+
+
+
+    /*
+    * /**************************INIT TEMP
+    *
+    * ******************************TRANSFORM DATAROWS INTO NEW FORMAT WITH STORE
+    *
+    */
+    def transformDataRows(company){
+        def db = mongo.getDB(grailsApplication.config.com.nest5.BusinessData.database)
+        def store = db.store.findOne('company':company as Integer)        //¿Cualquier store de la empresa?
+        if(!store){
+            def obid = new ObjectId()
+            def resultado = db.store.insert(_id: obid,name: "Local Por Defecto", latitude: 0, longitude: 0, location: null, company: company as Integer)
+            store = db.store.findOne('_id':obid)
+        }
+
+        if(!store)
+            return false
+
+        BasicDBObject set = new BasicDBObject().append('$set',new BasicDBObject().append('store',store))
+        set.append('$unset',new BasicDBObject().append('company',''))
+        BasicDBObject query = new BasicDBObject().append("company",company as Integer)
+        db.device.update(query,set,false,true)
+        BasicDBObject set2 = new BasicDBObject().append('$set',new BasicDBObject().append("device.store",store))
+        set2.append('$unset',new BasicDBObject().append("device.company",''))
+        BasicDBObject query2 = new BasicDBObject().append("device.company",company as Integer)
+        db.dataRow.update(query2,set2,false,true)
+    }
+    /*
+    *
+    *
+    *
+    * */
 
 
 

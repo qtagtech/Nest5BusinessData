@@ -1,10 +1,13 @@
 package com.nest5data
 import com.mongodb.BasicDBObject
+import com.mongodb.DBCursor
 import com.sun.tools.internal.ws.wsdl.document.http.HTTPBinding
 import grails.converters.JSON
 import com.nest5data.Device
 import grails.plugin.springsecurity.annotation.Secured
 import groovyx.net.http.*
+import org.bson.types.ObjectId
+
 import static groovyx.net.http.ContentType.TEXT
 import static groovyx.net.http.Method.GET
 
@@ -24,25 +27,29 @@ class DeviceOpsController {
     }
 
     def registerDevice(){
+        //println "aca1"
         def received = null
         try{received = JSON.parse(params?.payload)}catch (Exception e){}
         def result
         if(!received){
+            //println "aca2"
             response.setStatus(400)
             result = [status: 400, code: 55520,message: 'Invalid Device Registration Parameters']
             render result as JSON
             return
         }
+        //println "aca3"
         def company = received?.company
         //check company existance in remote Operational RDBMS database, there should be a local copy of all companies.
         //there should be a Company model for matching the received id to it and getting a company object, for now any id will do it
         if(!company){
+            //println "aca4"
             response.setStatus(400)
             result = [status: 400, code: 55520,message: 'Invalid Device Registration Parameters']
             render result as JSON
             return
         }//error
-
+        //println "aca5"
         def jsonData = companyDetailsRequest(company)
         /*def com = Company.findByGlobal_id(company as Long)
         if(!com){
@@ -126,34 +133,59 @@ class DeviceOpsController {
             SecUserSecRole.create com, companyRole
         }*/
         if(!jsonData){
+            //println "aca6"
             response.setStatus(400)
             result = [status: 400, code: 55522,message: 'Error fetching Data.']
             render result as JSON
             return
         }
+        //println "aca7"
         if (jsonData.status != 1){
+            //println "aca8"
             response.setStatus(400)
             result = [status: 400, code: 55521,message: 'Company does not exist.']
             render result as JSON
         }
+        //println "aca9"
             //here we should also receive reported location via gps, wifi or any other location provider. public ip of device, os and many more useful data for trending and statistics
-        def registered = Device.findAllByUid(received?.device_id)
+        def db = mongo.getDB(grailsApplication.config.com.nest5.BusinessData.database)
+        BasicDBObject query = new BasicDBObject().append('uid',received?.device_id)
+        def registered = db.device.findOne(query)
+//        def registered = Device.findAllByUid(received?.device_id)
         if(registered?.size() > 0){  //there was a device with the same id previously registered
+            //println "aca10"
 
                 response.setStatus(200)
-                result = [status: 200, code: 55511,message: 'Device is already registered for other company, login continues normally.',minSale: registered[0].minSale,maxSale: registered[0].maxSale as Integer, currentSale: registered[0].currentSale as Integer,prefix: registered[0].prefix as String,nit: jsonData.nit, tel: jsonData.telephone,address: jsonData.address, name: jsonData.name, email: jsonData.email,url: jsonData.url,invoiceMessage: jsonData.invoiceMessage,tipMessage: jsonData.tipMessage,resolution: jsonData.resolution] //here, the device should ask the user if this device should change company. and the call will the be made to changeDeviceRegistration
+                result = [status: 200, code: 55511,message: 'Device is already registered for other company, login continues normally.',minSale: registered.minSale,maxSale: registered.maxSale as Integer, currentSale: registered.currentSale as Integer,prefix: registered.prefix as String,nit: jsonData.nit, tel: jsonData.telephone,address: jsonData.address, name: jsonData.name, email: jsonData.email,url: jsonData.url,invoiceMessage: jsonData.invoiceMessage,tipMessage: jsonData.tipMessage,resolution: jsonData.resolution] //here, the device should ask the user if this device should change company. and the call will the be made to changeDeviceRegistration
                 render result as JSON
                 return
         }
+        //println "aca11"
         //else, save the id and register it to the current company making the request
-        def device = new Device(uid: received?.device_id, company: company,registeredOn: new Date(),minSale: 0, maxSale: 0,currentSale: 0,prefix: " ",resolution: " ")
+        //check for stores
+
+        /*def device = new Device(uid: received?.device_id, company: company,registeredOn: new Date(),minSale: 0, maxSale: 0,currentSale: 0,prefix: " ",resolution: " ")
         if(!device.save()){
             println device.errors.allErrors
             response.setStatus(400)
             result = [status: 400, code: 5550,message: 'Error writing object to file system'] //here, the device should ask the user if this device should change company. and the call will the be made to changeDeviceRegistration
             render result as JSON
             return
+        }*/
+
+        def device
+        def store = checkStores(received)
+        //println "aca12"
+        def resultado = db.device.insert('uid':received.device_id, name: "Sin Nombre",'store': store, registeredOn: new Date(), lastUpdated: new Date(), minSale: 0, maxSale: 0, currentSale: 0, prefix: " ", resolution: " " )
+        device = db.device.findOne("uid":received?.device_id,"store.company":received.company as Integer)
+        if(!device){
+            //println "aca13"
+            response.setStatus(400)
+            result = [status: 400, code: 5550,message: 'Error writing device to file system']
+            render result as JSON
+            return
         }
+        ////println "aca14"
         response.setStatus(200)
         result = [status: 200, code: 555,message: 'Device successfully registered to company',minSale: 0,maxSale: 0, currentSale: 0,prefix: " ",nit: jsonData?.nit, tel: jsonData?.telephone,address: jsonData?.address, name: jsonData?.name, email: jsonData?.email,url: jsonData?.url,invoiceMessage: jsonData?.invoiceMessage,tipMessage: jsonData?.tipMessage,resolution :jsonData?.resolution]
         render result as JSON
@@ -208,7 +240,7 @@ class DeviceOpsController {
         }
 
         def db = mongo.getDB(grailsApplication.config.com.nest5.BusinessData.database)
-        BasicDBObject query = new BasicDBObject("company",params?.company as Integer);
+        BasicDBObject query = new BasicDBObject("store.company",params?.company as Integer);
         def filas = db.device.find(query)
         if(filas.size() == 0) {
             response.setStatus(400)
@@ -253,7 +285,7 @@ class DeviceOpsController {
             return
         }
         def db = mongo.getDB(grailsApplication.config.com.nest5.BusinessData.database)
-        BasicDBObject query = new BasicDBObject("company",company as Integer).
+        BasicDBObject query = new BasicDBObject("store.company",company as Integer).
                 append("uid", row as String);
         //println query
         def filas = db.device.find(query)
@@ -288,7 +320,7 @@ class DeviceOpsController {
             return
         }
         def db = mongo.getDB(grailsApplication.config.com.nest5.BusinessData.database)
-        BasicDBObject query = new BasicDBObject("company",company as Integer).
+        BasicDBObject query = new BasicDBObject("store.company",company as Integer).
                 append("uid", row as String);
         BasicDBObject newfields = new BasicDBObject("name":params?.name)
                 .append("currentSale",params?.currentSale)
@@ -354,6 +386,44 @@ class DeviceOpsController {
                 return null
             }
         }
+    }
+
+    def checkStores(received){
+        //println"llega a checkstores"
+        def company = received.company
+        DBCursor stores
+        def db = mongo.getDB(grailsApplication.config.com.nest5.BusinessData.database)
+        try{
+            BasicDBObject query = new BasicDBObject().append('company',company as Integer)
+            stores = db.store.find(query)
+        }catch(Exception e){
+            e.printStackTrace()
+            return null
+        }
+        //println"stores encontradas:"
+        //printlnstores.count()
+        if(stores.count() == 0){
+            //println"no hay tiendas, crea una nueva"
+            def obid = new ObjectId()
+            def resultado = db.store.insert(_id: obid,name: "Local Por Defecto", latitude: 0, longitude: 0, location: null, company: company as Integer)
+            if(resultado.error)
+            {
+                //printlnresultado.getLastError()
+                return null
+            }
+            //println"busca en db una tienda con el id que se acaba de crear "+obid
+            def store = db.store.findOne('_id':obid)
+            //println"dentro de checkStores encontró una vez hecha comprobación y demás esta tienda que devolverá"
+            //printlnstore
+            return store
+        }
+        else{
+            def store = stores.next()
+            //println"existen tiendas entopnces devuleve la primera de la lista"+store
+            return store
+        }
+
+
     }
 
 

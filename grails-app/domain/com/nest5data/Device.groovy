@@ -6,7 +6,8 @@ class Device {
     ObjectId id
     String name
     String uid
-    Integer company
+   // Integer company
+    Store store
     Date registeredOn
     Date lastUpdated
     Integer minSale
@@ -22,5 +23,6 @@ class Device {
     static constraints = {
     }
     static mapWith = "mongo"
+    static embedded = ['store']
 
 }
