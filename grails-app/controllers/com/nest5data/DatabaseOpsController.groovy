@@ -1080,6 +1080,72 @@ class DatabaseOpsController {
         return
     }
 
+    def salesFromDate(){
+        def result
+        def company = params?.company
+        if(!company){
+            response.setStatus(400)
+            result = []
+            render result as JSON
+            return
+        }
+        def dates = magicDates(params)
+        def startDate = dates.startDate
+        def endDate = dates.endDate
+        def doomdate = dates.doomdate
+        def db = mongo.getDB(grailsApplication.config.com.nest5.BusinessData.database)
+        BasicDBObject query = new BasicDBObject("table",'sale').
+                append("device.store.company",company as Integer).
+                append("isDeleted", false)
+                .append("timeCreated",new BasicDBObject('$gte', startDate).append('$lt', endDate));
+        def filas
+        try{
+            filas = db.dataRow.find(query)
+        }catch(Exception e){
+            println ("Error cogiendo filas de mongo")
+            e.printStackTrace()
+        }
+        if(filas == null){
+            response.setStatus(200)
+            result = []
+            render result as JSON
+            return
+        }
+        if(filas.size() == 0) {
+            response.setStatus(200)
+            result = []
+            render result as JSON
+            return
+        }
+        def facturas = []
+        while(filas.hasNext()) {
+            def element = filas.next() ?: null
+            def item = [:]
+            //println  element
+            if(element){
+                item['id'] = 55555555
+                item['syncId'] = element?.syncId
+                item['isDelivery'] = element?.fields?.delivery
+                item['isTogo'] = element?.fields?.togo
+                item['tip'] = element?.fields?.tip
+                item['number'] = element?.fields?.sale_number
+                item['method'] = element?.fields?.payment_method
+                item['received'] = element?.fields?.received
+                item['discount'] = element?.fields?.discount
+                item['date'] = element?.timeCreated
+                item['ingredients'] = element?.fields?.ingredients
+                item['products'] = element?.fields?.products
+                item['combos'] = element?.fields?.combos
+                facturas.push(item)
+            }
+
+        }
+        if(filas)
+            filas.close()
+        render facturas as JSON
+        return
+    }
+
     def fetchInvoice(){
         def result
         def company = params?.company
