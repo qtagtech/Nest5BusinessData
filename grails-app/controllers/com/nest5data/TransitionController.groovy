@@ -52,4 +52,18 @@ class TransitionController {
 
         }
 
+    def convertToCompany(){
+        def from = params.from
+        def to = params.to
+
+        def db = mongo.getDB(grailsApplication.config.com.nest5.BusinessData.database)
+            render "-Comenzando conversión...<br>"
+            BasicDBObject set = new BasicDBObject().append('$set',new BasicDBObject().append('company',to))
+            BasicDBObject query = new BasicDBObject().append("company",from)
+            db.device.update(query,set,false,true)
+            render "-----¡todo convertido con éxito!<br>"
+        render "¡FIN!"
+
+    }
+
 }

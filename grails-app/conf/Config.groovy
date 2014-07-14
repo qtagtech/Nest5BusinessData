@@ -105,7 +105,7 @@ environments {
         grails.logging.jul.usebridge = false
         grails.serverURL = "http://bigdata.nest5.com"
         com.nest5.BusinessData.database = "bigdata"
-        com.nest5.BusinessData.Nest5APIServerURL = "http://nest5.com"
+        com.nest5.BusinessData.Nest5APIServerURL = "http://www.nest5.com"
     }
 }
 
