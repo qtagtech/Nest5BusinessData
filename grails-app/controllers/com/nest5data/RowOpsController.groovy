@@ -142,10 +142,10 @@ class RowOpsController {
             return
         }
         //check the device is registered to the same company as the previous records for this sync_id element
-        def deleting = params.is_delete ?: false
+        def deleting = params.is_delete == "true" ? true : false
         println "DELETING"
         println deleting
-        if(deleting){
+        if(deleting == true){
             println"aca4"//the device sent a delete request with all the properties except for the fields (blank values). the server should soft-delete it. The deleted flag is true since the element wont be available to any device from now on
             //db.dataRow.insert('table': received.table, 'rowId': received.row_id,'timeCreated': timeCreated,'timeReceived': new Date(),fields: null,'hashKey': 'N/A','device': device as JSON, 'isDeleted': true,'syncId': received.sync_id as Long,syncRow: syncRow)
             //set isDeleted flag on previous existent element (if any) to true
@@ -191,7 +191,8 @@ class RowOpsController {
         BasicDBObject query = new BasicDBObject().append('syncId',received?.sync_id as Long)
         .append('isDeleted',false)
         def previousResults = db.dataRow.findOne(query)
-        if(previousResults.size() == 0){ //there were no records. it is a new insert, send notification to all devices registered with this one. This shouldn't happen, since if it was a new record it wouldn't have sync_id!= 0
+
+        if(previousResults?.size() == 0 || previousResults == null){ //there were no records. it is a new insert, send notification to all devices registered with this one. This shouldn't happen, since if it was a new record it wouldn't have sync_id!= 0
             println "aca9"
             def rowHash = received?.fields?.encodeAsMD5()
             def sync_id = randomNumber() //it gets a random number, if the number already exists in the database the function is going to return 0 so it will cycle the while until it gets a number different from 0L
