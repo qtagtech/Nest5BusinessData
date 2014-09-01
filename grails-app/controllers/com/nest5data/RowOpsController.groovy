@@ -107,7 +107,7 @@ class RowOpsController {
             return
         }
         if(received.sync_id as Long == 0){//This means it's a new insert, since it doesn't have common id through all devices. nothing else should be done but save it and generate an id that should be returned to the client to update
-            //println"aca1"
+            println"aca1"
             def rowHash = received?.fields?.encodeAsMD5()
             def sync_id = randomNumber() //it gets a random number, if the number already exists in the database the function is going to return 0 so it will cycle the while until it gets a number different from 0L
             while(sync_id == 0L){
@@ -118,7 +118,7 @@ class RowOpsController {
             //check if it is a sale, if yes, update currentSale value in device
             //update device's lastupdated field everything in try catch to avoid conflicts
             try{
-                //println"aca2"
+                println"aca2"
                 BasicDBObject searchQuery = new BasicDBObject().append('uid',received.device_id)
                 BasicDBObject newDocument = new BasicDBObject()
                 newDocument.append('$set',new BasicDBObject().append("lastUpdated",new Date()))
@@ -131,7 +131,7 @@ class RowOpsController {
                     }
                 }
             }catch (Exception e){
-                //println"aca3"
+                println"aca3"
                 //println"error actualizando device"
                 e.printStackTrace()
             }
@@ -142,32 +142,29 @@ class RowOpsController {
             return
         }
         //check the device is registered to the same company as the previous records for this sync_id element
-        def deleting = received.is_delete ? true : false
-        if(deleting){
-            //println"aca4"//the device sent a delete request with all the properties except for the fields (blank values). the server should soft-delete it. The deleted flag is true since the element wont be available to any device from now on
-            db.dataRow.insert('table': received.table, 'rowId': received.row_id,'timeCreated': timeCreated,'timeReceived': new Date(),fields: null,'hashKey': 'N/A','device': device as JSON, 'isDeleted': true,'syncId': received.sync_id as Long,syncRow: syncRow)
+        def deleting = params.is_delete == "true" ? true : false
+        println "DELETING"
+        println deleting
+        if(deleting == true){
+            println"aca4"//the device sent a delete request with all the properties except for the fields (blank values). the server should soft-delete it. The deleted flag is true since the element wont be available to any device from now on
+            //db.dataRow.insert('table': received.table, 'rowId': received.row_id,'timeCreated': timeCreated,'timeReceived': new Date(),fields: null,'hashKey': 'N/A','device': device as JSON, 'isDeleted': true,'syncId': received.sync_id as Long,syncRow: syncRow)
             //set isDeleted flag on previous existent element (if any) to true
-            def previousResults = DataRow.withCriteria {
-                def now = new Date()
-                lt 'timeReceived', now
-                eq 'isDeleted', false
-                eq 'syncId', received.sync_id as Long
+            //if no record was found, we find previous record prior to now
+            def now = new Date()
+            BasicDBObject query = new BasicDBObject().append('syncId',received?.sync_id as Long)
+                    .append('isDeleted',false)
+            def previousResults = db.dataRow.findOne(query)
+            if(previousResults.size() == 0){//no record found of the one that is trying to delete
+                response.setStatus(400)//new object created
+                result = [status: 400, code: 555,message: 'No item with found for deleting',syncId: null,syncRow: null]  //error deleting the current element
+                render result as JSON
+                return
             }
-            if(previousResults?.size() != 0){ //there were records.
-                //println"aca5"
-                def lastResult = previousResults?.sort {it?.timeReceived}.get(0)
-                //check if current device saving a row, belongs to the same company as the the previous device
-                if(lastResult.device.store.company != device.store.company){
-                    //println"aca6"
-                    response.setStatus(400)//not acceptable
-                    result = [status: 400, code: 55514,message: 'This Record doesn\'t belong to your company.',syncId: null,syncRow: null]
-                    render result as JSON
-                    return
-                }
-                lastResult.isDeleted = true
-                lastResult.save(flush: true)
-            }
-            //println"aca7"
+            println"aca7"
+            BasicDBObject qu = new BasicDBObject("_id",previousResults._id)
+            BasicDBObject newfields = new BasicDBObject().append("isDeleted",true)
+            BasicDBObject setObject = new BasicDBObject('$set' : newfields)
+            def filas = db.dataRow.update(qu,setObject)
             response.setStatus(200)//new object created
             result = [status: 200, code: 555,message: 'Document deleted successfully',syncId: received.sync_id,syncRow: syncRow]  //success deleting the current element
             render result as JSON
@@ -183,21 +180,20 @@ class RowOpsController {
 
         }
         if(lockedResults.size() > 0) {   //there were records saved during saved Time and receive time that are functional, that means not deleted, this row must be discarded (softDelete)
-            //println "aca8"
+            println "aca8"
             response.setStatus(406)//not acceptable
             result = [status: 406, code: 55513,message: 'CAUTION: Overlap saving attempted. A newer version of this element has been saved from a different client',syncId: null,syncRow: syncRow]  //success, but status indicates syncId present, and las row should be updated with the sync_id generated in the server
             render result as JSON
             return
         }
         //if no record was found, we find previous record prior to now
-        def previousResults = DataRow.withCriteria {
-            def now = new Date()
-            lt 'timeReceived', now
-            eq 'isDeleted', false
-            eq 'syncId', received.sync_id as Long
-            }
-        if(previousResults.size() == 0){ //there were no records. it is a new insert, send notification to all devices registered with this one. This shouldn't happen, since if it was a new record it wouldn't have sync_id!= 0
-            //println "aca9"
+        def now = new Date()
+        BasicDBObject query = new BasicDBObject().append('syncId',received?.sync_id as Long)
+        .append('isDeleted',false)
+        def previousResults = db.dataRow.findOne(query)
+
+        if(previousResults?.size() == 0 || previousResults == null){ //there were no records. it is a new insert, send notification to all devices registered with this one. This shouldn't happen, since if it was a new record it wouldn't have sync_id!= 0
+            println "aca9"
             def rowHash = received?.fields?.encodeAsMD5()
             def sync_id = randomNumber() //it gets a random number, if the number already exists in the database the function is going to return 0 so it will cycle the while until it gets a number different from 0L
             while(sync_id == 0L){
@@ -207,7 +203,7 @@ class RowOpsController {
             //check if it is a sale, if yes, update currentSale value in device
             //update device's lastupdated field everything in try catch to avoid conflicts
             try{
-                //println "aca10"
+                println "aca10"
                 BasicDBObject searchQuery = new BasicDBObject().append('uid',received.device_id)
                 BasicDBObject newDocument = new BasicDBObject()
                 newDocument.append('$set',new BasicDBObject().append("lastUpdated",new Date()))
@@ -220,25 +216,30 @@ class RowOpsController {
                     }
                 }
             }catch (Exception e){
-                //println "aca11"
+                println "aca11"
                 println "error actualizando device"
                 println e
             }
-            //println "aca12"
+            println "aca12"
             response.setStatus(201)//new object created
             result = [status: 201, code: 555,message: 'New document successfully created, please update sync_id value in client\'s DB',syncId: sync_id,syncRow: syncRow]  //success, but status indicates syncId present, and las row should be updated with the sync_id generated in the server
             render result as JSON
             return
         }
-        //println "aca13"
+        println "aca13"
         //else, compare md5 hashes but only get the latest record with isDeleted false in case there are more than one (error may exist here)
-        def lastResult = previousResults?.sort {it?.timeReceived}?.get(0)
+        /*
+        * OJOOOO EVISRA ACÁ LO QUE SUCEDE AL CAMBIAR LA VARIABLE PREVIOUS RESULTS QUE YA NO ES UNA LISTA DE CREATE CRITERIA SINO UN CURSOR DE BASICDBOBJECT
+        *
+        * */
+        //def lastResult = previousResults?.sort {it?.timeReceived}?.get(0)
+        def lastResult  = previousResults
         //println lastResult
         //check if current device saving a row, belongs to the same company as the the previous device
         if(lastResult.device.store.company != device.store.company){
             //
 
-            //println "aca14"
+            println "aca14"
             response.setStatus(400)//not acceptable
             result = [status: 400, code: 55514,message: 'This Record doesn\'t belong to your company.',syncId: null,syncRow: null]
             render result as JSON
@@ -247,7 +248,7 @@ class RowOpsController {
         def newHash = received?.fields?.encodeAsMD5()
         if(newHash == lastResult.hashKey){ //hashes are the same, so row hasn't had any update, discard the old one with soft delete, save new one and send ACK
             //save new row
-            //println "aca15"
+            println "aca15"
             db.dataRow.insert('table': received.table, 'rowId': received.row_id,'timeCreated': timeCreated,'timeReceived': new Date(),fields: received.fields,'hashKey': newHash,'device': device, 'isDeleted': false,'syncId': received.sync_id as Long)
             //discard old row
             lastResult.isDeleted = true
@@ -255,7 +256,7 @@ class RowOpsController {
             //check if it is a sale, if yes, update currentSale value in device
             //update device's lastupdated field everything in try catch to avoid conflicts
             try{
-                //println "aca16"
+                println "aca16"
                 BasicDBObject searchQuery = new BasicDBObject().append('uid',received.device_id)
                 BasicDBObject newDocument = new BasicDBObject()
                 newDocument.append('$set',new BasicDBObject().append("lastUpdated",new Date()))
@@ -268,26 +269,31 @@ class RowOpsController {
                     }
                 }
             }catch (Exception e){
-                //println "aca17"
+                println "aca17"
                 println "error actualizando device"
                 println e
             }
-            //println "aca18"
+            println "aca18"
             response.setStatus(200)//new object created
             result = [status: 200, code: 555,message: 'Document successfully updated! There are no changes.',syncId: received.sync_id,syncRow: syncRow]  //success in updating latest row version although ther were no changes.
             render result as JSON
             return
 
         }
-        //println "aca18"
+        println "aca19"
         //else, the new one is an update of the row, save it, send multicast to all devices withe the update to be made on the specific row and table
+
         db.dataRow.insert('table': received.table, 'rowId': received.row_id,'timeCreated': timeCreated,'timeReceived': new Date(),fields: received.fields,'hashKey': newHash,'device': device, 'isDeleted': false,'syncId': received.sync_id as Long)
-        lastResult.isDeleted = true
-        lastResult.save(flush: true)
+        BasicDBObject qu = new BasicDBObject("_id",lastResult._id)
+        BasicDBObject newfields = new BasicDBObject().append("isDeleted",true)
+        BasicDBObject setObject = new BasicDBObject('$set' : newfields)
+        def filas = db.dataRow.update(qu,setObject)
+        //lastResult.isDeleted = true
+        //lastResult.save(flush: true)
         //check if it is a sale, if yes, update currentSale value in device
         //update device's lastupdated field everything in try catch to avoid conflicts
         try{
-            //println "aca19"
+            println "aca20"
             BasicDBObject searchQuery = new BasicDBObject().append('uid',received.device_id)
             BasicDBObject newDocument = new BasicDBObject()
             newDocument.append('$set',new BasicDBObject().append("lastUpdated",new Date()))
@@ -300,11 +306,11 @@ class RowOpsController {
                 }
             }
         }catch (Exception e){
-            //println "aca20"
+            println "aca21"
             println "error actualizando device"
             println e
         }
-        //println "aca21"
+        println "aca22"
         response.setStatus(200)//new object created
         //println "acaaaa"
         result = [status: 200, code: 555,message: 'Document successfully updated to newer version!',syncId: received.sync_id,syncRow: syncRow]  //success in updating to newer version
@@ -412,7 +418,9 @@ class RowOpsController {
         *
         *
         * */
-        def db = mongo.getDB(grailsApplication.config.com.nest5.BusinessData.database)
+        //acá se está recibiendo el id de la compañía desde el panel web,
+
+         def db = mongo.getDB(grailsApplication.config.com.nest5.BusinessData.database)
         BasicDBObject query = new BasicDBObject("syncId",row as Long).
                 append("device.store.company",company as Integer).
                 append("isDeleted", false);
