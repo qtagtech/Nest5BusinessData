@@ -500,6 +500,133 @@ class RowOpsController {
 
     }
 
+    def cancelInvoice(){
+        def result
+        def company = params?.company
+        def seller = params?.seller
+        if(!company){
+            response.setStatus(400)
+            result = [status: 400, code: 55522,message: 'Invalid company',payload: null]
+            render result as JSON
+            return
+        }
+        if(!seller){
+            response.setStatus(400)
+            result = [status: 400, code: 55522,message: 'Invalid seller',payload: null]
+            render result as JSON
+            return
+        }
+        def salenumber = params?.salenumber
+        if(!salenumber){
+            response.setStatus(400)
+            result = [status: 400, code: 55522,message: 'Invalid Sale Number',payload: null]
+            render result as JSON
+            return
+        }
+        def db = mongo.getDB(grailsApplication.config.com.nest5.BusinessData.database)
+        BasicDBObject query = new BasicDBObject("table","sale").
+                append("device.store.company",company as Integer).
+                append("fields.sale_number",salenumber as Integer).
+                append("isDeleted", false);
+        //println query
+        def saleCursor
+        def sale
+        try{
+            saleCursor = db.dataRow.find(query)
+        }catch(Exception e){
+            println "error buscando Sale"
+        }
+
+        if(!saleCursor) {
+
+            response.setStatus(400)
+            result = [status: 400, code: 55531,message: 'There is no Sale with such Number in the database for company with id '+company,payload: null]
+            render result as JSON
+            return
+        }
+
+
+
+            sale = saleCursor.next()
+            if(!sale){
+
+                response.setStatus(400)
+                result = [status: 400, code: 55531,message: 'There is no Sale with such Number in the database for company with id '+company,payload: null]
+                render result as JSON
+                return
+            }
+
+            def device = db.device.findOne("store.company": company as Integer)
+
+
+        //check if it is already cancelled or has a request
+        BasicDBObject queryp = new BasicDBObject("device",device).
+                append("sale",salenumber).
+                append("seller", seller);
+        def cancelaCursorp
+        def cancelacionp
+        try{
+            cancelaCursorp = db.cancelation.find(queryp)
+        }catch(Exception e){
+            println "error buscando Cancelacionp"
+        }
+
+        if(cancelaCursorp) {
+            cancelacionp = cancelaCursorp.next()
+            if(cancelacionp){
+                if(!cancelacionp.reviewed){
+                    response.setStatus(200)
+                    result = [status: 200, code: 55535,message: 'There is already a pending request to cancel sale with id:  '+salenumber+' from seller: '+seller+' pending for approval.',payload: null]
+                    render result as JSON
+                    return
+                }else{
+                    response.setStatus(200)
+                    result = [status: 200, code: 55536,message: 'The sale with id:  '+salenumber+' has already been cancelled.',payload: null]
+                    render result as JSON
+                    return
+                }
+
+            }
+        }
+            def cancela = db.cancelation.insert(_id: new ObjectId(),date: new Date(), device: device, sale: salenumber, reviewed: false, seller: seller)
+            if(cancela.error)
+            {
+
+                println cancela.getLastError()
+                response.setStatus(400)
+                result = [status: 400, code: 55531,message: 'There was an error saving the cancelation object',payload: null]
+                render result as JSON
+                return
+            }
+        BasicDBObject query2 = new BasicDBObject("device",device).
+                append("sale",salenumber).
+                append("seller", seller);
+        def cancelaCursor
+        def cancelacion
+        try{
+            cancelaCursor = db.cancelation.find(query2)
+        }catch(Exception e){
+            println "error buscando Cancelacion"
+        }
+
+        if(!cancelaCursor) {
+        }
+
+
+
+        cancelacion = cancelaCursor.next()
+        if(!cancelacion){
+
+        }
+            BasicDBObject updatation = new BasicDBObject().append('$set',new BasicDBObject().append("cancelation",cancelacion))
+            db.dataRow.update(query,updatation)
+        response.setStatus(200)
+        result = [status: 200, code: 555,message: 'Invoice with id: '+salenumber+' canceled successfully',payload: null]
+        render result as JSON
+        return
+    }
+
+
 
     def checkStores(params){
         println "llega a checkstores"
@@ -531,6 +658,8 @@ class RowOpsController {
             return store
         }
         else{
+
+
             def store = stores.next()
             println "existen tiendas entopnces devuleve la primera de la lista"+store
             return store

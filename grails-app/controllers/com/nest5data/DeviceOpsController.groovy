@@ -164,7 +164,7 @@ class DeviceOpsController {
         //else, save the id and register it to the current company making the request
         //check for stores
 
-        /*def device = new Device(uid: received?.device_id, company: company,registeredOn: new Date(),minSale: 0, maxSale: 0,currentSale: 0,prefix: " ",resolution: " ")
+        /*def device = new Device(uid: received?.device_id, company: company,registeredOn: new Dateupdate(),minSale: 0, maxSale: 0,currentSale: 0,prefix: " ",resolution: " ")
         if(!device.save()){
             println device.errors.allErrors
             response.setStatus(400)
@@ -207,16 +207,18 @@ class DeviceOpsController {
 
 
         //here we should also receive reported location via gps, wifi or any other location provider. public ip of device, os and many more useful data for trending and statistics
-        def registered = Device.findByUid(received?.device_id)
-        if(!registered){  //there was a device with the same id previously registered
-
-                response.setStatus(400)
-                result = [status: 400, code: 55520,message: 'Device does not exist']
-                render result as JSON
-                return
+        def db = mongo.getDB(grailsApplication.config.com.nest5.BusinessData.database)
+        BasicDBObject query = new BasicDBObject().append('uid',received?.device_id)
+        def registered = db.device.findOne(query)
+//        def registered = Device.findAllByUid(received?.device_id)
+        if(registered?.size() == 0){  //there was a device with the same id previously registered
+            response.setStatus(400)
+            result = [status: 400, code: 55520,message: 'Device does not exist']
+            render result as JSON
+            return
         }
         //println registered.company
-        def com = companyDetailsRequest(registered.company)
+        def com = companyDetailsRequest(registered?.store?.company)
         if(!com){
             response.setStatus(400)
             result = [status: 400, code: 55525,message: 'company does not exist',maxSale: 0, currentSale: 0,prefix: 0,nit: "00000", tel: "00000",address: "NA", name: "NA", email: "NA",url: "NA",invoiceMessage: "NA",tipMessage:"NA"]
@@ -224,7 +226,7 @@ class DeviceOpsController {
             return
         }
         response.setStatus(200)
-        result = [status: 200, code: 555,message: 'Device exists, find maxSale, currentSale and prefix values attached as payload',maxSale: registered.maxSale as Integer, currentSale: registered.currentSale as Integer,prefix: registered.prefix as String,nit: com.nit, tel: com.telephone,address: com.address, name: com.name, email: com.email,url: com.url,invoiceMessage: com.invoiceMessage,tipMessage: com.tipMessage]
+        result = [status: 200, code: 555,message: 'Device exists, find maxSale, currentSale and prefix values attached as payload',maxSale: registered?.maxSale as Integer, currentSale: registered?.currentSale as Integer,prefix: registered?.prefix as String,nit: com.nit, tel: com.telephone,address: com.address, name: com.name, email: com.email,url: com.url,invoiceMessage: com.invoiceMessage,tipMessage: com.tipMessage]
         render result as JSON
         return
 
